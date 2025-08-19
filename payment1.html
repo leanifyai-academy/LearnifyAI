@@ -1,0 +1,239 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<title>Learnify AI — Your Certificate</title> 
+ 
+<style> 
+  :root{ 
+    --bg:#0b1321; 
+    --card:#0f1b2eaa; 
+    --edge:#3cf37a; 
+    --edge-soft:#b1ffcf; 
+    --txt:#e9f5ee; 
+    --muted:#a9c0b3; 
+    --white:#ffffff; 
+    --ok:#2ecc71; 
+    --shadow:0 18px 60px rgba(0,0,0,.45); 
+  } 
+  *{box-sizing:border-box} 
+  body{ 
+    margin:0; 
+    min-height:100vh; 
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; 
+    color:var(--txt); 
+    background: 
+      radial-gradient(1200px 600px at 80% 10%, #1b2a46 0%, transparent 60%), 
+      radial-gradient(900px 600px at 10% 90%, #132238 0%, transparent 55%), 
+      linear-gradient(135deg,#061018, #0b1321); 
+    display:grid; 
+    place-items:center; 
+    padding:24px; 
+  } 
+ 
+  .wrap{ 
+    position:relative; 
+    max-width:980px; 
+    width:100%; 
+    isolation:isolate; 
+  } 
+  .frame{ 
+    position:absolute; inset:-2px; 
+    border-radius:24px; 
+    background: 
+      conic-gradient(from 0deg, var(--edge), var(--edge-soft), var(--edge), var(--edge-soft), var(--edge)); 
+    filter:blur(14px) saturate(140%); 
+    opacity:.35; 
+    animation:spin 9s linear infinite; 
+    z-index:-1; 
+  } 
+  @keyframes spin{to{transform:rotate(360deg)}} 
+ 
+  .card{ 
+    background:var(--card); 
+    backdrop-filter:blur(18px) saturate(140%); 
+    border:1px solid rgba(255,255,255,.08); 
+    border-radius:24px; 
+    box-shadow:var(--shadow); 
+    overflow:hidden; 
+    padding:24px; 
+  } 
+ 
+  .head{ 
+    display:flex; align-items:center; justify-content:space-between; 
+    padding:22px 0; border-bottom:1px solid rgba(255,255,255,.06); 
+  } 
+  .brand{display:flex; align-items:center; gap:12px} 
+  .logo{ 
+    width:38px; height:38px; border-radius:12px; 
+    background: radial-gradient(circle at 30% 30%, var(--edge) 0%, #1ddf69 25%, #0b5 55%, #093 100%); 
+    box-shadow:0 0 0 2px rgba(255,255,255,.08), 0 8px 24px rgba(31, 255, 160,.22); 
+  } 
+  .brand h1{font-size:18px; margin:0; letter-spacing:.3px; font-weight:700;} 
+  .seal{font-size:12px; color:var(--muted); display:flex; gap:10px; align-items:center;} 
+  .seal .dot{width:8px; height:8px; border-radius:50%; background:var(--ok); box-shadow:0 0 8px var(--ok)} 
+ 
+  .hero{ 
+    padding:20px 0 8px; 
+    text-align:center; 
+  } 
+  .hero h2{ 
+    font-size:28px; 
+    margin:10px 0; 
+    color:var(--edge); 
+  } 
+  .hero p{ 
+    font-size:16px; 
+    color:#d8ffe9; 
+    margin:4px 0 16px; 
+  } 
+ 
+  .certificate-box{ 
+    border:2px dashed var(--edge); 
+    border-radius:16px; 
+    padding:30px 20px; 
+    background:rgba(255,255,255,.05); 
+    text-align:center; 
+    margin-top:20px; 
+  } 
+  .certificate-box h3{ 
+    margin:10px 0; 
+    color:var(--edge-soft); 
+  } 
+  .certificate-box p{ 
+    font-size:16px; 
+    margin:6px 0; 
+  } 
+ 
+  .btn{ 
+    margin-top:24px; 
+    padding:14px 24px; 
+    border:none; 
+    border-radius:12px; 
+    cursor:pointer; 
+    font-weight:800; 
+    letter-spacing:.2px; 
+    background:linear-gradient(90deg, #26d07c, #3cf37a); 
+    color:#001b0e; 
+    box-shadow:0 14px 30px rgba(60,243,122,.22), inset 0 -2px 0 rgba(0,0,0,.15); 
+    transition:transform .12s ease, filter .2s ease; 
+    display:block; 
+    width:100%; 
+  } 
+  .btn:hover{transform:translateY(-1px); filter:saturate(110%)} 
+  .btn:active{transform:translateY(0)} 
+
+  .share-buttons{
+    margin-top:16px;
+    display:flex;
+    justify-content:space-around;
+  }
+  .share-btn{
+    flex:1;
+    margin:6px;
+    padding:10px 16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    color:#fff;
+  }
+  .whatsapp{background:#25D366;}
+  .linkedin{background:#0A66C2;}
+</style> 
+</head> 
+<body> 
+  <div class="wrap"> 
+    <div class="frame"></div> 
+    <div class="card"> 
+      <div class="head"> 
+        <div class="brand"> 
+          <div class="logo" aria-hidden="true"></div> 
+          <h1>Learnify AI • Certificate</h1> 
+        </div> 
+        <div class="seal"><span class="dot"></span> Verified</div> 
+      </div> 
+ 
+      <div class="certificate-box">
+    <h1>Certificate of Completion</h1>
+    <p>This certifies that</p>
+    <h2 id="certName">Student Name</h2>
+    <p>has successfully completed the course:</p>
+    <p class="highlight" id="certCourse">Data Science Basics</p>
+    <p>Date: <span id="certDate"></span></p>
+
+    <div class="footer">
+      <div>
+        <div class="signature">Instructor Signature</div>
+        <p>Learnify AI</p>
+      </div>
+      <div>
+        <div class="signature">Director Signature</div>
+        <p>Learnify AI</p>
+      </div>
+    </div>
+
+    <div class="seal">Learnify</div>
+  </div>
+ 
+      <button class="btn" onclick="downloadCertificate()">Download Certificate</button> 
+
+      <!-- ✅ Share Buttons -->
+      <div class="share-buttons">
+        <button class="share-btn whatsapp" onclick="shareWhatsApp()">Share WhatsApp</button>
+        <button class="share-btn linkedin" onclick="shareLinkedIn()">Share LinkedIn</button>
+      </div>
+
+    </div> 
+  </div> 
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> 
+<script> 
+  // Fill data dynamically
+  const name = localStorage.getItem('userName') || "Student Name"; 
+  const course = localStorage.getItem('userCourse') || "Data Science Basics"; 
+  const date = new Date().toLocaleDateString();
+
+  document.getElementById('userName').textContent = name; 
+  document.getElementById('certName').textContent = name; 
+  document.getElementById('certCourse').textContent = course; 
+  document.getElementById('certDate').textContent = date; 
+ 
+  function downloadCertificate(){ 
+    const { jsPDF } = window.jspdf; 
+    html2canvas(document.getElementById('certificateBox')).then(canvas => { 
+      const imgData = canvas.toDataURL('image/png'); 
+      const pdf = new jsPDF('landscape', 'pt', [canvas.width, canvas.height]); 
+      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height); 
+      pdf.save('Certificate.pdf'); 
+
+      // 🔗 Call backend automation
+      fetch("http://127.0.0.1:5000/save_certificate", {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify({ name, course, date })
+      });
+    }); 
+  } 
+
+  // ✅ Share on WhatsApp
+  function shareWhatsApp(){
+    const msg = `🎓 I just completed "${course}" at Learnify AI! #Learning #AI\nCertified: ${name}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, "_blank");
+  }
+
+  // ✅ Share on LinkedIn
+  function shareLinkedIn(){
+    const msg = `🎓 Proud to have completed "${course}" at Learnify AI! 🚀 #AI #DataScience #Learning`;
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&summary=${encodeURIComponent(msg)}`, "_blank");
+  }
+  
+  // Auto insert today's date
+    document.getElementById("certDate").innerText = new Date().toLocaleDateString();
+  
+</script> 
+</body> 
+</html>

@@ -1,0 +1,2308 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Data Science Course</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+  <style> 
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background-color: #ffffff; 
+      color: #1a1a1a; 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.7; 
+    } 
+    header { 
+      background-color: #001f3f; 
+      color: #ffffff; 
+      padding: 20px; 
+      text-align: center; 
+    } 
+    header h1 { 
+      margin: 0; 
+      font-size: 2.2em; 
+    } 
+    nav { 
+      background-color: #003366; 
+      display: flex; 
+      justify-content: center; 
+      padding: 10px 0; 
+    } 
+    nav a { 
+      color: #ffffff; 
+      text-decoration: none; 
+      margin: 0 20px; 
+      font-weight: 500; 
+    } 
+    nav a:hover { 
+      color: #00bfff; 
+    } 
+    .container { 
+      max-width: 900px; 
+      margin: 30px auto; 
+      padding: 0 20px; 
+    } 
+    h2 { 
+      color: #001f3f; 
+      cursor: pointer; 
+      position: relative; 
+      padding-right: 25px; 
+    } 
+    h2::after { 
+      content: '▼'; 
+      position: absolute; 
+      right: 0; 
+      font-size: 0.8em; 
+    } 
+    .chapter { 
+      margin-bottom: 20px; 
+      border-bottom: 1px solid #ccc; 
+      padding-bottom: 15px; 
+    } 
+    .chapter-content { 
+      display: none; 
+      padding-top: 10px; 
+      animation: fadeIn 0.5s ease-in-out; 
+    } 
+    @keyframes fadeIn { 
+      from {opacity: 0;} 
+      to {opacity:1;} 
+    } 
+    button.enroll { 
+      display: block; 
+      background-color: #001f3f; 
+      color: #ffffff; 
+      border: none; 
+      padding: 15px 30px; 
+      margin: 30px auto; 
+      font-size: 1.2em; 
+      cursor: pointer; 
+      border-radius: 8px; 
+      transition: background-color 0.3s ease; 
+    } 
+    button.enroll:hover { 
+      background-color: #003366; 
+    } 
+    p { 
+      margin-bottom: 15px; 
+    } 
+    li { 
+      margin-bottom: 8px; 
+    } 
+    .highlight { 
+      color: #003366; 
+      font-weight: 500; 
+    } 
+  </style> 
+</head> 
+<body> 
+  <header> 
+    <h1>Data Science – Beginner to Advanced</h1> 
+    <p>Master Data Science step by step – from basics to advanced projects with real-world datasets.</p> 
+  </header> 
+
+  <nav> 
+    <a href="#chapter1">Introduction</a> 
+    <a href="#chapter2">Python for DS</a> 
+    <a href="#chapter3">Statistics</a> 
+    <a href="#chapter4">Data Wrangling</a> 
+    <a href="#chapter5">Visualization</a> 
+    <a href="#chapter6">Machine Learning</a> 
+    <a href="#chapter7">Projects</a> 
+    <a href="#chapter8">Summary</a> 
+  </nav> 
+
+  <div class="container"> 
+    <div class="chapter" id="chapter1"> 
+      <h2>Chapter 1: Introduction to Data Science</h2> 
+      <div class="chapter-content"> 
+<p>
+Data science is the art and science of extracting meaningful insights and actionable information from large and often messy data. It’s a multidisciplinary field at the intersection of <b>statistics</b>, <b>computer science</b>, and <b>domain expertise</b>.
+</p>
+
+<hr/>
+
+<h3>What is Data Science?</h3>
+<ul>
+  <li><b>Definition:</b> Data science encompasses the entire process of working with data – from acquiring raw data, cleaning and preparing it, analyzing patterns and trends, building models to make predictions, and communicating findings to influence decisions.</li>
+  <li>It covers <b>descriptive analytics</b> (what happened?), <b>diagnostic analytics</b> (why did it happen?), <b>predictive analytics</b> (what might happen?), and <b>prescriptive analytics</b> (what should be done?).</li>
+  <li>Modern data science leverages <b>machine learning</b> and <b>AI</b> to automate prediction and pattern recognition, beyond what traditional statistics alone can do.</li>
+</ul>
+
+<hr/>
+
+<h3>The Role of a Data Scientist</h3>
+<ul>
+  <li>Responsible for <b>data collection</b> (from databases, web scraping, APIs, sensors, etc.).</li>
+  <li><b>Data cleaning/wrangling:</b> Dealing with missing, corrupted, or inconsistent information.</li>
+  <li><b>Exploratory data analysis (EDA):</b> Understanding the main trends, structures, and anomalies in the data using visualizations and summary stats.</li>
+  <li>Building and tuning <b>machine learning models</b> to make predictions or categorize data.</li>
+  <li><b>Evaluating model performance</b> with proper metrics/validation.</li>
+  <li>Translating technical findings into <b>clear, actionable insights</b> for business or science use.</li>
+  <li>Often works with experts from other fields (marketing, healthcare, finance, manufacturing, etc.) and communicates results in plain language.</li>
+</ul>
+
+<hr/>
+
+<h3>Applications of Data Science</h3>
+<ul>
+  <li><b>Business:</b> 
+    <ul>
+      <li>Customer segmentation for marketing</li>
+      <li>Sales forecasting and inventory optimization</li>
+      <li>Churn prediction: Who’s likely to leave a service and why?</li>
+    </ul>
+  </li>
+  <li><b>Healthcare:</b>
+    <ul>
+      <li>Patient diagnosis & risk scoring (cancer detection, heart attack risk, etc.)</li>
+      <li>Drug discovery and epidemiological modeling</li>
+      <li>Resource allocation for hospitals</li>
+    </ul>
+  </li>
+  <li><b>Finance:</b>
+    <ul>
+      <li>Credit scoring and loan approval automation</li>
+      <li>Fraud detection systems</li>
+      <li>Algorithmic trading</li>
+    </ul>
+  </li>
+  <li><b>Other domains:</b>
+    <ul>
+      <li>Sports analytics: Player performance, game strategy</li>
+      <li>Smart cities: Traffic prediction, energy optimization</li>
+      <li>Media/social media analytics: Trend detection, recommendation systems</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Tools of the Data Science Trade</h3>
+<ul>
+  <li><b>Programming Languages:</b>
+    <ul>
+      <li><b>Python:</b> Most popular for its readability and ecosystem (<code>pandas</code> for data, <code>NumPy</code> for math, <code>scikit-learn</code> for ML, <code>matplotlib</code>/<code>seaborn</code> for visualization).</li>
+      <li><b>R:</b> Favored for statistical modeling and high-quality data visualization (<code>ggplot2, dplyr</code>).</li>
+    </ul>
+  </li>
+  <li><b>Databases & Query Languages:</b>
+    <ul>
+      <li><b>SQL:</b> Standard for querying structured data in relational databases (e.g., MySQL, PostgreSQL).</li>
+      <li><b>NoSQL:</b> For flexible or large-scale data (e.g., MongoDB, Cassandra).</li>
+    </ul>
+  </li>
+  <li><b>Business & Visualization Tools:</b>
+    <ul>
+      <li><b>Excel:</b> Still widely used for analysis, quick exploration, and dashboarding.</li>
+      <li><b>Tableau, Power BI:</b> For creating interactive dashboards and exploring results visually with minimal coding.</li>
+    </ul>
+  </li>
+  <li><b>Big Data & Cloud Tools:</b>
+    <ul>
+      <li><b>Hadoop/Spark:</b> Used for processing very large datasets in distributed systems.</li>
+      <li><b>Jupyter Notebooks, Google Colab:</b> For coding, analysis, visualization, and sharing results in a single document.</li>
+      <li><b>Cloud platforms:</b> AWS, Google Cloud, Azure provide scalable tools for storage, computation, and deployment.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>What Makes Data Science Special?</h3>
+<ul>
+  <li>Combines <b>analytical rigor</b> (math, stats, algorithms) with <b>domain intuition</b> for business, healthcare, etc.</li>
+  <li>Highly <b>practical</b>: The best data scientists can solve ambiguous “real world” problems and communicate their findings clearly.</li>
+  <li>Roles are diverse—data engineer, machine learning engineer, business analyst, data analyst, and research scientist all use data science foundations.</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Data science powers insights and automation in nearly every industry today.</li>
+  <li>It’s project-driven—small and large, solo and collaborative. Building a project portfolio is essential for jobs/internships.</li>
+  <li>Strong command of at least one programming language, SQL, and visualization is required to start a DS career.</li>
+</ul>
+
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultDSIntro {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationDSIntro {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 1: Introduction to Data Science Quiz</h2>
+
+<form id="dsIntroQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is Data Science?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> Extracting insights and knowledge from data</label>
+    <label><input type="radio" name="q1" value="wrong" /> Making animations and graphics</label>
+    <label><input type="radio" name="q1" value="wrong" /> Writing databases</label>
+    <label><input type="radio" name="q1" value="wrong" /> Designing websites</label>
+    <button type="button" class="btn-submit" onclick="submitDSIntro(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which tool is commonly used in Data Science for data analysis?</strong></p>
+    <label><input type="radio" name="q2" value="correct" /> Python</label>
+    <label><input type="radio" name="q2" value="wrong" /> HTML</label>
+    <label><input type="radio" name="q2" value="wrong" /> CSS</label>
+    <label><input type="radio" name="q2" value="wrong" /> Photoshop</label>
+    <button type="button" class="btn-submit" onclick="submitDSIntro(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is one role of a data scientist?</strong></p>
+    <label><input type="radio" name="q3" value="correct" /> Building predictive models to solve problems</label>
+    <label><input type="radio" name="q3" value="wrong" /> Writing legal contracts</label>
+    <label><input type="radio" name="q3" value="wrong" /> Manufacturing hardware</label>
+    <label><input type="radio" name="q3" value="wrong" /> Conducting physical experiments</label>
+    <button type="button" class="btn-submit" onclick="submitDSIntro(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which industry uses Data Science for credit scoring and fraud detection?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> Finance</label>
+    <label><input type="radio" name="q4" value="wrong" /> Agriculture</label>
+    <label><input type="radio" name="q4" value="wrong" /> Construction</label>
+    <label><input type="radio" name="q4" value="wrong" /> Education</label>
+    <button type="button" class="btn-submit" onclick="submitDSIntro(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What is SQL mainly used for in Data Science?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> Querying and managing relational databases</label>
+    <label><input type="radio" name="q5" value="wrong" /> Visualizing data with charts</label>
+    <label><input type="radio" name="q5" value="wrong" /> Text preprocessing</label>
+    <label><input type="radio" name="q5" value="wrong" /> Writing machine learning algorithms</label>
+    <button type="button" class="btn-submit" onclick="submitDSIntro(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultDSIntro"></div>
+<p id="motivationDSIntro"></p>
+
+<script>
+  const dsIntroAnswers = {
+    q1: 'Extracting insights and knowledge from data',
+    q2: 'Python',
+    q3: 'Building predictive models to solve problems',
+    q4: 'Finance',
+    q5: 'Querying and managing relational databases'
+  };
+  const dsIntroCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userDSIntro = {};
+
+  function submitDSIntro(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userDSIntro['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === dsIntroCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Well done! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${dsIntroAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep practicing your data science basics!</span>`;
+    }
+
+    if (Object.keys(userDSIntro).length === 5) {
+      showDSIntroResult();
+    }
+  }
+
+  function showDSIntroResult() {
+    let score = 0;
+    for (const key in userDSIntro) {
+      if (userDSIntro[key] === dsIntroCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultDSIntro').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Great start! You're building a strong foundation in data science.",
+      "Excellent! Keep exploring and practicing more.",
+      "Well done! Data science skills open many doors.",
+      "Fantastic! The more you learn, the more you'll achieve.",
+      "Keep it up! Practice is key to mastering data science."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationDSIntro').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+</div> 
+    </div> 
+
+    <div class="chapter" id="chapter2"> 
+      <h2>Chapter 2: Python for Data Science</h2> 
+      <div class="chapter-content"> 
+<p>
+Python is the most widely-used programming language in data science due to its simplicity, versatility, and powerful ecosystem of libraries tailored for data manipulation, analysis, and visualization.
+</p>
+
+<hr/>
+
+<h3>Refresher on Python Basics</h3>
+<ul>
+  <li>Fundamentals include variables, data types (int, float, string), lists, tuples, dictionaries, sets.</li>
+  <li>Control structures: loops (<code>for</code>, <code>while</code>), conditionals (<code>if</code>, <code>else</code>).</li>
+  <li>Functions: reusable blocks of code with <code>def</code>, supporting parameters and return values.</li>
+  <li>Important concepts: list comprehensions, lambda functions, error handling with <code>try/except</code>.</li>
+</ul>
+
+<hr/>
+
+<h3>Key Libraries for Data Science</h3>
+<ul>
+  <li><b>NumPy:</b> Provides efficient tools for working with arrays, matrices, and mathematical operations.</li>
+  <li><b>Pandas:</b> High-level data manipulation and analysis library built on top of NumPy. Provides two main data structures: Series and DataFrames.</li>
+  <li><b>Matplotlib:</b> Foundational plotting library for static, interactive, and animated visualizations.</li>
+  <li><b>Seaborn:</b> Built on Matplotlib, it provides a high-level interface for attractive and informative statistical graphics.</li>
+</ul>
+
+<hr/>
+
+<h3>Data Structures: Series & DataFrames</h3>
+<ul>
+  <li><b>Series:</b> One-dimensional labeled array capable of holding any data type. Like a column in a spreadsheet.</li>
+  <li><b>DataFrame:</b> Two-dimensional labeled data structure with columns of potentially different types. Like a table or spreadsheet.</li>
+  <li>Both support operations like filtering, aggregation, missing data handling, and merging.</li>
+</ul>
+
+<hr/>
+
+<h3>Importing and Exporting Datasets</h3>
+<ul>
+  <li><b>CSV Files:</b> Use <code>pandas.read_csv()</code> to load; <code>DataFrame.to_csv()</code> to save.</li>
+  <li><b>Excel:</b> Load with <code>pandas.read_excel()</code>, save with <code>to_excel()</code>.</li>
+  <li><b>SQL Databases:</b> Use <code>pandas.read_sql()</code> with an SQLAlchemy connection; write with <code>to_sql()</code>.</li>
+  <li><b>JSON:</b> Load with <code>pandas.read_json()</code>, save with <code>to_json()</code>.</li>
+  <li>These methods simplify moving data in/out of different formats for analysis and sharing.</li>
+</ul>
+
+<hr/>
+
+<h3>Example Snippet: Loading a CSV and Previewing Data</h3>
+<pre><code>import pandas as pd
+
+# Load dataset
+df = pd.read_csv('data.csv')
+
+# Preview first 5 rows
+print(df.head())
+</code></pre>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Python basics are essential for effective data science programming.</li>
+  <li>Pandas Series and DataFrames are the core structures you'll interact with most often.</li>
+  <li>Familiarity with importing/exporting data across formats is critical for real-world workflows.</li>
+  <li>Visualization libraries help you understand data patterns and communicate insights effectively.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultPythonDS {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationPythonDS {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 2: Python for Data Science Quiz</h2>
+
+<form id="pythonDSQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. Which library is primarily used for data manipulation and analysis?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> Pandas</label>
+    <label><input type="radio" name="q1" value="wrong"> Matplotlib</label>
+    <label><input type="radio" name="q1" value="wrong"> NumPy</label>
+    <label><input type="radio" name="q1" value="wrong"> Seaborn</label>
+    <button type="button" class="btn-submit" onclick="submitPythonDS(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What is a Pandas DataFrame?</strong></p>
+    <label><input type="radio" name="q2" value="correct"> A two-dimensional labeled data structure</label>
+    <label><input type="radio" name="q2" value="wrong"> A one-dimensional array</label>
+    <label><input type="radio" name="q2" value="wrong"> A collection of functions</label>
+    <label><input type="radio" name="q2" value="wrong"> A plotting library</label>
+    <button type="button" class="btn-submit" onclick="submitPythonDS(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which method is used to load a CSV file into a DataFrame?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> pandas.read_csv()</label>
+    <label><input type="radio" name="q3" value="wrong"> pandas.load_csv()</label>
+    <label><input type="radio" name="q3" value="wrong"> pandas.open_csv()</label>
+    <label><input type="radio" name="q3" value="wrong"> pandas.import_csv()</label>
+    <button type="button" class="btn-submit" onclick="submitPythonDS(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What are Series in Pandas?</strong></p>
+    <label><input type="radio" name="q4" value="correct"> One-dimensional labeled arrays</label>
+    <label><input type="radio" name="q4" value="wrong"> Two-dimensional arrays</label>
+    <label><input type="radio" name="q4" value="wrong"> Data visualization objects</label>
+    <label><input type="radio" name="q4" value="wrong"> Database connections</label>
+    <button type="button" class="btn-submit" onclick="submitPythonDS(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which library is primarily used for plotting in Python?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> Matplotlib</label>
+    <label><input type="radio" name="q5" value="wrong"> Pandas</label>
+    <label><input type="radio" name="q5" value="wrong"> NumPy</label>
+    <label><input type="radio" name="q5" value="wrong"> Seaborn</label>
+    <button type="button" class="btn-submit" onclick="submitPythonDS(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultPythonDS"></div>
+<p id="motivationPythonDS"></p>
+
+<script>
+  const pythonDSAnswers = {
+    q1: 'Pandas',
+    q2: 'A two-dimensional labeled data structure',
+    q3: 'pandas.read_csv()',
+    q4: 'One-dimensional labeled arrays',
+    q5: 'Matplotlib'
+  };
+  const pythonDSCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userPythonDS = {};
+
+  function submitPythonDS(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userPythonDS['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === pythonDSCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Well done! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${pythonDSAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep practicing your Python for data analysis!</span>`;
+    }
+
+    if (Object.keys(userPythonDS).length === 5) {
+      showPythonDSResult();
+    }
+  }
+
+  function showPythonDSResult() {
+    let score = 0;
+    for (const key in userPythonDS) {
+      if (userPythonDS[key] === pythonDSCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultPythonDS').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Great job! Python skills are essential for data science.",
+      "Excellent work! Keep practicing coding and analysis.",
+      "Well done! Python proficiency boosts your data capabilities.",
+      "Fantastic! Your progress in data programming is strong.",
+      "Keep it up! Practice makes you a better data scientist."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationPythonDS').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+    </div> 
+    </div> 
+
+    <div class="chapter" id="chapter3"> 
+      <h2>Chapter 3: Statistics & Probability</h2> 
+      <div class="chapter-content"> 
+
+<p>
+Statistics and probability are the foundation of data science. They help you summarize data, quantify uncertainty, and draw inferences about populations from samples.
+</p>
+
+<hr/>
+
+<h3>Descriptive Statistics</h3>
+<ul>
+  <li><b>Mean:</b> The average of a set of numbers. <code>mean = (sum of values) / (number of values)</code></li>
+  <li><b>Median:</b> The middle value in sorted data. Robust to outliers.</li>
+  <li><b>Mode:</b> The value that appears most frequently.</li>
+  <li><b>Variance:</b> The average of squared differences from the mean. Measures spread.</li>
+  <li><b>Standard Deviation (std dev):</b> The square root of variance; shows average distance from the mean.</li>
+</ul>
+<pre>
+Example (data: 2, 4, 4, 4, 5, 5, 7, 9):
+Mean: (2+4+4+4+5+5+7+9)/8 = 5
+Median: (middle two are 4 and 5) → (4+5)/2 = 4.5
+Mode: 4 (it appears most)
+Variance: 4 (calc: sum((x-5)^2)/8)
+Std Dev: 2
+</pre>
+
+<hr/>
+
+<h3>Probability Basics & Distributions</h3>
+<ul>
+  <li><b>Probability:</b> A measure (0-1) of how likely an event is to occur.</li>
+  <li><b>Distributions:</b>
+      <ul>
+        <li><b>Normal (Gaussian):</b> Bell-shaped; most real-world data (e.g., heights, test scores) is roughly normal.</li>
+        <li><b>Binomial:</b> Counts number of "successes" in a fixed number of trials (e.g., 10 coin flips).</li>
+        <li><b>Poisson:</b> Models the count of events in a fixed interval (e.g., calls per hour at a call center).</li>
+      </ul>
+  </li>
+  <li>Key idea: Once you know the distribution, you can estimate probabilities and quantiles!</li>
+</ul>
+
+<hr/>
+
+<h3>Hypothesis Testing</h3>
+<ul>
+  <li><b>What is it?</b> Formal procedure to test "is there a significant effect or difference?"</li>
+  <li><b>Process:</b> Set a <b>null hypothesis</b> (no difference), calculate a test statistic, and get a <b>p-value</b> (probability observed data occurs if null is true).</li>
+  <li><b>t-test:</b> Compare means of two groups (e.g., new vs. old treatment).</li>
+  <li><b>Chi-square test:</b> Tests independence of categorical variables (e.g., gender vs. product preference).</li>
+  <li><b>ANOVA:</b> Compares means across 3+ groups.</li>
+</ul>
+<pre>
+If p-value &lt; 0.05, reject the null: the difference is likely significant!
+</pre>
+
+<hr/>
+
+<h3>Correlation vs. Causation</h3>
+<ul>
+  <li><b>Correlation:</b> When two variables move together (e.g., hours studied & exam score), but one may not cause the other.</li>
+  <li><b>Causation:</b> One variable directly influences another (cause-effect).</li>
+  <li>“Correlation does not imply causation!”—there might be confounding variables.</li>
+  <li><b>Pearson correlation coefficient (r):</b> Measures linear relationship: –1 (strong negative) to +1 (strong positive).</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Descriptive stats summarize data, probability quantifies uncertainty.</li>
+  <li>Understand distributions to select appropriate statistical tests.</li>
+  <li>Always interpret correlations with care—look for possible causes & context.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultStats {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationStats {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 3: Statistics & Probability Quiz</h2>
+
+<form id="statsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What does the mean represent?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> The average of values</label>
+    <label><input type="radio" name="q1" value="wrong"> The middle value of sorted data</label>
+    <label><input type="radio" name="q1" value="wrong"> The most frequent value</label>
+    <label><input type="radio" name="q1" value="wrong"> The variance of data</label>
+    <button type="button" class="btn-submit" onclick="submitStats(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which distribution is bell-shaped and symmetric?</strong></p>
+    <label><input type="radio" name="q2" value="correct"> Normal distribution</label>
+    <label><input type="radio" name="q2" value="wrong"> Binomial distribution</label>
+    <label><input type="radio" name="q2" value="wrong"> Poisson distribution</label>
+    <label><input type="radio" name="q2" value="wrong"> Uniform distribution</label>
+    <button type="button" class="btn-submit" onclick="submitStats(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What does a t-test compare?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> Means of two groups</label>
+    <label><input type="radio" name="q3" value="wrong"> Proportions of one group</label>
+    <label><input type="radio" name="q3" value="wrong"> Categories in a dataset</label>
+    <label><input type="radio" name="q3" value="wrong"> Variances of multiple groups</label>
+    <button type="button" class="btn-submit" onclick="submitStats(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Why does correlation not imply causation?</strong></p>
+    <label><input type="radio" name="q4" value="correct"> Because other variables might influence both correlated variables</label>
+    <label><input type="radio" name="q4" value="wrong"> Because correlation measures causality directly</label>
+    <label><input type="radio" name="q4" value="wrong"> Because correlation is always zero</label>
+    <label><input type="radio" name="q4" value="wrong"> Because causation requires no data</label>
+    <button type="button" class="btn-submit" onclick="submitStats(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What does the variance measure?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> The spread of data around the mean</label>
+    <label><input type="radio" name="q5" value="wrong"> The average value</label>
+    <label><input type="radio" name="q5" value="wrong"> The most common value</label>
+    <label><input type="radio" name="q5" value="wrong"> The correlation coefficient</label>
+    <button type="button" class="btn-submit" onclick="submitStats(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultStats"></div>
+<p id="motivationStats"></p>
+
+<script>
+  const statsAnswers = {
+    q1: 'The average of values',
+    q2: 'Normal distribution',
+    q3: 'Means of two groups',
+    q4: 'Because other variables might influence both correlated variables',
+    q5: 'The spread of data around the mean'
+  };
+  const statsCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userStats = {};
+
+  function submitStats(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userStats['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === statsCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Good job! That is correct.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${statsAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep practicing your stats skills!</span>`;
+    }
+
+    if (Object.keys(userStats).length === 5) {
+      showStatsResult();
+    }
+  }
+
+  function showStatsResult() {
+    let score = 0;
+    for (const key in userStats) {
+      if (userStats[key] === statsCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultStats').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! Your stats understanding is solid.",
+      "Great work! Concepts like probability and distributions are foundational.",
+      "Keep it up! Strong statistics knowledge boosts data science skills.",
+      "Well done! You're sharpening your analytical thinking.",
+      "Fantastic! Statistics is the backbone of data-driven decisions."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationStats').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+      </div> 
+    </div> 
+
+    <div class="chapter" id="chapter4"> 
+      <h2>Chapter 4: Data cleaning and Preprocessing</h2> 
+      <div class="chapter-content"> 
+<p>
+Data cleaning and preprocessing are critical steps to prepare raw data for analysis or modeling. Poorly cleaned data can lead to misleading outcomes and reduce model performance.
+</p>
+
+<hr/>
+
+<h3>Handling Missing Values</h3>
+<ul>
+  <li>Missing data can occur due to collection errors, privacy settings, or data corruption.</li>
+  <li>Common approaches:
+    <ul>
+      <li><b>Deletion:</b> Remove rows or columns with missing values if few and random.</li>
+      <li><b>Imputation:</b> Fill missing values using mean, median, mode, or model-based techniques.</li>
+      <li><b>Flagging:</b> Create binary indicators to mark missing entries for the model to learn.</li>
+    </ul>
+  </li>
+  <li>Always investigate why data is missing (MCAR, MAR, MNAR) before choosing a strategy.</li>
+</ul>
+
+<hr/>
+
+<h3>Dealing with Outliers</h3>
+<ul>
+  <li>Outliers are rare, extreme values that may distort analysis.</li>
+  <li>Detection techniques:
+    <ul>
+      <li>Visual: box plots, scatter plots.</li>
+      <li>Statistical: z-score thresholds, IQR method (values outside 1.5×IQR).</li>
+    </ul>
+  </li>
+  <li>Handling:
+    <ul>
+      <li>Remove if clearly errors or irrelevant.</li>
+      <li>Transform (e.g., log transform) to reduce impact.</li>
+      <li>Cap/floor values at limits (winsorizing).</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Data Transformation</h3>
+<ul>
+  <li><b>Scaling:</b> Adjust numerical feature range, e.g., Min-Max scaling to [0,1].</li>
+  <li><b>Normalization:</b> Standardize features to have mean 0 and std dev 1 (z-score). Useful for many ML models.</li>
+  <li><b>Encoding Categorical Variables:</b>
+    <ul>
+      <li><b>One-hot encoding:</b> Represent categories as binary vectors.</li>
+      <li><b>Label encoding:</b> Map categories to integers for ordinal data.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Feature Engineering Basics</h3>
+<ul>
+  <li>Creating new features from raw data to improve model performance.</li>
+  <li>Examples:
+    <ul>
+      <li>Combining date-time into day of week, month, hour.</li>
+      <li>Deriving ratios or differences between features.</li>
+      <li>Extracting text features: length, keyword presence.</li>
+    </ul>
+  </li>
+  <li>Feature selection: Choosing the most relevant features using correlation, importance scores, or domain knowledge.</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Good quality input data leads to better insights and model accuracy.</li>
+  <li>Understand the type and cause of missingness before imputation.</li>
+  <li>Handle outliers carefully: they may be errors or important rare events.</li>
+  <li>Feature engineering transforms raw data into meaningful predictors and is often more important than complex models.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultCleaning {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationCleaning {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 4: Data Cleaning & Preprocessing Quiz</h2>
+
+<form id="cleaningQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. Which method is often used to fill missing numerical data?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> Imputation using mean or median</label>
+    <label><input type="radio" name="q1" value="wrong"> Removing all data rows</label>
+    <label><input type="radio" name="q1" value="wrong"> Encoding as strings</label>
+    <label><input type="radio" name="q1" value="wrong"> Using one-hot encoding</label>
+    <button type="button" class="btn-submit" onclick="submitCleaning(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What is an outlier?</strong></p>
+    <label><input type="radio" name="q2" value="correct"> A value that is significantly different from most others</label>
+    <label><input type="radio" name="q2" value="wrong"> A very common value in the dataset</label>
+    <label><input type="radio" name="q2" value="wrong"> A missing value</label>
+    <label><input type="radio" name="q2" value="wrong"> The average of a data range</label>
+    <button type="button" class="btn-submit" onclick="submitCleaning(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which technique scales data to a range, typically between 0 and 1?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> Min-Max scaling</label>
+    <label><input type="radio" name="q3" value="wrong"> Z-score normalization</label>
+    <label><input type="radio" name="q3" value="wrong"> One-hot encoding</label>
+    <label><input type="radio" name="q3" value="wrong"> Removing missing values</label>
+    <button type="button" class="btn-submit" onclick="submitCleaning(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What is one-hot encoding used for?</strong></p>
+    <label><input type="radio" name="q4" value="correct"> Converting categorical variables into binary vectors</label>
+    <label><input type="radio" name="q4" value="wrong"> Filling missing numerical data</label>
+    <label><input type="radio" name="q4" value="wrong"> Scaling continuous variables</label>
+    <label><input type="radio" name="q4" value="wrong"> Normalizing date/time variables</label>
+    <button type="button" class="btn-submit" onclick="submitCleaning(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What is feature engineering?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> Creating new features to improve model performance</label>
+    <label><input type="radio" name="q5" value="wrong"> Deleting important columns</label>
+    <label><input type="radio" name="q5" value="wrong"> Scaling data to zero mean</label>
+    <label><input type="radio" name="q5" value="wrong"> Running model training</label>
+    <button type="button" class="btn-submit" onclick="submitCleaning(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultCleaning"></div>
+<p id="motivationCleaning"></p>
+
+<script>
+  const cleaningAnswers = {
+    q1: 'Imputation using mean or median',
+    q2: 'A value that is significantly different from most others',
+    q3: 'Min-Max scaling',
+    q4: 'Converting categorical variables into binary vectors',
+    q5: 'Creating new features to improve model performance'
+  };
+  const cleaningCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userCleaning = {};
+
+  function submitCleaning(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userCleaning['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === cleaningCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is right.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${cleaningAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep up the good work in data preprocessing!</span>`;
+    }
+
+    if (Object.keys(userCleaning).length === 5) {
+      showCleaningResult();
+    }
+  }
+
+  function showCleaningResult() {
+    let score = 0;
+    for (const key in userCleaning) {
+      if (userCleaning[key] === cleaningCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultCleaning').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! Your data cleaning knowledge is strong.",
+      "Well done! Good preprocessing leads to better models.",
+      "Keep it up! Data preparation is key in analytics.",
+      "Great job! You're mastering the foundations of data science.",
+      "Fantastic! Your skills will lead to better insights."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationCleaning').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+      </div> 
+    </div> 
+
+    <div class="chapter" id="chapter5"> 
+      <h2>Chapter 5: Data Visualization</h2> 
+      <div class="chapter-content"> 
+<p>
+Data visualization is about transforming raw data into graphical representations that help people understand patterns, outliers, trends, and insights. It is an essential skill in data science for analysis, communication, and storytelling.
+</p>
+
+<hr/>
+
+<h3>Matplotlib Basics</h3>
+<ul>
+  <li><b>Matplotlib</b> is Python’s foundational plotting library.</li>
+  <li>Common plot types:
+    <ul>
+      <li><b>Line plot:</b> Best for time series and trends.</li>
+      <li><b>Bar chart:</b> Compares values across categories.</li>
+      <li><b>Histogram:</b> Shows distribution of numerical data (e.g., frequency of values).</li>
+    </ul>
+  </li>
+  <li><code>plt.plot()</code>, <code>plt.bar()</code>, <code>plt.hist()</code> are typical entry points.</li>
+  <li>Use <code>plt.xlabel()</code>, <code>plt.ylabel()</code>, <code>plt.title()</code> for labeling.</li>
+</ul>
+<pre>
+import matplotlib.pyplot as plt
+plt.hist(data)
+plt.title('Distribution')
+plt.show()
+</pre>
+
+<hr/>
+
+<h3>Seaborn: Advanced Visualizations</h3>
+<ul>
+  <li><b>Seaborn</b> builds on Matplotlib, offering stylish and complex statistical graphics with less code.</li>
+  <li><b>Heatmaps:</b> Show intensity of values (e.g., correlations between variables).</li>
+  <li><b>Pairplots:</b> Plot pairwise relationships in the dataset, revealing trends and outliers.</li>
+  <li>Other visuals: boxplots, violin plots, regression plots, categorical plots, etc.</li>
+</ul>
+<pre>
+import seaborn as sns
+sns.heatmap(corr, annot=True)
+sns.pairplot(df, hue="label")
+</pre>
+
+<hr/>
+
+<h3>Plotly for Interactive Dashboards</h3>
+<ul>
+  <li><b>Plotly</b> enables interactive, web-ready visualizations (zoom, hover, legends, etc.).</li>
+  <li>Easy integration with Python and Jupyter, supports dashboards and story-driven analytics (works with Dash framework).</li>
+  <li>Popular for sharing data insights beyond static reports.</li>
+</ul>
+<pre>
+import plotly.express as px
+fig = px.scatter(df, x='x', y='y', color='label')
+fig.show()
+</pre>
+
+<hr/>
+
+<h3>Storytelling with Data</h3>
+<ul>
+  <li>The best plots don’t just show data; they tell a story—highlighting context, change, or comparisons that matter for the decision-maker.</li>
+  <li>Tips for data storytelling:
+    <ul>
+      <li>Start with a clear question or insight you want to show.</li>
+      <li>Choose visuals suited for your message and audience.</li>
+      <li>Use color, labels, and annotations to guide attention.</li>
+      <li>Minimize clutter—highlight what matters.</li>
+      <li>Wrap up with a takeaway or recommended action.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Visualizations speed data understanding and drive better decisions.</li>
+  <li>Learn both static (Matplotlib, Seaborn) and interactive (Plotly) tools.</li>
+  <li>Think like a storyteller—focus on clarity, context, and insight, not just pretty graphics.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultViz {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationViz {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 5: Data Visualization Quiz</h2>
+
+<form id="vizQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. Which library provides the foundation for plotting in Python?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> Matplotlib</label>
+    <label><input type="radio" name="q1" value="wrong"> Seaborn</label>
+    <label><input type="radio" name="q1" value="wrong"> Plotly</label>
+    <label><input type="radio" name="q1" value="wrong"> Pandas</label>
+    <button type="button" class="btn-submit" onclick="submitViz(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What is a heatmap used for in Seaborn?</strong></p>
+    <label><input type="radio" name="q2" value="correct"> To show the intensity of values (e.g., correlation matrix)</label>
+    <label><input type="radio" name="q2" value="wrong"> Plotting line charts over time</label>
+    <label><input type="radio" name="q2" value="wrong"> Making 3D plots</label>
+    <label><input type="radio" name="q2" value="wrong"> Displaying raw tabular data only</label>
+    <button type="button" class="btn-submit" onclick="submitViz(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which library would you use for interactive, web-ready graphs?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> Plotly</label>
+    <label><input type="radio" name="q3" value="wrong"> Matplotlib</label>
+    <label><input type="radio" name="q3" value="wrong"> Seaborn</label>
+    <label><input type="radio" name="q3" value="wrong"> NumPy</label>
+    <button type="button" class="btn-submit" onclick="submitViz(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What does a pairplot show?</strong></p>
+    <label><input type="radio" name="q4" value="correct"> Relationships between pairs of variables in a dataset</label>
+    <label><input type="radio" name="q4" value="wrong"> Only bar charts</label>
+    <label><input type="radio" name="q4" value="wrong"> Only time series</label>
+    <label><input type="radio" name="q4" value="wrong"> Aggregated means only</label>
+    <button type="button" class="btn-submit" onclick="submitViz(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Why is storytelling important in data visualization?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> It helps turn data into actionable insights</label>
+    <label><input type="radio" name="q5" value="wrong"> It is only for entertainment</label>
+    <label><input type="radio" name="q5" value="wrong"> It adds unnecessary decorations</label>
+    <label><input type="radio" name="q5" value="wrong"> It makes data harder to understand</label>
+    <button type="button" class="btn-submit" onclick="submitViz(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultViz"></div>
+<p id="motivationViz"></p>
+
+<script>
+  const vizAnswers = {
+    q1: 'Matplotlib',
+    q2: 'To show the intensity of values (e.g., correlation matrix)',
+    q3: 'Plotly',
+    q4: 'Relationships between pairs of variables in a dataset',
+    q5: 'It helps turn data into actionable insights'
+  };
+  const vizCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userViz = {};
+
+  function submitViz(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userViz['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === vizCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Wonderful! That is right.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${vizAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep building your data viz skills!</span>`;
+    }
+
+    if (Object.keys(userViz).length === 5) {
+      showVizResult();
+    }
+  }
+
+  function showVizResult() {
+    let score = 0;
+    for (const key in userViz) {
+      if (userViz[key] === vizCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultViz').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Amazing! Data visualization is a superpower.",
+      "Great effort! Effective visuals drive clear insights.",
+      "Excellent! Keep telling stories with your data.",
+      "Well done! Powerful plots make discoveries visible.",
+      "Superb! Visual storytelling sets you apart."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationViz').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+      </div> 
+    </div> 
+
+    <div class="chapter" id="chapter6"> 
+      <h2>Chapter 6: Machine Learning for Data Science</h2> 
+      <div class="chapter-content"> 
+
+<p>
+Machine Learning (ML) gives computers the ability to learn from data and make predictions or decisions without being explicitly programmed. It is a core pillar of modern data science applications.
+</p>
+
+<hr/>
+
+<h3>Introduction to ML Models</h3>
+<ul>
+  <li>ML models use patterns in historical data to make predictions or uncover structure.</li>
+  <li>Two main types: <b>supervised learning</b> and <b>unsupervised learning</b>.</li>
+  <li>Common workflow: dataset &rarr; feature extraction &rarr; model selection &rarr; training &rarr; evaluation &rarr; deployment.</li>
+</ul>
+
+<hr/>
+
+<h3>Supervised Learning</h3>
+<ul>
+  <li>You have labeled data: each input comes with a known output (target/label).</li>
+  <li><b>Regression:</b> Predict continuous values.
+    <ul>
+      <li><b>Linear Regression:</b> Fits a line (in 2D or a hyperplane) to predict one variable from another.</li>
+    </ul>
+  </li>
+  <li><b>Classification:</b> Predict discrete class labels.
+    <ul>
+      <li><b>Logistic Regression:</b> Probability-based model for binary (or multi-class) classification.</li>
+      <li><b>Decision Trees:</b> Tree structures that split features to make decisions, good for both classification and regression.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Unsupervised Learning</h3>
+<ul>
+  <li>No labeled output; the goal is to find structure in the data.</li>
+  <li><b>Clustering:</b> Group similar data points together. Ex: <b>K-Means</b>.</li>
+  <li><b>Dimensionality Reduction:</b> Reduce the number of features while retaining as much information as possible.</li>
+  <li><b>PCA (Principal Component Analysis):</b> Finds new “axes” (principal components) that capture most variance in the data.</li>
+</ul>
+
+<hr/>
+
+<h3>Model Evaluation Metrics</h3>
+<ul>
+  <li><b>Accuracy:</b> Proportion of correct predictions (good when classes are balanced).</li>
+  <li><b>Precision:</b> Out of predicted positives, how many are truly positive?</li>
+  <li><b>Recall:</b> Out of actual positives, how many did the model identify?</li>
+  <li><b>F1-score:</b> The harmonic mean of precision and recall; balances the two.</li>
+  <li>For regression: <b>Mean Squared Error (MSE), R² (coefficient of determination)</b>.</li>
+  <li>Always pick evaluation metrics suited to your business or analysis goal.</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Supervised ML learns from labeled data; unsupervised ML finds structure in unlabeled data.</li>
+  <li>Decision trees, linear/logistic regression, and clustering are foundational models for most data science problems.</li>
+  <li>Evaluation metrics go beyond accuracy—precision, recall, and F1-score matter, especially with imbalanced datasets.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 480px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultML {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationML {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 7: Machine Learning for Data Science Quiz</h2>
+
+<form id="mlQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is supervised learning?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> Learning from labeled data with known outputs</label>
+    <label><input type="radio" name="q1" value="wrong"> Learning from unlabeled data</label>
+    <label><input type="radio" name="q1" value="wrong"> Random guessing</label>
+    <label><input type="radio" name="q1" value="wrong"> Data visualization</label>
+    <button type="button" class="btn-submit" onclick="submitML(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which algorithm is used for predicting continuous values?</strong></p>
+    <label><input type="radio" name="q2" value="correct"> Linear Regression</label>
+    <label><input type="radio" name="q2" value="wrong"> Logistic Regression</label>
+    <label><input type="radio" name="q2" value="wrong"> Decision Trees</label>
+    <label><input type="radio" name="q2" value="wrong"> K-Means Clustering</label>
+    <button type="button" class="btn-submit" onclick="submitML(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What does K-Means clustering do?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> Groups data into clusters based on similarity</label>
+    <label><input type="radio" name="q3" value="wrong"> Predicts continuous targets</label>
+    <label><input type="radio" name="q3" value="wrong"> Fits a hyperplane to data</label>
+    <label><input type="radio" name="q3" value="wrong"> Makes tree-based decisions</label>
+    <button type="button" class="btn-submit" onclick="submitML(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which metric balances precision and recall?</strong></p>
+    <label><input type="radio" name="q4" value="correct"> F1-score</label>
+    <label><input type="radio" name="q4" value="wrong"> Accuracy</label>
+    <label><input type="radio" name="q4" value="wrong"> Mean Squared Error</label>
+    <label><input type="radio" name="q4" value="wrong"> Confusion Matrix</label>
+    <button type="button" class="btn-submit" onclick="submitML(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which model is commonly used for classification problems?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> Logistic Regression</label>
+    <label><input type="radio" name="q5" value="wrong"> Linear Regression</label>
+    <label><input type="radio" name="q5" value="wrong"> PCA</label>
+    <label><input type="radio" name="q5" value="wrong"> K-Means</label>
+    <button type="button" class="btn-submit" onclick="submitML(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultML"></div>
+<p id="motivationML"></p>
+
+<script>
+  const mlAnswers = {
+    q1: 'Learning from labeled data with known outputs',
+    q2: 'Linear Regression',
+    q3: 'Groups data into clusters based on similarity',
+    q4: 'F1-score',
+    q5: 'Logistic Regression'
+  };
+  const mlCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userML = {};
+
+  function submitML(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userML['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === mlCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! Correct answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${mlAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning machine learning concepts!</span>`;
+    }
+
+    if (Object.keys(userML).length === 5) {
+      showMLResult();
+    }
+  }
+
+  function showMLResult() {
+    let score = 0;
+    for (const key in userML) {
+      if (userML[key] === mlCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultML').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! You're mastering key machine learning concepts.",
+      "Great job! These fundamentals build strong ML foundations.",
+      "Well done! Keep practicing to improve your skills.",
+      "Fantastic! Machine learning knowledge is powerful.",
+      "Keep it up! Every question answered adds to your expertise."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationML').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+      </div> 
+    </div> 
+
+    <div class="chapter" id="chapter7"> 
+      <h2>Chapter 7: Data Science Projects</h2> 
+      <div class="chapter-content"> 
+<p>
+Data science projects bring together all your skills — from data cleaning to modeling and storytelling — to solve real-world problems with data. Here’s how an end-to-end project typically flows, with example ideas.
+</p>
+
+<hr/>
+
+<h3>End-to-End Data Science Project Workflow</h3>
+<ol>
+  <li><b>Problem Understanding:</b>
+    <ul>
+      <li>Define the business or research question.</li>
+      <li>Understand objectives and what success means.</li>
+    </ul>
+  </li>
+  <li><b>Data Collection:</b>
+    <ul>
+      <li>Find, gather, or generate relevant data (CSV, databases, APIs, web scraping).</li>
+    </ul>
+  </li>
+  <li><b>Data Cleaning & Preprocessing:</b>
+    <ul>
+      <li>Handle missing data, outliers, duplicate entries.</li>
+      <li>Transform data: scaling, encoding, feature engineering.</li>
+    </ul>
+  </li>
+  <li><b>Exploratory Data Analysis (EDA) & Visualization:</b>
+    <ul>
+      <li>Summary statistics, patterns, data distributions.</li>
+      <li>Visualize relationships, trends, and outliers.</li>
+    </ul>
+  </li>
+  <li><b>Model Building:</b>
+    <ul>
+      <li>Choose the right machine learning algorithm (classification, regression, clustering, etc.).</li>
+      <li>Train, tune, and test your model; check performance with relevant metrics.</li>
+    </ul>
+  </li>
+  <li><b>Evaluation & Interpretation:</b>
+    <ul>
+      <li>Explain results, validate with business logic, and identify possible improvements.</li>
+    </ul>
+  </li>
+  <li><b>Deployment (Optional):</b>
+    <ul>
+      <li>Turn model into a usable tool (web app, API, dashboard).</li>
+    </ul>
+  </li>
+  <li><b>Final Report/Presentation:</b>
+    <ul>
+      <li>Write a clear summary of your process, findings, and recommendations.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr/>
+
+<h3>Example Project Ideas</h3>
+<ul>
+  <li><b>Customer Churn Analysis:</b> Predict which customers might leave a subscription service, and why. Communicate actionable insights to reduce churn.</li>
+  <li><b>Sales Prediction Model:</b> Forecast future sales for a product or store, using time series or regression. Show seasonality and key drivers.</li>
+  <li><b>Healthcare Data Analysis:</b> Explore patient records to discover risk factors, predict disease outcomes, or identify patterns for better care.</li>
+  <li><b>Movie Recommendation Engine:</b> Suggest movies to users based on watch history, preferences or similarity to other users.</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Structure your work: clean code, clear steps, explanations, visualizations.</li>
+  <li>Document your project well, including challenges and next steps.</li>
+  <li>Practice makes perfect: try new datasets and project ideas frequently to build your skills and resume.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 200px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultProjects {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationProjects {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 7: Data Science Projects Quiz</h2>
+
+<form id="projectsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is the first step in a data science project workflow?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> Understand the problem and define objectives</label>
+    <label><input type="radio" name="q1" value="wrong"> Build a machine learning model</label>
+    <label><input type="radio" name="q1" value="wrong"> Visualize data</label>
+    <label><input type="radio" name="q1" value="wrong"> Collect data</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which phase involves handling missing or inconsistent data?</strong></p>
+    <label><input type="radio" name="q2" value="correct"> Data cleaning and preprocessing</label>
+    <label><input type="radio" name="q2" value="wrong"> Modeling</label>
+    <label><input type="radio" name="q2" value="wrong"> Data collection</label>
+    <label><input type="radio" name="q2" value="wrong"> Deployment</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is the main goal of exploratory data analysis (EDA)?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> Understand data patterns and relationships</label>
+    <label><input type="radio" name="q3" value="wrong"> Build production software</label>
+    <label><input type="radio" name="q3" value="wrong"> Automate data collection</label>
+    <label><input type="radio" name="q3" value="wrong"> Create dashboards only</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which of the following is NOT typically part of model evaluation?</strong></p>
+    <label><input type="radio" name="q4" value="correct"> Web design</label>
+    <label><input type="radio" name="q4" value="wrong"> Accuracy measurement</label>
+    <label><input type="radio" name="q4" value="wrong"> Confusion matrix analysis</label>
+    <label><input type="radio" name="q4" value="wrong"> Cross-validation</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Why is documentation important in data science projects?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> To communicate process, results, and insights clearly</label>
+    <label><input type="radio" name="q5" value="wrong"> To make the project look longer</label>
+    <label><input type="radio" name="q5" value="wrong"> To hide errors</label>
+    <label><input type="radio" name="q5" value="wrong"> To confuse users</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultProjects"></div>
+<p id="motivationProjects"></p>
+
+<script>
+  const projectsAnswers = {
+    q1: 'Understand the problem and define objectives',
+    q2: 'Data cleaning and preprocessing',
+    q3: 'Understand data patterns and relationships',
+    q4: 'Web design',
+    q5: 'To communicate process, results, and insights clearly'
+  };
+  const projectsCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userProjects = {};
+
+  function submitProjects(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userProjects['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === projectsCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Excellent! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${projectsAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning and practicing!</span>`;
+    }
+
+    if (Object.keys(userProjects).length === 5) {
+      showProjectsResult();
+    }
+  }
+
+  function showProjectsResult() {
+    let score = 0;
+    for (const key in userProjects) {
+      if (userProjects[key] === projectsCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultProjects').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Great job! You're developing strong project skills.",
+      "Well done! Projects are key to mastering data science.",
+      "Keep it up! Real-world projects boost your expertise.",
+      "Fantastic! Documenting your work helps share knowledge.",
+      "Awesome! Every project completed is a step forward."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationProjects').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+      </div> 
+    </div> 
+
+    <div class="chapter" id="chapter8"> 
+      <h2>Chapter 8: Summary & Career Path (optional)</h2> 
+      <div class="chapter-content"> 
+<hr/>
+
+<h3>Recap of Key Concepts</h3>
+<ul>
+  <li><b>Data Science Foundations:</b> Data collection, cleaning, analysis, visualization, and storytelling with data.</li>
+  <li><b>Core Skills:</b> Python & libraries (NumPy, Pandas, Matplotlib, Seaborn), SQL, statistics, probability, machine learning (supervised/unsupervised), data preprocessing, and feature engineering.</li>
+  <li><b>Project Workflow:</b> End-to-end process: from understanding the problem and preparing data to building models and delivering clear reports and visuals.</li>
+  <li><b>Ethical Practices:</b> Emphasize fairness, privacy, explainability, and responsible AI use.</li>
+</ul>
+
+<hr/>
+
+<h3>Career Opportunities in Data Science</h3>
+<ul>
+  <li><b>Data Analyst:</b> Analyze and visualize data to support business decisions.</li>
+  <li><b>Data Scientist (DS):</b> Build predictive models, run experiments, and communicate actionable insights.</li>
+  <li><b>ML Engineer:</b> Develop, deploy, and optimize machine learning systems at scale.</li>
+  <li><b>AI Engineer:</b> Design and implement intelligent applications, using deep learning and state-of-the-art models.</li>
+  <li>Other roles: Data Engineer, Business Analyst, Research Scientist, Product Analytics, and more.</li>
+</ul>
+
+<hr/>
+
+<h3>How to Build a Strong Portfolio</h3>
+<ul>
+  <li>
+    <b>Projects on GitHub:</b> Share code, notebooks, and documentation for end-to-end projects (e.g., EDA, ML, dashboards).
+  </li>
+  <li>
+    <b>LinkedIn:</b> Showcase your best projects with descriptions, visuals, and links to your GitHub repos.
+  </li>
+  <li>
+    Focus on clarity: write concise READMEs, document your process, and explain challenges faced or solved.
+  </li>
+  <li>
+    Add variety: Try projects from different domains (business, health, NLP, vision, etc.).
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Resume Tips, Freelancing & Job Market Insights (Short)</h3>
+<ul>
+  <li>
+    <b>Resume:</b> 1-page for freshers, highlight projects & technical skills first, then education. Quantify results (e.g., “improved model accuracy by 10%”).
+  </li>
+  <li>
+    <b>Freelancing:</b> Start on platforms like Upwork, Kaggle competitions, or by helping NGOs/small businesses with data problems.
+  </li>
+  <li>
+    <b>Job Market:</b> Data roles are growing fast; practical, hands-on experience + communication is key. Stay curious, keep learning, and adapt to new tools and domains.
+  </li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Master fundamentals, build & share projects, and keep your portfolio active.</li>
+  <li>Communicate your findings well — it’s as important as technical skill.</li>
+  <li>Persistence and practical experience open doors in the data science field!</li>
+</ul>
+      </div> 
+    </div> 
+
+<div style="text-align:center; margin: 40px 0;">  
+  <p><strong>Get your Data Science Basics Certificate for ₹99!</strong> – Showcase your achievement and boost your career.</p>  
+  <button class="enroll" id="payBtn">Get Certificate</button>  
+</div>  
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  document.getElementById("payBtn").onclick = function(e) {
+    e.preventDefault();
+
+    var options = {
+      "key": "rzp_test_1234567890abcdef", // 🔹 Replace with your Razorpay Key ID from Dashboard
+      "amount": 9900, // ₹99 in paise
+      "currency": "INR",
+      "name": "Learnify AI",
+      "description": "Certificate Payment",
+      "image": "https://yourdomain.com/logo.png", // optional logo
+      "handler": function (response) {
+        // ✅ Redirect after successful payment
+        window.location.href = "payment1.html?payment_id=" + response.razorpay_payment_id;
+      },
+      "prefill": {
+        "name": localStorage.getItem("userName") || "Student",
+        "email": localStorage.getItem("userEmail") || "student@email.com",
+        "contact": localStorage.getItem("userPhone") || "9999999999"
+      },
+      "theme": { "color": "#0a1f44" } // navy blue
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response){
+      alert("❌ Payment Failed: " + response.error.description);
+    });
+    rzp.open();
+  }
+</script>
+
+
+  <script> 
+    // Toggle open/close for chapters 
+    document.querySelectorAll("h2").forEach(h2 => { 
+      h2.addEventListener("click", () => { 
+        const content = h2.nextElementSibling; 
+        content.style.display = content.style.display === "block" ? "none" : "block"; 
+      }); 
+    }); 
+  </script> 
+  <script src="dsscript.js"></script>
+</body> 
+</html>

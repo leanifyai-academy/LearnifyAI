@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Learnify AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* --- RESET --- */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Roboto', sans-serif; line-height:1.6; color:#f0f0f0; background-color:#001f3f; overflow-x:hidden; }
+
+/* --- LOADER (Futuristic Fade) --- */
+#intro-loader {
+  position: fixed; inset:0; background:#001f3f; display:flex; align-items:center; justify-content:center; z-index:9999;
+}
+#intro-loader img {
+  height:120px; opacity:0; transform:scale(0.8);
+  animation: fadeTech 2s ease forwards;
+}
+@keyframes fadeTech {
+  0% { opacity:0; transform:scale(0.8) translateY(20px); filter:blur(4px) brightness(0.8);}
+  50% { opacity:1; transform:scale(1.1) translateY(-10px); filter:blur(0px) brightness(1.2);}
+  100% { opacity:0; transform:scale(1) translateY(-30px); filter:blur(2px) brightness(1);}
+}
+
+/* --- HEADER --- */
+header { text-align:center; padding:60px 20px; background:linear-gradient(135deg,#001f3f,#003366); position:relative; overflow:hidden; }
+header img.logo-animate { height:100px; margin-bottom:20px; opacity:0; transform:scale(0) rotate(0deg); animation: logoEntry 2s ease forwards; animation-delay:2s; }
+@keyframes logoEntry { 0%{opacity:0;transform:scale(0) rotate(0deg);}50%{opacity:1;transform:scale(1.4) rotate(180deg);}100%{opacity:1;transform:scale(1) rotate(360deg);} }
+header h1 { font-family:'Poppins',sans-serif; font-size:3rem; color:#00ffff; margin-bottom:15px; letter-spacing:2px; animation: fadeIn 2s ease forwards; opacity:0; animation-delay:2.3s; }
+header nav a { color:#00ffff; margin:0 15px; text-decoration:none; font-weight:600; position:relative; }
+header nav a::after { content:""; position:absolute; left:0; bottom:-5px; width:0; height:2px; background:#00ffff; transition:width 0.3s; }
+header nav a:hover::after { width:100%; }
+
+/* --- SECTIONS --- */
+section { padding:80px 20px; text-align:center; opacity:0; transform:translateY(50px); transition: all 1s ease; }
+section.show { opacity:1; transform:translateY(0); }
+section h2 { font-family:'Poppins',sans-serif; font-size:2.2rem; margin-bottom:20px; color:#00ffff; letter-spacing:1px; }
+section p { max-width:700px; margin:0 auto 20px; font-size:1rem; line-height:1.6; }
+
+/* --- CARDS --- */
+.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
+.card { background:#001f3f; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.3); padding:25px; width:260px; transition: transform 0.6s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s; cursor:pointer; position:relative; }
+.card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 15px 30px rgba(0,255,255,0.6); }
+.card h3 { color:#00ffff; margin-bottom:10px; }
+.card p { font-size:0.95rem; line-height:1.4; }
+
+/* --- WHY LEARN WITH US --- */
+ul { list-style:none; padding:0; max-width:700px; margin:20px auto; text-align:left; }
+ul li { margin-bottom:15px; position:relative; padding-left:30px; opacity:0; transform:translateX(-30px); transition:all 0.8s ease; }
+ul li.show { opacity:1; transform:translateX(0); }
+ul li::before { content:'✅'; position:absolute; left:0; color:#00ffff; font-size:1.1rem; }
+
+/* --- CONTACT --- */
+#contact a { color:#00ffff; text-decoration:none; font-weight:500; transition:0.3s; }
+#contact a:hover { color:#fff; text-decoration:underline; }
+
+/* --- FOOTER --- */
+footer { background:#001a33; color:#fff; padding:30px 20px; text-align:center; }
+
+/* --- MODAL --- */
+.modal { display:none; position:fixed; inset:0; background-color:rgba(0,0,0,0.85); z-index:10000; justify-content:center; align-items:center; }
+.modal-content { position:relative; background:#001f3f; padding:30px; border-radius:15px; width:380px; max-height:90vh; overflow-y:auto; box-shadow:0 0 25px rgba(0,255,255,0.5); color:#fff; text-align:center; }
+.close { position:absolute; top:12px; right:16px; font-size:28px; color:#fff; cursor:pointer; }
+.close:hover { color:#00ffff; }
+form input, form select { width:100%; padding:12px; margin:8px 0; border:1px solid #00ffff33; border-radius:8px; background:#00264d; color:#fff; outline:none; transition:0.3s; }
+form input:focus, form select:focus { border-color:#00ffff; box-shadow:0 0 8px #00ffff66; }
+.cta-button { width:100%; padding:12px; background:linear-gradient(135deg,#003366,#00ffff); border:none; border-radius:50px; color:#fff; font-weight:bold; cursor:pointer; margin-top:12px; transition:all 0.3s ease; box-shadow:0 4px 10px rgba(0,255,255,0.3); }
+.cta-button:hover { transform:scale(1.05); box-shadow:0 0 20px #00ffff77; }
+#otp { display:block; margin-top:8px; }
+
+/* TABS */
+.tabs { display:flex; margin-bottom:15px; }
+.tab { flex:1; padding:10px; cursor:pointer; background:#003366; border:none; color:#00ffff; font-weight:bold; border-radius:8px 8px 0 0; }
+.tab.active { background:#00ffff; color:#001f3f; }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn { 0%{opacity:0;}100%{opacity:1;} }
+
+/* --- RESPONSIVE --- */
+@media (max-width:768px) { .cards { flex-direction:column; align-items:center; } }
+/* Why Choose Us */
+.why-choose {padding:60px 20px;text-align:center;background:#001f3f;}
+.why-choose h2 {font-size:2rem;margin-bottom:30px;color:#f0f0f0;}
+.features {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;max-width:1100px;margin:0 auto;}
+
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 20px;
+  background: #001f3f;
+  color: #fff;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.stat h3 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.stat p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+/* Newsletter */
+.whatsapp-community {
+  padding: 60px 20px;
+  text-align: center;
+  background: darkgreen;
+}
+
+.whatsapp-community h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.whatsapp-community p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 30px;
+  background: #25D366; /* WhatsApp green */
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.btn-whatsapp i {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5a;
+}
+
+.typing-text {
+  font-family: 'Poppins', monospace; /* keeps spacing aligned */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  text-align: center;
+  white-space: pre;  /* preserve spacing */
+}
+.typing-text div {
+  display: block;
+}
+
+
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: #4e46e5; }
+  100% { border-color: transparent; }
+}
+
+
+</style>
+</head>
+<body>
+<!-- Intro Loader -->
+<div id="intro-loader">
+  <img src="logo.png" alt="Loading Logo" />
+</div>
+
+<header>
+  <img src="logo.png" alt="Learnify AI Logo" class="logo-animate" />
+  <h1>Learnify AI</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+    <a href="#" id="loginBtn" class="cta-button" style="padding:10px 20px;font-size:0.9rem;">Login</a>
+  </nav>
+</header>
+
+<!-- LOGIN / SIGN UP MODAL -->
+<div id="authModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="tabs">
+      <button id="loginTab" class="tab active">Login</button>
+      <button id="signupTab" class="tab">Sign Up</button>
+    </div>
+
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="submit" class="cta-button">Login</button>
+      <p style="margin-top:6px; font-size:.85rem;">
+        <a href="#" id="forgotPassword">Forgot Password?</a>
+      </p>
+    </form>
+
+    <!-- SIGN UP FORM -->
+    <form id="signupForm" style="display:none;">
+  <input type="text" id="firstName" placeholder="First Name" required />
+  <input type="text" id="lastName" placeholder="Last Name" required />
+  <input type="email" id="signupEmail" placeholder="Email" required />
+  <select id="courseSelect" required>
+    <option value="">Select Course for Certificate</option>
+    <option value="AI Basics">AI Basics</option>
+    <option value="Machine Learning Basics">Machine Learning Basics</option>
+    <option value="Deep Learning Basics">Deep Learning Basics</option>
+    <option value="Data Science Basics">Data Science Basics</option>
+  </select>
+  <input type="tel" id="phone" placeholder="Phone Number" required />
+  
+  <button type="button" id="sendOTP" class="cta-button">Send OTP</button>
+  <input type="text" id="otp" placeholder="Enter OTP" style="display:none;" />
+  
+  <input type="password" id="signupPassword" placeholder="Create Password" required />
+  <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+  <!-- Hidden Payment Status -->
+  <input type="hidden" id="paymentStatus" value="unpaid" />
+
+  <button type="submit" class="cta-button">Sign Up</button>
+</form>
+
+  </div>
+</div>
+
+<section id="about"> 
+  <h2>About Learnify AI</h2> 
+  <p>
+  Learnify AI is your ultimate platform to master AI, ML, Data Science,
+  Step-by-step tutorials that simplify complex concepts for beginners.,
+  Hands-on projects and resources to help you upskill and build a portfolio. 
+  </p>
+</section>
+
+
+<section class="about"> 
+  <h2>Why Choose Us?</h2> 
+  <div class="typing-text" id="why-typing"></div>
+</section>
+
+<section id="courses">
+  <h2>Our Courses & Projects</h2>
+  <p style="color:#00ffff;font-weight:600;margin-bottom:20px;">
+    All tutorials are <strong>100% free</strong>! Certificates are optional and cost <strong>₹99</strong>.
+  </p>
+
+  <div class="cards">
+    <div class="card" data-course="Aibasics.html"> 
+      <h3>AI Basics</h3> 
+      <p>Learn fundamentals of AI, Python programming, and beginner-friendly projects.</p> 
+    </div> 
+    <div class="card" data-course="machinelearning.html"> 
+      <h3>Machine Learning Basics</h3> 
+      <p>Step-by-step ML tutorials with mini-projects and datasets to practice.</p> 
+    </div> 
+    <div class="card" data-course="dlcourse.html"> 
+      <h3>Deep Learning Basics</h3> 
+      <p>Hands-on deep learning projects with neural networks, CNNs, and RNNs.</p> 
+    </div> 
+    <div class="card" data-course="dscourse.html"> 
+      <h3>Data Science Basics</h3> 
+      <p>Work on real datasets, perform analysis, and build practical DS projects.</p> 
+    </div> 
+    <div class="card" data-course="aiprojects.html"> 
+      <h3>Basic AI Projects</h3> 
+      <p>Build real-world AI projects to strengthen your skills and portfolio.</p> 
+    </div> 
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:LearnifyAI@gmail.com">LearnifyAI@gmail.com</a></p>
+  <p>
+    Follow us on 
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> | 
+    <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a> | 
+    <a href="https://x.com" target="_blank" rel="noopener">X</a>
+  </p>
+</section>
+<section class="stats">
+  <div class="stat">
+    <h3 class="count" data-target="10000">0+</h3>
+    <p>Learners Worldwide</p>
+  </div>
+  <div class="stat">
+    <h3 class="count" data-target="50">0</h3>
+    <p>Hands-on Projects</p>
+  </div>
+  <div class="stat">
+    <h3 class="count" data-target="100">0%</h3>
+    <p>Student Satisfaction</p>
+  </div>
+</section>
+
+<section class="whatsapp-community">
+  <h2>Join Our WhatsApp Community</h2>
+  <p>Connect with AI learners, share ideas, and get instant updates directly on WhatsApp.</p>
+  <a href="https://chat.whatsapp.com/BDvLZaGzuqF7CM5JcNh6aj?mode=ac_t" target="_blank" class="btn-whatsapp">
+    <i class="fab fa-whatsapp"></i> Join Now
+  </a>
+</section>
+
+
+<footer>
+  <p>&copy; 2025 Learnify AI. All rights reserved.</p>
+</footer>
+
+<script>
+// Loader fadeout
+window.addEventListener('load', () => { 
+  setTimeout(()=>{ document.getElementById('intro-loader').style.display='none'; },2000);
+  revealOnScroll();
+});
+
+// Scroll reveal
+const sections = document.querySelectorAll('section');
+const lis = document.querySelectorAll('ul li');
+function revealOnScroll(){
+  const trigger = window.innerHeight*0.85;
+  sections.forEach(sec=>{ if(sec.getBoundingClientRect().top<trigger) sec.classList.add('show'); });
+  lis.forEach(li=>{ if(li.getBoundingClientRect().top<trigger) li.classList.add('show'); });
+}
+window.addEventListener('scroll', revealOnScroll);
+
+// --- Auth Modal ---
+const authModal = document.getElementById('authModal');
+const closeModal = authModal.querySelector('.close');
+const loginTab = document.getElementById('loginTab');
+const signupTab = document.getElementById('signupTab');
+const loginForm = document.getElementById('loginForm');
+const signupForm = document.getElementById('signupForm');
+const sendOTPBtn = document.getElementById('sendOTP');
+const otpInput = document.getElementById('otp');
+
+const LS_USER_KEY = 'learnifyUser';
+const LS_LAST_COURSE = 'learnifyLastCourse';
+
+// Open modal only on Login button click
+document.getElementById('loginBtn').addEventListener('click', () => {
+  authModal.style.display = 'flex';
+});
+
+// Course card click
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    const userNow = JSON.parse(localStorage.getItem(LS_USER_KEY) || 'null');
+    if(userNow){
+      // User logged in, open course
+      localStorage.setItem(LS_LAST_COURSE, card.dataset.course);
+      window.open(card.dataset.course, '_blank');
+    } else {
+      // Not logged in, show modal
+      authModal.style.display = 'flex';
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+    }
+  });
+});
+
+// Close modal
+closeModal.addEventListener('click', ()=> authModal.style.display='none');
+window.addEventListener('click', e=>{ if(e.target===authModal) authModal.style.display='none'; });
+
+// Tabs
+loginTab.addEventListener('click', ()=>{
+  loginTab.classList.add('active'); signupTab.classList.remove('active');
+  loginForm.style.display='block'; signupForm.style.display='none';
+});
+signupTab.addEventListener('click', ()=>{
+  signupTab.classList.add('active'); loginTab.classList.remove('active');
+  signupForm.style.display='block'; loginForm.style.display='none';
+});
+
+// OTP simulation
+sendOTPBtn.addEventListener('click', ()=>{
+  alert('OTP sent to your phone (simulated)');
+  otpInput.style.display='block';
+});
+
+// Sign Up
+signupForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  const first = document.getElementById('firstName').value.trim();
+  const last = document.getElementById('lastName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const pwd = document.getElementById('signupPassword').value;
+  const confirm = document.getElementById('confirmPassword').value;
+
+  const pwdRegex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+  if(!pwdRegex.test(pwd)){ alert('Password must contain 1 uppercase, 1 number, min 6 chars'); return; }
+  if(pwd!==confirm){ alert('Passwords do not match'); return; }
+
+  const user = { first,last,email,phone,password:pwd,createdAt:Date.now() };
+  localStorage.setItem(LS_USER_KEY, JSON.stringify(user));
+  alert('Sign Up successful!');
+  authModal.style.display='none';
+});
+
+// Login
+loginForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  const email = document.getElementById('loginEmail').value.trim();
+  const pwd = document.getElementById('loginPassword').value;
+
+  const user = JSON.parse(localStorage.getItem(LS_USER_KEY) || 'null');
+  if(!user){ alert('No account found, please Sign Up'); return; }
+  if(user.email!==email || user.password!==pwd){ alert('Invalid credentials'); return; }
+
+  alert(`Welcome back, ${user.first}!`);
+  authModal.style.display='none';
+});
+
+// Forgot password
+document.getElementById('forgotPassword').addEventListener('click', ()=>{
+  const user = JSON.parse(localStorage.getItem(LS_USER_KEY) || 'null');
+  if(!user){ alert('No account found'); return; }
+  const newPwd = prompt('Enter new password (1 uppercase, 1 number, min 6 chars)');
+  if(!newPwd.match(/^(?=.*[A-Z])(?=.*\d).{6,}$/)){ alert('Invalid password'); return; }
+  user.password = newPwd;
+  localStorage.setItem(LS_USER_KEY, JSON.stringify(user));
+  alert('Password updated!');
+});
+
+// Typing effect function
+function typeText(elementId, lines, speed = 30, delay = 500) {
+  const el = document.getElementById(elementId);
+  let lineIndex = 0;
+  let charIndex = 0;
+
+
+  function typeLine() {
+    if (lineIndex < lines.length) {
+      let lineEl = document.querySelector(`#${elementId} .line-${lineIndex}`);
+      if (!lineEl) {
+        lineEl = document.createElement("div");
+        lineEl.className = `line-${lineIndex}`;
+        el.appendChild(lineEl);
+      }
+
+      if (charIndex < lines[lineIndex].length) {
+        lineEl.textContent += lines[lineIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeLine, speed);
+      } else {
+        charIndex = 0;
+        lineIndex++;
+        setTimeout(typeLine, delay);
+      }
+    }
+  }
+
+  typeLine();
+}
+
+
+// Why Choose Us Section (3 lines)
+typeText("why-typing", [
+  // 1st Paragraph
+  "Recognized certificates that are trusted by recruiters worldwide.\n" +
+  "Stand out in interviews with credentials that prove your expertise.\n" +
+  "Boost your career growth with verified achievements.",
+
+  // 2nd Paragraph
+  "AI-powered learning methods that adapt to your style.\n" +
+  "Interactive lessons designed to keep you engaged and motivated.\n" +
+  "Learn smarter, faster, and more effectively with technology.",
+
+  // 3rd Paragraph
+  "Global access with affordable pricing for everyone.\n" +
+  "Whether you’re in India, the US, or anywhere else, start learning today.\n" +
+  "No barriers—just knowledge at your fingertips.",
+
+  // 4th Paragraph
+  "Project-based learning to apply theory into practice.\n" +
+  "Work on real-world AI and Data Science projects to strengthen your skills.\n" +
+  "Build a portfolio that speaks louder than words."
+]);
+// Stats Counter Effect
+const counters = document.querySelectorAll('.count');
+const speed = 200; // smaller = faster
+
+const startCount = () => {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText.replace(/\D/g, ""); // remove % if any
+      const increment = Math.ceil(target / speed);
+
+      if (current < target) {
+        counter.innerText = current + increment + (counter.innerText.includes('%') ? '%' : '');
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target + (counter.innerText.includes('%') ? '%' : '');
+      }
+    };
+    updateCount();
+  });
+};
+
+// Run when page loads
+window.addEventListener('load', startCount);
+
+document.getElementById("signupForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = {
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    email: document.getElementById("signupEmail").value,
+    phone: document.getElementById("phone").value,
+    course: document.getElementById("courseSelect").value,
+    password: document.getElementById("signupPassword").value,
+    paymentStatus: document.getElementById("paymentStatus").value
+  };
+
+  await fetch("https://your-n8n-server/webhook/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  alert("Signup submitted. Please proceed to payment.");
+});
+document.getElementById("paymentStatus").value = "paid";
+
+
+</script>
+
+</body>
+</html>

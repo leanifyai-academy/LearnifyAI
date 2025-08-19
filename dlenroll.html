@@ -1,0 +1,2563 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Deep Learning Course</title>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <style>  
+        body {  
+            font-family: 'Roboto', sans-serif;  
+            background-color: #ffffff;  
+            color: #1a1a1a;  
+            margin: 0;  
+            padding: 0;  
+            line-height: 1.7;  
+        }  
+        header {  
+            background-color: #001f3f;  
+            color: #ffffff;  
+            padding: 20px;  
+            text-align: center;  
+        }  
+        header h1 {  
+            margin: 0;  
+            font-size: 2.2em;  
+        }  
+        nav {  
+            background-color: #003366;  
+            display: flex;  
+            justify-content: center;  
+            padding: 10px 0;  
+        }  
+        nav a {  
+            color: #ffffff;  
+            text-decoration: none;  
+            margin: 0 20px;  
+            font-weight: 500;  
+        }  
+        nav a:hover {  
+            color: #00bfff;  
+        }  
+        .container {  
+            max-width: 900px;  
+            margin: 30px auto;  
+            padding: 0 20px;  
+        }  
+        h2 {  
+            color: #001f3f;  
+            cursor: pointer;  
+            position: relative;  
+            padding-right: 25px;  
+        }  
+        h2::after {  
+            content: '▼';  
+            position: absolute;  
+            right: 0;  
+            font-size: 0.8em;  
+        }  
+        .chapter {  
+            margin-bottom: 20px;  
+            border-bottom: 1px solid #ccc;  
+            padding-bottom: 15px;  
+        }  
+        .chapter-content {  
+            display: none;  
+            padding-top: 10px;  
+            animation: fadeIn 0.5s ease-in-out;  
+        }  
+        @keyframes fadeIn {  
+            from {opacity: 0;}  
+            to {opacity:1;}  
+        }  
+        button.enroll {  
+            display: block;  
+            background-color: #001f3f;  
+            color: #ffffff;  
+            border: none;  
+            padding: 15px 30px;  
+            margin: 30px auto;  
+            font-size: 1.2em;  
+            cursor: pointer;  
+            border-radius: 8px;  
+            transition: background-color 0.3s ease;  
+        }  
+        button.enroll:hover {  
+            background-color: #003366;  
+        }  
+        p {  
+            margin-bottom: 15px;  
+        }  
+        li {  
+            margin-bottom: 8px;  
+        }  
+        .highlight {  
+            color: #003366;  
+            font-weight: 500;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <header>  
+        <h1>Deep Learning – Complete Beginner’s Course</h1>  
+        <p>Master Deep Learning concepts, neural networks, and real-world applications step by step!</p>  
+    </header>  
+
+    <nav>  
+        <a href="#chapter1">Intro</a>  
+        <a href="#chapter2">Neural Nets</a>  
+        <a href="#chapter3">Training</a>  
+        <a href="#chapter4">CNNs</a>  
+        <a href="#chapter5">RNNs</a>  
+        <a href="#chapter6">Projects</a>  
+        <a href="#chapter7">Ethics</a>  
+        <a href="#chapter8">Future</a>  
+    </nav>  
+
+    <div class="container">  
+        <!-- Chapter 1 -->  
+        <div class="chapter" id="chapter1">  
+            <h2>Chapter 1: Introduction to Deep Learning</h2>  
+            <div class="chapter-content">  
+<p>
+Deep Learning is a subset of machine learning inspired by the structure and function of the human brain. It uses artificial neural networks with many layers (hence "deep") to learn representations and solve complex tasks without explicit, hand-crafted feature engineering.
+</p>
+
+<hr>
+
+<h3>What is Deep Learning?</h3>
+<ul>
+  <li>Deep learning uses multi-layered neural networks to automatically extract features and patterns from large datasets.</li>
+  <li>It excels at handling unstructured data like images, audio, and text.</li>
+  <li>Fueled by big data and powerful hardware (GPUs, TPUs), deep learning achieves superhuman performance for certain tasks.</li>
+</ul>
+
+<hr>
+
+<h3>Difference between Machine Learning & Deep Learning</h3>
+<ul>
+  <li><b>Machine Learning (ML):</b> Involves algorithms (like decision trees, SVM, linear regression) that often require manual feature extraction. Good with tabular, structured data.</li>
+  <li><b>Deep Learning (DL):</b> Uses layered neural networks that learn features automatically. Excels at large-scale, complex, and unstructured data (e.g., photos, language, sound).</li>
+  <li><b>Key difference:</b> DL automates feature learning, while in ML, feature engineering is typically manual.</li>
+</ul>
+
+<hr>
+
+<h3>Real-world Applications</h3>
+<ul>
+  <li><b>Computer Vision:</b> Image recognition (self-driving cars, security cameras, medical imaging).</li>
+  <li><b>Speech Processing:</b> Voice assistants (Siri, Alexa), speech-to-text, language translation.</li>
+  <li><b>Natural Language Processing (NLP):</b> Chatbots, sentiment analysis, text summarization, search engines.</li>
+  <li><b>Recommendation Systems:</b> Netflix, YouTube, and e-commerce product recommendations.</li>
+  <li><b>Gaming and Robotics:</b> AlphaGo, automated control, advanced simulations.</li>
+</ul>
+
+<hr>
+
+<h3>Basic Structure of a Neural Network</h3>
+<ul>
+  <li>A neural network is made up of layers of interconnected nodes ("neurons"):</li>
+  <ul>
+    <li><b>Input layer:</b> Receives raw data (numbers, pixels, etc.).</li>
+    <li><b>Hidden layers:</b> Process inputs through learned mathematical functions (weights and biases).</li>
+    <li><b>Output layer:</b> Produces the final result (classification, regression, etc.).</li>
+  </ul>
+  <li>Each neuron receives input, applies a (weighted sum + bias), passes it through an activation function, and sends output to the next layer.</li>
+</ul>
+
+<hr>
+
+<h3>How Data Flows Through Layers</h3>
+<ol>
+  <li>Inputs are presented at the input layer (e.g., pixel values of an image).</li>
+  <li>They move (“feed forward”) through each hidden layer, getting transformed by weights, biases, and activation functions.</li>
+  <li>The output layer produces predictions (e.g., “dog” or “cat” classification).</li>
+  <li>During training, the network adjusts its weights and biases to minimize prediction errors.</li>
+</ol>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Deep learning uses neural networks to learn complex patterns from massive data.</li>
+  <li>It is the foundation for modern breakthroughs in AI for vision, speech, and language.</li>
+  <li>Neural networks mimic (in a simple way) how brains process information using interconnected neurons.</li>
+  <li>Learning occurs by data flowing forward and adjustments (learning) happening through training.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultDLIntro {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationDLIntro {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 1: Deep Learning & Neural Networks Quiz</h2>
+
+<form id="DLIntroQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is a key feature of deep learning compared to traditional machine learning?</strong></p>
+    <label><input type="radio" name="q1" value="wrong" /> Uses only shallow (1-layer) neural networks</label>
+    <label><input type="radio" name="q1" value="wrong" /> Requires manual feature engineering for all data</label>
+    <label><input type="radio" name="q1" value="correct" /> Learns hierarchical representations automatically from raw data</label>
+    <label><input type="radio" name="q1" value="wrong" /> Works best on tiny datasets with no structure</label>
+    <button type="button" class="btn-submit" onclick="submitDLIntro(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which field is a common application of deep learning?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> Spreadsheet calculations</label>
+    <label><input type="radio" name="q2" value="wrong" /> Chemical balancing in the lab</label>
+    <label><input type="radio" name="q2" value="correct" /> Computer vision (e.g. image recognition)</label>
+    <label><input type="radio" name="q2" value="wrong" /> Weather balloon inflation</label>
+    <button type="button" class="btn-submit" onclick="submitDLIntro(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is a neural network composed of?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> Only a single output node</label>
+    <label><input type="radio" name="q3" value="wrong" /> Just one hidden layer and biases</label>
+    <label><input type="radio" name="q3" value="correct" /> Multiple layers of neurons (nodes) connected with weights</label>
+    <label><input type="radio" name="q3" value="wrong" /> A random collection of algorithms</label>
+    <button type="button" class="btn-submit" onclick="submitDLIntro(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. How does data flow through a feedforward neural network?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> From the input layer through hidden layers to the output layer</label>
+    <label><input type="radio" name="q4" value="wrong" /> In a circle</label>
+    <label><input type="radio" name="q4" value="wrong" /> Back and forth between input and output</label>
+    <label><input type="radio" name="q4" value="wrong" /> Only between the output and input layers</label>
+    <button type="button" class="btn-submit" onclick="submitDLIntro(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. In deep learning, what does “deep” refer to?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> The use of deep water cooling</label>
+    <label><input type="radio" name="q5" value="correct" /> Many hidden layers between input and output</label>
+    <label><input type="radio" name="q5" value="wrong" /> Models with zero layers</label>
+    <label><input type="radio" name="q5" value="wrong" /> Data stored deep inside the computer</label>
+    <button type="button" class="btn-submit" onclick="submitDLIntro(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultDLIntro"></div>
+<p id="motivationDLIntro"></p>
+
+<script>
+  const DLIntroAnswers = {
+    q1: 'Learns hierarchical representations automatically from raw data',
+    q2: 'Computer vision (e.g. image recognition)',
+    q3: 'Multiple layers of neurons (nodes) connected with weights',
+    q4: 'From the input layer through hidden layers to the output layer',
+    q5: 'Many hidden layers between input and output'
+  };
+  const DLIntroCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userDLIntro = {};
+
+  function submitDLIntro(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+    userDLIntro['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+    if (selected === DLIntroCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${DLIntroAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep practicing and you’ll master these concepts!</span>`;
+    }
+    if (Object.keys(userDLIntro).length === 5) {
+      showDLIntroResult();
+    }
+  }
+
+  function showDLIntroResult() {
+    let score = 0;
+    for (const key in userDLIntro) {
+      if (userDLIntro[key] === DLIntroCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultDLIntro').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Fantastic! You're off to a strong start in deep learning.",
+      "Great effort! Keep exploring neural networks.",
+      "Impressive! The more you learn, the more you'll achieve.",
+      "Practice makes perfect—deep learning mastery awaits.",
+      "Awesome work! The future of AI is in your hands."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationDLIntro').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 2 -->  
+        <div class="chapter" id="chapter2">  
+            <h2>Chapter 2: Basics of Neural Networks</h2>  
+            <div class="chapter-content">
+<p>
+<strong>Perceptrons</strong> are the simplest type of artificial neuron and are the basic building blocks for more complex neural networks.
+</p>
+
+<hr>
+
+<h3>Perceptron: The Building Block of Deep Learning</h3>
+<ul>
+  <li>A perceptron takes weighted inputs, adds a bias, and passes the result through an activation function to produce an output.</li>
+  <li><b>Formula:</b> <code>output = activation(weighted_sum(inputs) + bias)</code></li>
+  <li>It’s like a basic decision maker: if the (weighted sum + bias) crosses a threshold, it “fires.”</li>
+</ul>
+
+<hr>
+
+<h3>Limitations of a Simple Perceptron</h3>
+<ul>
+  <li>It can only solve problems that are linearly separable (i.e., can be separated with a straight line).</li>
+  <li>Cannot solve the XOR problem (why we need multiple layers and nonlinear functions).</li>
+</ul>
+
+<hr>
+
+<h3>Activation Functions</h3>
+<ul>
+  <li>Introduce non-linearity into the network—allowing it to learn complex patterns.</li>
+  <li><b>Sigmoid:</b> Smooth S-shaped curve, outputs between 0 and 1. Used in binary classification.</li>
+  <li><b>Tanh:</b> Similar to sigmoid, but outputs between -1 and 1. Zero-centered.</li>
+  <li><b>ReLU (Rectified Linear Unit):</b> Most common, outputs 0 for negatives and x for positives. Allows for fast training and solves vanishing gradient problem for deep networks.</li>
+  <li><b>Leaky ReLU:</b> Like ReLU, but allows a small, non-zero slope for negative inputs (fixes “dead neuron” issue).</li>
+  <li><b>Softmax:</b> Converts a vector of values to probabilities that sum to 1, used in the output layer of multi-class classification networks.</li>
+</ul>
+<table border="1" cellpadding="6">
+<tr><th>Name</th><th>Formula</th><th>Output Range</th><th>Typical Use</th></tr>
+<tr><td>Sigmoid</td><td>1/(1+e<sup>–x</sup>)</td><td>0 to 1</td><td>Binary classification</td></tr>
+<tr><td>Tanh</td><td>(e<sup>x</sup> – e<sup>–x</sup>)/(e<sup>x</sup> + e<sup>–x</sup>)</td><td>–1 to 1</td><td>Hidden layers (zero-centered)</td></tr>
+<tr><td>ReLU</td><td>max(0, x)</td><td>0 to ∞</td><td>Hidden layers</td></tr>
+<tr><td>Leaky ReLU</td><td>x if x>0; αx if x≤0</td><td>–∞ to ∞</td><td>Hidden layers (fixes dead ReLU)</td></tr>
+<tr><td>Softmax</td><td>e<sup>x<sub>i</sub></sup>/Σe<sup>x<sub>j</sub></sup></td><td>0 to 1 (sums to 1)</td><td>Output layer, multi-class</td></tr>
+</table>
+
+<hr>
+
+<h3>Why Non-linearity is Important</h3>
+<ul>
+  <li>
+    Without non-linear activation functions, a neural network (even with many layers) would behave like a single-layer linear model and could not learn complex boundaries.
+  </li>
+  <li>
+    Non-linear activation functions enable networks to approximate any function and solve problems that aren’t linearly separable.
+  </li>
+</ul>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>The perceptron is the foundation; stacking them builds deep networks.</li>
+  <li>Activation functions are essential for neural networks to learn complex data relationships.</li>
+  <li>Different activation functions are useful in different scenarios (output range, zero-centeredness, speed of training).</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultPerceptrons {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationPerceptrons {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 2: Perceptrons & Activation Functions Quiz</h2>
+
+<form id="PerceptronsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What does a perceptron do with its inputs?</strong></p>
+    <label><input type="radio" name="q1" value="wrong" /> Multiplies all inputs with 0</label>
+    <label><input type="radio" name="q1" value="correct" /> Computes a weighted sum and passes it through an activation</label>
+    <label><input type="radio" name="q1" value="wrong" /> Adds inputs then divides by two</label>
+    <label><input type="radio" name="q1" value="wrong" /> Always outputs 1 regardless of input</label>
+    <button type="button" class="btn-submit" onclick="submitPerceptrons(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which problem cannot be solved by a single-layer perceptron?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> AND logic gate</label>
+    <label><input type="radio" name="q2" value="wrong" /> OR logic gate</label>
+    <label><input type="radio" name="q2" value="correct" /> XOR logic gate</label>
+    <label><input type="radio" name="q2" value="wrong" /> Simple thresholding</label>
+    <button type="button" class="btn-submit" onclick="submitPerceptrons(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is the output range of the sigmoid activation function?</strong></p>
+    <label><input type="radio" name="q3" value="correct" /> 0 to 1</label>
+    <label><input type="radio" name="q3" value="wrong" /> -1 to 1</label>
+    <label><input type="radio" name="q3" value="wrong" /> 0 to infinity</label>
+    <label><input type="radio" name="q3" value="wrong" /> -infinity to +infinity</label>
+    <button type="button" class="btn-submit" onclick="submitPerceptrons(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Why are non-linear activation functions necessary in neural networks?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> To allow the model to learn complex, non-linear patterns</label>
+    <label><input type="radio" name="q4" value="wrong" /> To keep network output always linear</label>
+    <label><input type="radio" name="q4" value="wrong" /> To ensure neurons always fire</label>
+    <label><input type="radio" name="q4" value="wrong" /> To reduce the number of parameters</label>
+    <button type="button" class="btn-submit" onclick="submitPerceptrons(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which activation function is most commonly used for hidden layers in modern neural networks?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> Sigmoid</label>
+    <label><input type="radio" name="q5" value="wrong" /> Softmax</label>
+    <label><input type="radio" name="q5" value="correct" /> ReLU (Rectified Linear Unit)</label>
+    <label><input type="radio" name="q5" value="wrong" /> Step function</label>
+    <button type="button" class="btn-submit" onclick="submitPerceptrons(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultPerceptrons"></div>
+<p id="motivationPerceptrons"></p>
+
+<script>
+  const PerceptronsAnswers = {
+    q1: 'Computes a weighted sum and passes it through an activation',
+    q2: 'XOR logic gate',
+    q3: '0 to 1',
+    q4: 'To allow the model to learn complex, non-linear patterns',
+    q5: 'ReLU (Rectified Linear Unit)'
+  };
+  const PerceptronsCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userPerceptrons = {};
+
+  function submitPerceptrons(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+    userPerceptrons['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+    if (selected === PerceptronsCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${PerceptronsAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep practicing to master the basics!</span>`;
+    }
+    if (Object.keys(userPerceptrons).length === 5) {
+      showPerceptronsResult();
+    }
+  }
+
+  function showPerceptronsResult() {
+    let score = 0;
+    for (const key in userPerceptrons) {
+      if (userPerceptrons[key] === PerceptronsCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultPerceptrons').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! Your foundation for deep learning is getting stronger.",
+      "Keep up the good work! Every neuron and function matters.",
+      "Great effort! Non-linearity is the key to deep learning power.",
+      "Well done! Practice is the path to mastery.",
+      "Fantastic! You're on the way to deep learning expertise."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationPerceptrons').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 3 -->  
+        <div class="chapter" id="chapter3">  
+            <h2>Chapter 3: Training Deep Neural Networks</h2>  
+            <div class="chapter-content">
+<p>
+Training a neural network means adjusting its weights and biases so that outputs get closer to the correct answers. This process uses the notions of a <strong>forward pass</strong> and <strong>backpropagation</strong> (backward pass), and is repeated over many rounds (epochs).
+</p>
+
+<hr>
+
+<h3>How Weights &amp; Biases Work</h3>
+<ul>
+  <li>Each connection between neurons has a <strong>weight</strong>; each neuron has a <strong>bias</strong> (an extra adjustable value).</li>
+  <li>Weights control how much influence one neuron's output has on another; bias helps nudge decisions up/down regardless of input.</li>
+  <li>They are adjusted during learning to minimize error.</li>
+</ul>
+
+<hr>
+
+<h3>Forward Pass Explained Step by Step</h3>
+<ol>
+  <li>Input data is fed into the input layer.</li>
+  <li>Each neuron computes the weighted sum of its inputs plus bias: <code>z = w_1x_1 + w_2x_2 + ... + b</code>.</li>
+  <li>The result <code>z</code> is put through an activation function to generate output.</li>
+  <li>The process repeats layer by layer, until the final output layer makes a prediction.</li>
+</ol>
+
+<hr>
+
+<h3>Loss Functions</h3>
+<ul>
+  <li><strong>Loss function</strong> measures how far the model’s prediction is from the true answer. The goal during training is to minimize this loss.</li>
+  <li><b>Mean Squared Error (MSE):</b> Used for regression; measures average of squared differences.</li>
+  <li><b>Cross-Entropy Loss:</b> Used in classification; penalizes being confidently wrong.</li>
+  <li>Other loss functions exist for special tasks (hinge loss, log loss, etc.).</li>
+</ul>
+<pre>
+MSE:       L = (1/n) Σ (y_pred - y_true)²
+Cross-Entropy:   L = – Σ y_true · log(y_pred)
+</pre>
+
+<hr>
+
+<h3>Backpropagation: Intuition &amp; Math (Simple Example)</h3>
+<ul>
+  <li>Backpropagation is a way to adjust all weights & biases to make the network better.</li>
+  <li>It computes how much each weight and bias contributed to the error, working <em>backwards</em> from the loss to all parameters (using calculus/gradients).</li>
+  <li>It repeatedly updates parameters using a process called <b>gradient descent</b>.</li>
+  <li>Even a simple 2-layer network may use the chain rule to propagate error backward.</li>
+</ul>
+<pre>
+For each weight: w := w - learning_rate * (∂Loss/∂w)
+</pre>
+
+<hr>
+
+<h3>Epochs, Batches, and Iterations</h3>
+<ul>
+  <li><b>Epoch:</b> One full pass through the entire training dataset.</li>
+  <li><b>Batch:</b> The subset of data passed to the model before updating weights.</li>
+  <li><b>Iteration:</b> One update of the model (each batch = one iteration).</li>
+  <li>Training often uses mini-batches: process part of the data, update weights, repeat for the full dataset.</li>
+</ul>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Weights & biases learn the best mapping from inputs to outputs.</li>
+  <li>The forward pass makes predictions; backpropagation learns from mistakes.</li>
+  <li>Loss functions guide improvements; batches and epochs organize learning.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultTrainNN {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationTrainNN {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 3: Training Neural Networks Quiz</h2>
+
+<form id="trainNNQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What do weights and biases do in a neural network?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> Control the signals and thresholds during data flow</label>
+    <label><input type="radio" name="q1" value="wrong" /> Store the training data</label>
+    <label><input type="radio" name="q1" value="wrong" /> Define the learning rate</label>
+    <label><input type="radio" name="q1" value="wrong" /> Act as output labels</label>
+    <button type="button" class="btn-submit" onclick="submitTrainNN(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+  
+  <div class="question-block">
+    <p class="question-text"><strong>2. What is the purpose of the forward pass?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> Adjust weights and biases</label>
+    <label><input type="radio" name="q2" value="correct" /> Compute output predictions from inputs</label>
+    <label><input type="radio" name="q2" value="wrong" /> Initialize the activation functions</label>
+    <label><input type="radio" name="q2" value="wrong" /> Calculate loss only</label>
+    <button type="button" class="btn-submit" onclick="submitTrainNN(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+  
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which loss function is typically used for classification problems?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> Mean Squared Error (MSE)</label>
+    <label><input type="radio" name="q3" value="correct" /> Cross-Entropy Loss</label>
+    <label><input type="radio" name="q3" value="wrong" /> Mean Absolute Error</label>
+    <label><input type="radio" name="q3" value="wrong" /> Hinge Loss</label>
+    <button type="button" class="btn-submit" onclick="submitTrainNN(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+  
+  <div class="question-block">
+    <p class="question-text"><strong>4. What does backpropagation do?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> Computes gradients for weights and biases to minimize loss</label>
+    <label><input type="radio" name="q4" value="wrong" /> Passes inputs forward</label>
+    <label><input type="radio" name="q4" value="wrong" /> Randomly change weights during training</label>
+    <label><input type="radio" name="q4" value="wrong" /> Measures accuracy of predictions</label>
+    <button type="button" class="btn-submit" onclick="submitTrainNN(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+  
+  <div class="question-block">
+    <p class="question-text"><strong>5. What is an epoch in neural network training?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> One update of weights using a single data example</label>
+    <label><input type="radio" name="q5" value="wrong" /> Number of features</label>
+    <label><input type="radio" name="q5" value="correct" /> One full pass through the entire training set</label>
+    <label><input type="radio" name="q5" value="wrong" /> A unit of loss measurement</label>
+    <button type="button" class="btn-submit" onclick="submitTrainNN(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultTrainNN"></div>
+<p id="motivationTrainNN"></p>
+
+<script>
+  const trainNNAnswers = {
+    q1: 'Control the signals and thresholds during data flow',
+    q2: 'Compute output predictions from inputs',
+    q3: 'Cross-Entropy Loss',
+    q4: 'Computes gradients for weights and biases to minimize loss',
+    q5: 'One full pass through the entire training set'
+  };
+  const trainNNCorrect = {
+    q1: 'correct', q2: 'correct', q3: 'correct', q4: 'correct', q5: 'correct'
+  };
+  const userTrainNN = {};
+
+  function submitTrainNN(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+    userTrainNN['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+    if (selected === trainNNCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Excellent! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${trainNNAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning and improving!</span>`;
+    }
+    if (Object.keys(userTrainNN).length === 5) {
+      showTrainNNResult();
+    }
+  }
+
+  function showTrainNNResult() {
+    let score = 0;
+    for (const key in userTrainNN) {
+      if (userTrainNN[key] === trainNNCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultTrainNN').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Great work! Training neural networks is fundamental to deep learning.",
+      "Keep it up! Understanding forward and backward passes is key.",
+      "Amazing progress! Loss functions guide your model to learn better.",
+      "Fantastic! Every epoch makes your model smarter.",
+      "Well done! You're mastering important deep learning concepts."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationTrainNN').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 4 -->  
+        <div class="chapter" id="chapter4">  
+            <h2>Chapter 4: Convolutional Neural Networks (CNNs)</h2>  
+            <div class="chapter-content">
+                <p>
+Convolutional Neural Networks (CNNs) are specialized deep learning models designed for working with images and other grid-like data. They automatically learn spatial features and are the backbone of modern computer vision applications.
+</p>
+
+<hr>
+
+<h3>Why CNNs are Used for Images</h3>
+<ul>
+  <li>Images have spatial patterns—pixels close together often form meaningful shapes or textures.</li>
+  <li>CNNs use local connections (convolutions) to capture edges, textures, and object parts.</li>
+  <li>They require far fewer weights than fully connected networks, making them easier to train on large images.</li>
+</ul>
+
+<hr>
+
+<h3>Convolution, Filters & Feature Maps</h3>
+<ul>
+  <li><b>Convolution:</b> Applies a small matrix of weights (“filter” or “kernel”) to different portions of the image.</li>
+  <li><b>Filter (Kernel):</b> Small grid (e.g., 3x3, 5x5) that slides across the image, highlighting specific features like edges or corners.</li>
+  <li><b>Feature Map:</b> The result of applying a filter—a new “image” that shows where in the original image the filter detected something interesting.</li>
+</ul>
+
+<hr>
+
+<h3>Pooling (MaxPooling, AvgPooling)</h3>
+<ul>
+  <li><b>Pooling layers</b> reduce the size of feature maps, making the network more robust and faster.</li>
+  <li><b>MaxPooling:</b> Takes the largest value from a region (e.g., 2x2), preserving the strongest feature.</li>
+  <li><b>AvgPooling:</b> Takes the average value from each region, smoothing information.</li>
+  <li>Pooling helps reduce computation and makes the model less sensitive to small shifts and noise.</li>
+</ul>
+
+<hr>
+
+<h3>CNN Architecture Examples (LeNet, AlexNet)</h3>
+<ul>
+  <li><b>LeNet:</b> Early CNN (1998), used for handwritten digit recognition (MNIST). Features 2 convolution + pooling layers, then 2 fully connected layers.</li>
+  <li><b>AlexNet:</b> Deep breakthrough CNN (2012), won ImageNet contest. Uses 5 convolution layers, max pooling, ReLU activation, and dropout for regularization.</li>
+</ul>
+
+<hr>
+
+<h3>Hands-on Mini Image Classification Demo (Python Example)</h3>
+<pre><code>
+import tensorflow as tf
+model = tf.keras.Sequential([
+    tf.keras.layers.Conv2D(32, (3, 3), activation="relu", input_shape=(28, 28, 1)),
+    tf.keras.layers.MaxPooling2D(2, 2),
+    tf.keras.layers.Conv2D(64, (3, 3), activation="relu"),
+    tf.keras.layers.MaxPooling2D(2, 2),
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(10, activation="softmax")
+])
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+# Train with: model.fit(train_images, train_labels, epochs=5)
+</code></pre>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>CNNs are the foundation of image and vision AI.</li>
+  <li>They use convolutional layers and pooling to handle spatial data efficiently.</li>
+  <li>LeNet and AlexNet were historic breakthroughs—modern CNNs build on these ideas for greater scale and accuracy.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #80deea;
+  }
+
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+
+  #resultCNN {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+
+  #motivationCNN {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 4: CNN Basics Quiz</h2>
+
+<form id="cnnQuiz">
+  <div class="question-block">
+    <p class="question-text"><strong>1. Why are CNNs preferred for image data?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> They capture spatial relationships between pixels efficiently</label>
+    <label><input type="radio" name="q1" value="wrong" /> They ignore spatial information</label>
+    <label><input type="radio" name="q1" value="wrong" /> They use fully connected layers only</label>
+    <label><input type="radio" name="q1" value="wrong" /> They have no learnable parameters</label>
+    <button type="button" class="btn-submit" onclick="submitCNN(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What does a convolutional filter do?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> Adds noise to the image</label>
+    <label><input type="radio" name="q2" value="correct" /> Detects specific features like edges by scanning the image</label>
+    <label><input type="radio" name="q2" value="wrong" /> Enlarges the image</label>
+    <label><input type="radio" name="q2" value="wrong" /> Removes colors</label>
+    <button type="button" class="btn-submit" onclick="submitCNN(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is MaxPooling used for in CNNs?</strong></p>
+    <label><input type="radio" name="q3" value="correct" /> To reduce spatial dimensions by taking the maximum value in regions</label>
+    <label><input type="radio" name="q3" value="wrong" /> To increase the size of feature maps</label>
+    <label><input type="radio" name="q3" value="wrong" /> To remove filters</label>
+    <label><input type="radio" name="q3" value="wrong" /> To normalize the input data</label>
+    <button type="button" class="btn-submit" onclick="submitCNN(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which CNN architecture was the first to win the ImageNet competition?</strong></p>
+    <label><input type="radio" name="q4" value="wrong" /> LeNet</label>
+    <label><input type="radio" name="q4" value="correct" /> AlexNet</label>
+    <label><input type="radio" name="q4" value="wrong" /> VGGNet</label>
+    <label><input type="radio" name="q4" value="wrong" /> ResNet</label>
+    <button type="button" class="btn-submit" onclick="submitCNN(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What activation function is commonly used in CNN layers?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> Sigmoid</label>
+    <label><input type="radio" name="q5" value="wrong" /> Tanh</label>
+    <label><input type="radio" name="q5" value="correct" /> ReLU</label>
+    <label><input type="radio" name="q5" value="wrong" /> Softmax</label>
+    <button type="button" class="btn-submit" onclick="submitCNN(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultCNN"></div>
+<p id="motivationCNN"></p>
+
+<script>
+  const cnnAnswers = {
+    q1: 'They capture spatial relationships between pixels efficiently',
+    q2: 'Detects specific features like edges by scanning the image',
+    q3: 'To reduce spatial dimensions by taking the maximum value in regions',
+    q4: 'AlexNet',
+    q5: 'ReLU'
+  };
+  const cnnCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userCNN = {};
+
+  function submitCNN(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userCNN['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === cnnCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Well done! That is correct.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${cnnAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning, you'll get better!</span>`;
+    }
+
+    if (Object.keys(userCNN).length === 5) {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    let score = 0;
+    for (const key in userCNN) {
+      if (userCNN[key] === cnnCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultCNN').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Great job! CNN concepts are key in modern AI.",
+      "Keep practicing! Your understanding of CNNs is growing.",
+      "Well done! Visual learning is powerful with CNNs.",
+      "Awesome! You're mastering important deep learning fundamentals.",
+      "Keep it up! CNN expertise opens many AI doors."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationCNN').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 5 -->  
+        <div class="chapter" id="chapter5">  
+            <h2>Chapter 5: Recurrent Neural Networks (RNNs)</h2>  
+            <div class="chapter-content">  
+                <h2>Chapter 5: Recurrent Neural Networks (RNNs) & LSTMs – Detailed Notes</h2>
+
+<p>
+<strong>Recurrent Neural Networks (RNNs)</strong> are specialized neural networks for dealing with sequence data: anything where order matters, like time series, sentences, speech, or DNA.
+</p>
+
+<hr/>
+
+<h3>Why We Need RNNs for Sequences</h3>
+<ul>
+  <li><b>Standard (feedforward) neural networks</b> have no “memory” of previous data—their output depends only on the current input.</li>
+  <li><b>Sequential tasks</b>—language, music, stock prices—require considering what came before.</li>
+  <li><b>RNNs embed “memory”</b> by using a <b>hidden state</b> that carries information from one step to the next, letting the model learn patterns over time.</li>
+  <li>Example: Predicting the next word in “the sky is ____” depends heavily on the previous words.</li>
+</ul>
+
+<hr/>
+
+<h3>Structure of an RNN</h3>
+<ul>
+  <li>An RNN processes data one step at a time (e.g., one word, one time point).</li>
+  <li>At each step:
+    <ul>
+      <li>Takes the current input (\( x_t \)) and the previous “hidden state” (\( h_{t-1} \)).</li>
+      <li>Calculates the new hidden state: <br>
+      \( h_t = \text{activation}(W_{hh} h_{t-1} + W_{xh} x_t + b) \)</li>
+      <li>The output and new hidden state are passed forward.</li>
+    </ul>
+  </li>
+  <li>Visually, a chain of repeating “cells” where each passes state forward:
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Recurrent_neural_network_unfold.svg/400px-Recurrent_neural_network_unfold.svg.png" 
+    alt="RNN Unfolded" width="360"/>
+  </li>
+  <li>Weights (\( W \)) are shared across time steps (parameter efficiency).</li>
+</ul>
+
+<hr/>
+
+<h3>Vanishing & Exploding Gradient Problem</h3>
+<ul>
+  <li>RNNs are trained with <b>Backpropagation Through Time (BPTT)</b>—a version of gradient descent for sequences.</li>
+  <li>If the sequence is long, the gradients (for weight updates) can become very small (<b>vanishing</b>) or very large (<b>exploding</b>).</li>
+  <li><b>Vanishing:</b> Earlier inputs get “forgotten”; the model doesn't learn long-term dependencies.</li>
+  <li><b>Exploding:</b> Network becomes unstable; weights may “blow up.”</li>
+  <li>Practical fixes: <b>gradient clipping</b> (for exploding), and most importantly, better architectures (see below).</li>
+</ul>
+
+<hr/>
+
+<h3>LSTMs & GRUs – Advanced Recurrent Cells</h3>
+<ul>
+  <li><b>LSTM (Long Short-Term Memory):</b>
+    <ul>
+      <li>Adds <b>gates</b>—forget, input, output—that control information flow.</li>
+      <li>Can “choose” to remember or forget at every step, solving the vanishing gradient issue and allowing learning of long-term dependencies.</li>
+      <li>Formula highlights (<i>simplified</i>):
+        <ul>
+          <li>Forget gate: \( f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \)</li>
+          <li>Input gate: \( i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \) </li>
+          <li>Cell update: \( \tilde{C}_t = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \)</li>
+          <li>Final cell state: \( C_t = f_t * C_{t-1} + i_t * \tilde{C}_t \)</li>
+        </ul>
+      </li>
+      <li>LSTM cells are the standard for most sequence tasks (text, time series, etc).</li>
+    </ul>
+  </li>
+  <li><b>GRU (Gated Recurrent Unit):</b> Simpler than LSTM; combines some gates; often similar performance but easier to train.</li>
+</ul>
+
+<hr/>
+
+<h3>Applications: Real Use Cases</h3>
+<ul>
+  <li><b>Natural Language Processing:</b> Language modeling, sentiment analysis, translation (seq2seq).</li>
+  <li><b>Speech Recognition:</b> Convert audio signals to text.</li>
+  <li><b>Stock & Weather Forecasting:</b> Predict future values from previous trends.</li>
+  <li><b>Text Generation:</b> Generate new text character-by-character or word-by-word.</li>
+</ul>
+<pre><code>
+# Simple RNN text prediction in TensorFlow
+import tensorflow as tf
+model = tf.keras.Sequential([
+    tf.keras.layers.SimpleRNN(50, input_shape=(seq_length, vocab_size)),
+    tf.keras.layers.Dense(vocab_size, activation='softmax')
+])
+</code></pre>
+<ul>
+  <li>LSTM/GRU layers are available in all major deep learning libraries (Keras, PyTorch, etc).</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>RNNs handle sequential data by remembering past inputs via a hidden state.</li>
+  <li>Training RNNs is challenging due to vanishing/exploding gradients—the main reason LSTMs and GRUs were invented.</li>
+  <li>LSTMs/GRUs dominate in text, speech, and sequence prediction tasks.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultRNN {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationRNN {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 5: RNNs & LSTMs Quiz</h2>
+
+<form id="rnnQuiz">
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is the key advantage of RNNs over traditional neural networks?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> They maintain a hidden state that captures sequence information</label>
+    <label><input type="radio" name="q1" value="wrong" /> They use convolutional layers</label>
+    <label><input type="radio" name="q1" value="wrong" /> They don’t have weights to learn</label>
+    <label><input type="radio" name="q1" value="wrong" /> They process all inputs simultaneously</label>
+    <button type="button" class="btn-submit" onclick="submitRNN(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What problem does the vanishing gradient cause in RNN training?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> The model trains faster</label>
+    <label><input type="radio" name="q2" value="wrong" /> The gradients explode and become too large</label>
+    <label><input type="radio" name="q2" value="correct" /> The model forgets long-term dependencies</label>
+    <label><input type="radio" name="q2" value="wrong" /> The model loses weights completely</label>
+    <button type="button" class="btn-submit" onclick="submitRNN(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. How do LSTMs overcome the vanishing gradient problem?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> By removing connections</label>
+    <label><input type="radio" name="q3" value="wrong" /> By simplifying the network</label>
+    <label><input type="radio" name="q3" value="correct" /> Through gated cells controlling information flow</label>
+    <label><input type="radio" name="q3" value="wrong" /> By using batch normalization</label>
+    <button type="button" class="btn-submit" onclick="submitRNN(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What is a common use case for RNNs & LSTMs?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> Sequence prediction like text or stock trends</label>
+    <label><input type="radio" name="q4" value="wrong" /> Predicting static images</label>
+    <label><input type="radio" name="q4" value="wrong" /> Sorting numbers</label>
+    <label><input type="radio" name="q4" value="wrong" /> Clustering data</label>
+    <button type="button" class="btn-submit" onclick="submitRNN(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What does the “hidden state” in an RNN do?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> Stores information about previous inputs in the sequence</label>
+    <label><input type="radio" name="q5" value="wrong" /> Generates random noise</label>
+    <label><input type="radio" name="q5" value="wrong" /> Holds the final output only</label>
+    <label><input type="radio" name="q5" value="wrong" /> Controls the learning rate</label>
+    <button type="button" class="btn-submit" onclick="submitRNN(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultRNN"></div>
+<p id="motivationRNN"></p>
+
+<script>
+  const rnnAnswers = {
+    q1: 'They maintain a hidden state that captures sequence information',
+    q2: 'The model forgets long-term dependencies',
+    q3: 'Through gated cells controlling information flow',
+    q4: 'Sequence prediction like text or stock trends',
+    q5: 'Stores information about previous inputs in the sequence'
+  };
+  const rnnCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userRNN = {};
+
+  function submitRNN(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userRNN['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === rnnCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Well done! That is correct.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${rnnAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning and you’ll master these concepts!</span>`;
+    }
+
+    if (Object.keys(userRNN).length === 5) {
+      showRNNResult();
+    }
+  }
+
+  function showRNNResult() {
+    let score = 0;
+
+    for (const key in userRNN) {
+      if (userRNN[key] === rnnCorrect[key]) score++;
+    }
+
+    const percentage = (score / 5) * 100;
+
+    document.getElementById('resultRNN').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Fantastic! You're building strong knowledge of RNNs and LSTMs.",
+      "Great job! Sequence models are powerful tools in AI.",
+      "Well done! Keep practicing and mastering deep learning.",
+      "Excellent! Understanding memory in networks is key.",
+      "Keep it up! The future of AI involves sequences and time series."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationRNN').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 6 -->  
+        <div class="chapter" id="chapter6">  
+            <h2>Chapter 6: Deep Learning Projects</h2>  
+            <div class="chapter-content">
+<p>
+Building and understanding real projects is the most important step to mastering deep learning! Here are in-depth walkthroughs for three foundational types of projects and why they matter for your portfolio.
+</p>
+
+<hr/>
+
+<h3>1. Image Classification Project (MNIST or CIFAR-10)</h3>
+<ul>
+  <li><b>Objective:</b> Predict what is in an image—e.g., classify handwritten digits (0–9, MNIST) or small object photos (CIFAR-10, 10 categories).</li>
+  <li><b>Steps:</b>
+    <ol>
+      <li><b>Dataset Loading:</b> 
+        <ul>
+          <li>With <code>tf.keras.datasets</code>: <br>
+            <code>(X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()</code></li>
+          <li>CIFAR-10: <code>tf.keras.datasets.cifar10.load_data()</code></li>
+        </ul>
+      </li>
+      <li><b>Preprocessing:</b>
+        <ul>
+          <li>Normalize pixel values (0–1): <code>X_train = X_train / 255.0</code></li>
+          <li>Reshape as required (e.g., add a color channel for grayscale: (28,28) → (28,28,1)).</li>
+          <li>One-hot encode labels for softmax output (optionally).</li>
+        </ul>
+      </li>
+      <li><b>Model Building:</b>
+        <ul>
+          <li>Stack Conv2D (convolutional) layers with activation (ReLU), followed by MaxPooling2D, then Flatten and Dense softmax layer for prediction.</li>
+        </ul>
+      </li>
+      <li><b>Training:</b>
+        <ul>
+          <li>Compile: specify optimizer (<code>adam</code>), loss (e.g., <code>sparse_categorical_crossentropy</code>), and metrics (accuracy).</li>
+          <li>Train: <code>model.fit(X_train, y_train, epochs=5, batch_size=32)</code></li>
+        </ul>
+      </li>
+      <li><b>Evaluation:</b>
+        <ul>
+          <li>Check accuracy, confusion matrix, and try predicting / visualizing some sample images.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><b>Learning Outcome:</b> You’ll understand CNNs in practice, learn about input shapes/channels, and how classification outputs work.</li>
+</ul>
+
+<hr/>
+
+<h3>2. Text Classification Project (Sentiment Analysis)</h3>
+<ul>
+  <li><b>Objective:</b> Classify whether a text (like a movie review) is positive or negative—classic binary sentiment analysis.</li>
+  <li><b>Steps:</b>
+    <ol>
+      <li><b>Data:</b> Popular options: <code>tf.keras.datasets.imdb.load_data()</code>, Kaggle sentiment datasets, twitter data.</li>
+      <li><b>Preprocessing:</b>
+        <ul>
+          <li><b>Tokenize text:</b> Convert words to integer IDs.</li>
+          <li><b>Pad/truncate:</b> Make all sequences the same length (<code>tf.keras.preprocessing.sequence.pad_sequences</code>).</li>
+          <li><b>Vocabulary size:</b> Limit to most frequent words for efficiency (e.g., 10,000 words).</li>
+        </ul>
+      </li>
+      <li><b>Model:</b>
+        <ul>
+          <li>Start with an <b>Embedding layer</b> (turns IDs into dense vectors), followed by LSTM, GRU, or 1D Convolutional layers, ending in Dense output (sigmoid for binary).</li>
+        </ul>
+      </li>
+      <li><b>Compile & Train:</b> 
+        <ul>
+          <li>Loss: <code>binary_crossentropy</code>, metric: accuracy</li>
+        </ul>
+      </li>
+      <li><b>Evaluation:</b>
+        <ul>
+          <li>Confusion matrix—did you confuse positive and negative a lot? Try sequences that trick your model.</li>
+          <li>Print out or plot a handful of “hard” cases and see why they fail.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><b>Learning Outcome:</b> Experience full NLP pipeline: text → tokens → embeddings → model → predictions.</li>
+</ul>
+
+<hr/>
+
+<h3>3. Small Time Series Prediction Project (using RNN/LSTM)</h3>
+<ul>
+  <li><b>Objective:</b> Predict the next value(s) in a sequence (stock prices, weather, sensor data) using past data.</li>
+  <li><b>Steps:</b>
+    <ol>
+      <li><b>Data Collection:</b> Use a CSV of stock prices, daily temps, or generate a simple series in code.</li>
+      <li><b>Preprocessing:</b>
+        <ul>
+          <li>Turn series into sequences: for each “window” (e.g. 5 days), use as input to predict the next point.</li>
+          <li>Normalize or standardize values for stability (<code>X = (X - mean) / std</code>).</li>
+        </ul>
+      </li>
+      <li><b>Model:</b>
+        <ul>
+          <li>Stack 1-2 LSTM layers (or GRUs), possibly add Dropout for regularization. Output can be a single number (regression) or a class (e.g., up/down trend).</li>
+        </ul>
+      </li>
+      <li><b>Training:</b>
+        <ul>
+          <li>Loss: <code>mean_squared_error</code> for regression, <code>binary_crossentropy</code> for up/down classification.</li>
+        </ul>
+      </li>
+      <li><b>Evaluation:</b>
+        <ul>
+          <li>Plot predicted vs. actual—visualization is more intuitive than accuracy here.</li>
+          <li>Try shifting the window size and see how it affects results.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><b>Learning Outcome:</b> Gain practical insight on sliding windows, sequential data, and real-world sequence forecasting challenges.</li>
+</ul>
+
+<hr/>
+
+<h3>Importance of Building Projects for Portfolios</h3>
+<ul>
+  <li><b>Skill Proof:</b> Actual projects show an employer—“I can do this” much better than just grades or certificates.</li>
+  <li><b>Communication:</b> Your report, notebook, or blog about your project is as important as the code! Clear explanation matters.</li>
+  <li><b>Experience:</b> You practice full workflow: data wrangling → model design → training → error analysis → sharing results.</li>
+  <li><b>Job & Internship Leverage:</b> Entry-level AI/ML roles look for self-driven project work on public datasets.</li>
+</ul>
+<blockquote>
+Try to document your projects well and share them (e.g. GitHub, portfolio site, Kaggle or LinkedIn). Even simple projects showcase your learning!
+</blockquote>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Use classic datasets to show core skills; don’t just copy, but experiment and extend.</li>
+  <li>Visualize results and failures—don’t skip the “why did it go wrong?” step.</li>
+  <li>Portfolios with code, plots, and explanations make you stand out for ML/DL opportunities.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 8px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,121,107,0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 180px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 8px;
+  }
+  #resultProjects {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-top: 30px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationProjects {
+    font-style: italic;
+    margin-top: 12px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 6: Deep Learning Projects Quiz</h2>
+
+<form id="projectsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is the primary goal of an image classification project like MNIST?</strong></p>
+    <label><input type="radio" name="q1" value="correct"> Automatically identify the class of an image (e.g., digit 0-9)</label>
+    <label><input type="radio" name="q1" value="wrong"> Build a text-based chatbot</label>
+    <label><input type="radio" name="q1" value="wrong"> Predict stock prices</label>
+    <label><input type="radio" name="q1" value="wrong"> Analyze speech signals</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which layer type is typically used first in a CNN for image classification?</strong></p>
+    <label><input type="radio" name="q2" value="wrong"> Dense (Fully Connected) Layer</label>
+    <label><input type="radio" name="q2" value="correct"> Convolutional Layer</label>
+    <label><input type="radio" name="q2" value="wrong"> Recurrent Layer</label>
+    <label><input type="radio" name="q2" value="wrong"> Embedding Layer</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. For a text classification project, which step is essential in preparing data?</strong></p>
+    <label><input type="radio" name="q3" value="correct"> Tokenizing and padding sequences</label>
+    <label><input type="radio" name="q3" value="wrong"> Converting images to grayscale</label>
+    <label><input type="radio" name="q3" value="wrong"> Normalizing pixel values</label>
+    <label><input type="radio" name="q3" value="wrong"> Using convolutional layers only</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. In time series prediction with RNNs, what does the input sequence represent?</strong></p>
+    <label><input type="radio" name="q4" value="wrong"> Random unrelated points</label>
+    <label><input type="radio" name="q4" value="wrong"> Images</label>
+    <label><input type="radio" name="q4" value="correct"> Past sequential values used to predict the future</label>
+    <label><input type="radio" name="q4" value="wrong"> Output labels only</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Why is building projects important for your portfolio?</strong></p>
+    <label><input type="radio" name="q5" value="correct"> Demonstrates real practical skills to employers</label>
+    <label><input type="radio" name="q5" value="wrong"> Only theoretical knowledge matters</label>
+    <label><input type="radio" name="q5" value="wrong"> Projects don’t need documentation</label>
+    <label><input type="radio" name="q5" value="wrong"> Projects have no impact on job applications</label>
+    <button type="button" class="btn-submit" onclick="submitProjects(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultProjects"></div>
+<p id="motivationProjects"></p>
+
+<script>
+  const projectsAnswers = {
+    q1: 'Automatically identify the class of an image (e.g., digit 0-9)',
+    q2: 'Convolutional Layer',
+    q3: 'Tokenizing and padding sequences',
+    q4: 'Past sequential values used to predict the future',
+    q5: 'Demonstrates real practical skills to employers'
+  };
+  const projectsCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userProjects = {};
+
+  function submitProjects(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userProjects['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === projectsCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Well done! That is correct.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${projectsAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep practicing to build strong portfolios!</span>`;
+    }
+
+    if (Object.keys(userProjects).length === 5) {
+      showProjectsResult();
+    }
+  }
+
+  function showProjectsResult() {
+    let score = 0;
+    for (const key in userProjects) {
+      if (userProjects[key] === projectsCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultProjects').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! Projects speak louder than words in AI careers.",
+      "Great job! Keep building and sharing your work.",
+      "Well done! Practice by projects leads to mastery.",
+      "Fantastic! Real skills shine in practical projects.",
+      "Keep it up! Your portfolio is your personal brand."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationProjects').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 7 -->  
+        <div class="chapter" id="chapter7">  
+            <h2>Chapter 7: Ethics in Deep Learning</h2>  
+            <div class="chapter-content">  
+                <h2>Chapter 7: Ethics in Deep Learning</h2>
+
+<p>
+As powerful as deep learning systems are, they raise significant ethical issues that practitioners must address. Understanding these concerns is as important as technical mastery for real-world impact.
+</p>
+
+<hr/>
+
+<h3>Bias in AI Models</h3>
+<ul>
+  <li><b>What is it?</b> Bias arises when a model produces results that are systematically prejudiced due to flaws in the data or learning process.</li>
+  <li><b>Example:</b> Facial recognition systems that work poorly for certain ethnicities because of insufficient or unbalanced training data.</li>
+  <li><b>Source:</b> Can come from biased data (historical injustice, underrepresentation), biased labeling, or even the model's design itself.</li>
+  <li><b>Why it matters:</b> Can perpetuate and even amplify unfair treatment in critical areas (hiring, law enforcement, lending).</li>
+</ul>
+
+<hr/>
+
+<h3>Data Privacy & Security Concerns</h3>
+<ul>
+  <li>AI models often require vast amounts of data — sometimes personal, sensitive, or confidential.</li>
+  <li>Risks include <b>data breaches, misuse, re-identification of anonymized data, and training data leaks</b> (where the model reveals private info).</li>
+  <li>Techniques like data anonymization, encryption, federated learning, and privacy policies are necessary to protect individual rights.</li>
+  <li>Laws and frameworks (GDPR, CCPA) increasingly regulate how data can be used or stored for AI.</li>
+</ul>
+
+<hr/>
+
+<h3>Explainable AI (XAI)</h3>
+<ul>
+  <li>Deep learning models are often "black boxes"—their decisions are hard to interpret.</li>
+  <li><b>Why XAI?</b> For trust, transparency, and legal reasons, it’s crucial to understand and explain how/why a model made its decision.</li>
+  <li>Methods: Feature importance, LIME, SHAP, attention mechanisms, simplifying models—these help provide insight into AI predictions.</li>
+  <li>Regulated industries (healthcare, finance, law) increasingly require XAI.</li>
+</ul>
+
+<hr/>
+
+<h3>Responsible Use of Deep Learning in Society</h3>
+<ul>
+  <li>AI systems should <b>benefit society and avoid harm</b>; misuse can cause discrimination, reinforce stereotypes, or enable surveillance and manipulation.</li>
+  <li>Practitioners must consider impact: Who is affected? What’s the risk if the model is wrong?</li>
+  <li>Fairness, accountability, and transparency are guiding principles.</li>
+  <li>Organizations should establish ethical review processes, constant monitoring, and clear lines of responsibility for model use.</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Bias, privacy, explainability, and societal impact are core responsibilities for deep learning practitioners.</li>
+  <li>Stay informed about legal requirements and evolving ethical norms.</li>
+  <li>Seek to build not just powerful, but fair and trustworthy AI systems.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 470px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultEthics {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationEthics {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 7: Ethics in Deep Learning Quiz</h2>
+
+<form id="ethicsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What can cause bias in AI models?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> Biased or unrepresentative training data</label>
+    <label><input type="radio" name="q1" value="wrong" /> Using too many layers</label>
+    <label><input type="radio" name="q1" value="wrong" /> Using ReLU activation</label>
+    <label><input type="radio" name="q1" value="wrong" /> Normalizing inputs</label>
+    <button type="button" class="btn-submit" onclick="submitEthics(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Data privacy concerns in AI arise mainly because:</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> Models require no data</label>
+    <label><input type="radio" name="q2" value="correct" /> AI uses large amounts of often personal data</label>
+    <label><input type="radio" name="q2" value="wrong" /> AI doesn’t handle any security protocols</label>
+    <label><input type="radio" name="q2" value="wrong" /> Models always reveal private data openly</label>
+    <button type="button" class="btn-submit" onclick="submitEthics(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Explainable AI (XAI) helps because:</strong></p>
+    <label><input type="radio" name="q3" value="correct" /> It clarifies why a model made a particular decision</label>
+    <label><input type="radio" name="q3" value="wrong" /> It reduces model accuracy</label>
+    <label><input type="radio" name="q3" value="wrong" /> It hides the decision process</label>
+    <label><input type="radio" name="q3" value="wrong" /> It removes layers from the neural network</label>
+    <button type="button" class="btn-submit" onclick="submitEthics(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Responsible AI use requires:</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> Transparency, fairness, and accountability</label>
+    <label><input type="radio" name="q4" value="wrong" /> Maximizing profit only</label>
+    <label><input type="radio" name="q4" value="wrong" /> Ignoring biases in data</label>
+    <label><input type="radio" name="q4" value="wrong" /> Deploying models without testing</label>
+    <button type="button" class="btn-submit" onclick="submitEthics(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which regulation governs data privacy in Europe?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> GDPR (General Data Protection Regulation)</label>
+    <label><input type="radio" name="q5" value="wrong" /> HIPAA</label>
+    <label><input type="radio" name="q5" value="wrong" /> FISMA</label>
+    <label><input type="radio" name="q5" value="wrong" /> CCPA</label>
+    <button type="button" class="btn-submit" onclick="submitEthics(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultEthics"></div>
+<p id="motivationEthics"></p>
+
+<script>
+  const ethicsAnswers = {
+    q1: 'Biased or unrepresentative training data',
+    q2: 'AI uses large amounts of often personal data',
+    q3: 'It clarifies why a model made a particular decision',
+    q4: 'Transparency, fairness, and accountability',
+    q5: 'GDPR (General Data Protection Regulation)'
+  };
+  const ethicsCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userEthics = {};
+
+  function submitEthics(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userEthics['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === ethicsCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Excellent! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${ethicsAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep reflecting on these important principles!</span>`;
+    }
+
+    if (Object.keys(userEthics).length === 5) {
+      showEthicsResult();
+    }
+  }
+
+  function showEthicsResult() {
+    let score = 0;
+    for (const key in userEthics) {
+      if (userEthics[key] === ethicsCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultEthics').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Well done! Ethics is crucial in responsible AI development.",
+      "Great job! Understanding bias and privacy protects users.",
+      "Excellent! Explainability builds trust in AI systems.",
+      "Keep it up! Ethical awareness shapes the future of AI.",
+      "Fantastic! Your knowledge helps create fair and safe AI."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationEthics').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+            </div>  
+        </div>  
+
+        <!-- Chapter 8 -->  
+        <div class="chapter" id="chapter8">  
+            <h2>Chapter 8: Future of Deep Learning</h2>  
+            <div class="chapter-content">  
+<h2>Chapter 8: Future of Deep Learning</h2>
+
+<p>
+Deep learning continues to transform technology and society. New models and applications are pushing boundaries and reshaping what’s possible. Here’s what’s next in the field:
+</p>
+
+<hr/>
+
+<h3>Transformers & Large Language Models (LLMs)</h3>
+<ul>
+  <li><b>Transformers:</b> Powerful neural architectures based on “attention mechanisms” that excel at understanding and generating sequences (text, code, even images and audio).</li>
+  <li><b>Large Language Models (LLMs):</b> Massive transformer-based models (e.g., GPT-4) trained on billions of documents; capable of conversation, code generation, creative writing, and more.</li>
+  <li><b>Impact:</b> These models have made breakthroughs in translation, summarization, open-domain Q&A, and multimodal reasoning.</li>
+</ul>
+
+<hr/>
+
+<h3>Generative AI & GANs</h3>
+<ul>
+  <li><b>Generative AI:</b> Systems that don’t just analyze but also <b>create</b>—writing, drawing, composing music, etc.</li>
+  <li><b>GANs (Generative Adversarial Networks):</b> Two neural nets compete (a generator makes fakes, a discriminator tries to spot them) to create ultra-realistic images, art, or videos.</li>
+  <li><b>Stable Diffusion, DALL-E:</b> New image models can create striking original visuals from text prompts.</li>
+  <li>Applications include deepfakes, design, art, video games, and even drug discovery.</li>
+</ul>
+
+<hr/>
+
+<h3>AI in Healthcare, Autonomous Vehicles, and Robotics</h3>
+<ul>
+  <li><b>Healthcare:</b> Early disease detection from medical images, drug discovery, patient risk prediction, and AI-powered diagnostics.</li>
+  <li><b>Autonomous Vehicles:</b> Self-driving cars use deep learning for perception, decision-making, and safe navigation.</li>
+  <li><b>Robotics:</b> End-to-end learning for grasping, locomotion, and real-time adaptation. Robots can increasingly learn from video and simulation.</li>
+  <li>All these fields require safety, reliability, and ethical responsibility.</li>
+</ul>
+
+<hr/>
+
+<h3>The Future Job Market & Research Directions</h3>
+<ul>
+  <li><b>Skills In Demand:</b> AI/ML engineers, prompt engineers, data scientists, deep learning researchers, AI ethics specialists.</li>
+  <li><b>Key Research Frontiers:</b>
+    <ul>
+      <li>Making LLMs and generative models more efficient, fair, and trustworthy.</li>
+      <li>Bridging learning from small data, new forms of reasoning, and “explainable” AI.</li>
+      <li>AI safety, privacy, and sustainable models (lowering energy use).</li>
+      <li>Integration with edge devices, IoT, and hybrid human-AI teams.</li>
+    </ul>
+  </li>
+  <li>Upskill in coding, applied math, domain expertise, and ethical thinking to stay future-ready!</li>
+</ul>
+
+<hr/>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Transformers and LLMs are setting new standards in AI.</li>
+  <li>Generative AI is making computers creative partners.</li>
+  <li>Healthcare, transport, and robotics will be deeply impacted.</li>
+  <li>The job market is exploding, but also asking for responsibility, ethics, and deep adaptability from AI professionals.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 470px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 14px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultFuture {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 24px;
+    color: #004d40;
+    text-align: center;
+  }
+  #motivationFuture {
+    font-style: italic;
+    margin-top: 10px;
+    color: #00695c;
+    text-align: center;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 8: Future of Deep Learning Quiz</h2>
+
+<form id="futureQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is a transformer in deep learning?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> A neural network architecture using attention for sequence modeling</label>
+    <label><input type="radio" name="q1" value="wrong" /> An image compression tool</label>
+    <label><input type="radio" name="q1" value="wrong" /> A physical robot</label>
+    <label><input type="radio" name="q1" value="wrong" /> A database system</label>
+    <button type="button" class="btn-submit" onclick="submitFuture(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. GANs (Generative Adversarial Networks) are mainly used for:</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> Sorting numbers</label>
+    <label><input type="radio" name="q2" value="wrong" /> Audio classification only</label>
+    <label><input type="radio" name="q2" value="correct" /> Generating realistic images and data</label>
+    <label><input type="radio" name="q2" value="wrong" /> Encrypting data</label>
+    <button type="button" class="btn-submit" onclick="submitFuture(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which field is being revolutionized by deep learning for early disease detection?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> Social media analytics</label>
+    <label><input type="radio" name="q3" value="correct" /> Healthcare</label>
+    <label><input type="radio" name="q3" value="wrong" /> Toy manufacturing</label>
+    <label><input type="radio" name="q3" value="wrong" /> Web development</label>
+    <button type="button" class="btn-submit" onclick="submitFuture(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. One of the biggest challenges for the future of LLMs and generative AI is:</strong></p>
+    <label><input type="radio" name="q4" value="wrong" /> Finding enough GPUs</label>
+    <label><input type="radio" name="q4" value="correct" /> Ensuring fairness, trust, and responsible use</label>
+    <label><input type="radio" name="q4" value="wrong" /> Only studying simple datasets</label>
+    <label><input type="radio" name="q4" value="wrong" /> Limiting model size below 1 million parameters</label>
+    <button type="button" class="btn-submit" onclick="submitFuture(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which career domain is projected to grow alongside deep learning advances?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> AI/ML engineering and data science</label>
+    <label><input type="radio" name="q5" value="wrong" /> Steam engine operation</label>
+    <label><input type="radio" name="q5" value="wrong" /> Typewriter repair</label>
+    <label><input type="radio" name="q5" value="wrong" /> Morse code translation</label>
+    <button type="button" class="btn-submit" onclick="submitFuture(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultFuture"></div>
+<p id="motivationFuture"></p>
+
+<script>
+  const futureAnswers = {
+    q1: 'A neural network architecture using attention for sequence modeling',
+    q2: 'Generating realistic images and data',
+    q3: 'Healthcare',
+    q4: 'Ensuring fairness, trust, and responsible use',
+    q5: 'AI/ML engineering and data science'
+  };
+  const futureCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userFuture = {};
+
+  function submitFuture(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (!selectedText) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userFuture['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === futureCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Excellent! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">Correct answer: <strong>${futureAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning—the AI future awaits!</span>`;
+    }
+
+    if (Object.keys(userFuture).length === 5) {
+      showFutureResult();
+    }
+  }
+
+  function showFutureResult() {
+    let score = 0;
+    for (const key in userFuture) {
+      if (userFuture[key] === futureCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultFuture').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Amazing! You're ready to take on the future of deep learning.",
+      "Great job! Stay curious as AI continues to evolve.",
+      "Excellent work—tomorrow's discoveries start with today's learning.",
+      "Well done! You'll help shape the next AI revolution.",
+      "Impressive! The future is bright for life-long learners."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationFuture').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+            </div>  
+        </div>  
+<div style="text-align:center; margin: 40px 0;">  
+  <p><strong>Get your Data Science Basics Certificate for ₹99!</strong> – Showcase your achievement and boost your career.</p>  
+  <button class="enroll" id="payBtn">Get Certificate</button>  
+</div>  
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  document.getElementById("payBtn").onclick = function(e) {
+    e.preventDefault();
+
+    var options = {
+      "key": "rzp_test_1234567890abcdef", // 🔹 Replace with your Razorpay Key ID from Dashboard
+      "amount": 9900, // ₹99 in paise
+      "currency": "INR",
+      "name": "Learnify AI",
+      "description": "Certificate Payment",
+      "image": "https://yourdomain.com/logo.png", // optional logo
+      "handler": function (response) {
+        // ✅ Redirect after successful payment
+        window.location.href = "payment1.html?payment_id=" + response.razorpay_payment_id;
+      },
+      "prefill": {
+        "name": localStorage.getItem("userName") || "Student",
+        "email": localStorage.getItem("userEmail") || "student@email.com",
+        "contact": localStorage.getItem("userPhone") || "9999999999"
+      },
+      "theme": { "color": "#0a1f44" } // navy blue
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response){
+      alert("❌ Payment Failed: " + response.error.description);
+    });
+    rzp.open();
+  }
+</script>
+
+    </div>
+
+    <script>  
+        const chapters = document.querySelectorAll('.chapter h2');  
+        chapters.forEach(chap => {  
+            chap.addEventListener('click', () => {  
+                const content = chap.nextElementSibling;  
+                if (content.style.display === "block") {  
+                    content.style.display = "none";  
+                } else {  
+                    content.style.display = "block";  
+                }  
+            });  
+        });  
+    </script>  
+    
+    <script src="dlscript.js"></script>
+</body>  
+</html>

@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Basics Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #001f3f;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        nav {
+            background-color: #003366;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #00bfff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            color: #001f3f;
+            cursor: pointer;
+            position: relative;
+            padding-right: 25px;
+        }
+        h2::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            font-size: 0.8em;
+        }
+        .chapter {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
+        }
+        .chapter-content {
+            display: none;
+            padding-top: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1;}
+        }
+        button.enroll {
+            display: block;
+            background-color: #001f3f;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            margin: 30px auto;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        button.enroll:hover {
+            background-color: #003366;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            color: #003366;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Basics – Beginner’s Course</h1>
+        <p>Learn Artificial Intelligence from scratch – in-depth, engaging, and easy to understand!</p>
+    </header>
+    <nav>
+        <a href="#chapter1">Introduction</a>
+        <a href="#chapter2">Python</a>
+        <a href="#chapter3">Data</a>
+        <a href="#chapter4">Machine Learning</a>
+        <a href="#chapter5">Projects</a>
+        <a href="#chapter6">Ethics</a>
+        <a href="#chapter7">Future</a>
+        <a href="#chapter8">Summary</a>
+    </nav>
+    <div class="container">
+        <!-- Chapter 1 -->
+        <div class="chapter" id="chapter1">
+            <h2>Chapter 1: Understanding Artificial Intelligence</h2>
+            <div class="chapter-content">
+                <p><strong>Chapter 1: Introduction to AI</strong></p>
+
+<p><strong>What is AI?</strong></p>
+<p>Artificial Intelligence (AI) is the science of making machines — especially computers — think and act like humans. Imagine teaching a computer to:</p>
+<ul>
+  <li>Understand language,</li>
+  <li>Recognize photos,</li>
+  <li>Solve problems, or</li>
+  <li>Make decisions,</li>
+</ul>
+<p>just like humans do! When a machine learns from experience, adapts to changes, and improves its performance, we say it has AI. AI can range from playing a simple game of chess to helping doctors diagnose diseases or enabling self-driving cars to understand roads.</p>
+
+<p><strong>Key Points:</strong></p>
+<ul>
+  <li>Not everything automatic is AI! For example, an automatic washing machine or remote-controlled air conditioner is NOT AI, because they simply follow set instructions without learning or adapting.</li>
+  <li>AI enables machines to “learn” and “improve” by analyzing data and drawing conclusions, while automation just follows programmed steps.</li>
+</ul>
+
+<p><strong>Key Features of AI</strong></p>
+<p>AI has some exciting features that make machines “intelligent”:</p>
+<ul>
+  <li><strong>Learn from Experience:</strong> Like humans learn from mistakes and experiences, AI systems get better when given more examples/data.</li>
+  <li><strong>Reasoning:</strong> AI can analyze situations and solve problems logically.</li>
+  <li><strong>Understanding Language:</strong> Some AI can read and respond in human languages (think of Alexa, Siri, or Google Assistant!).</li>
+  <li><strong>Perception:</strong> AI can use cameras and sensors to “see” and recognize objects, faces, or even emotions.</li>
+  <li><strong>Decision Making:</strong> When given choices, AI can select the best option just like we do!</li>
+</ul>
+
+<p><strong>Types of Intelligence in AI:</strong><br>
+Just as people are good at different things (math, music, talking, or understanding feelings), AI can be designed for:</p>
+<ul>
+  <li>Math/logic,</li>
+  <li>Language,</li>
+  <li>Visuals (like recognizing images),</li>
+  <li>Movement (robots or drones),</li>
+  <li>Music,</li>
+  <li>Social (understanding people),</li>
+  <li>Self-awareness,</li>
+  <li>Understanding nature, and</li>
+  <li>Deep questions (existential intelligence).</li>
+</ul>
+
+<p><strong>Applications in Daily Life</strong></p>
+<p>AI is all around us — even if you don’t notice it! Here are some easy examples:</p>
+<ul>
+  <li><strong>Search engines:</strong> Google uses AI to show you relevant results in seconds.</li>
+  <li><strong>Digital assistants:</strong> Devices like Alexa, Siri, and Google Assistant understand your voice and help set alarms, play music, or answer questions.</li>
+  <li><strong>Online shopping:</strong> Shops recommend products based on what you’ve seen or bought.</li>
+  <li><strong>Navigation:</strong> Maps apps (like Google Maps) suggest quick routes and update in real-time using AI.</li>
+  <li><strong>Social media:</strong> Facebook and Instagram use AI to spot faces in photos and suggest friends to tag.</li>
+  <li><strong>Netflix & YouTube:</strong> Recommend movies and videos you might like.</li>
+</ul>
+
+<p>Other examples include email spam filters, smart home gadgets, video games, and chatbots that answer questions online.</p>
+
+<p><strong>Industry Applications</strong></p>
+<p>AI isn’t just for fun — industries use it to solve big challenges and work smarter:</p>
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+  <tr>
+    <th>Industry</th>
+    <th>How AI is Used</th>
+  </tr>
+  <tr>
+    <td><strong>Healthcare</strong></td>
+    <td>Diagnosing diseases, analyzing scans, drug discovery, virtual health assistants</td>
+  </tr>
+  <tr>
+    <td><strong>Banking</strong></td>
+    <td>Detecting fraud, making investment predictions, customer service bots</td>
+  </tr>
+  <tr>
+    <td><strong>Manufacturing</strong></td>
+    <td>Automating assembly lines, checking quality, predictive maintenance (fix before breakdowns)</td>
+  </tr>
+  <tr>
+    <td><strong>Retail</strong></td>
+    <td>Personalized shopping, managing stocks, automating customer support</td>
+  </tr>
+  <tr>
+    <td><strong>Education</strong></td>
+    <td>Personalized learning apps, grading assignments, tutoring</td>
+  </tr>
+  <tr>
+    <td><strong>Transport</strong></td>
+    <td>Self-driving vehicles, route optimization, traffic management</td>
+  </tr>
+  <tr>
+    <td><strong>Agriculture</strong></td>
+    <td>Monitoring crops with drones, predicting yields, spotting pests early</td>
+  </tr>
+  <tr>
+    <td><strong>Security</strong></td>
+    <td>Surveillance systems, identifying suspicious activity, controlling access</td>
+  </tr>
+</table>
+
+<p><strong>Ethics, Privacy, and Bias in AI</strong></p>
+<p>As AI grows, we must make sure it’s used responsibly! Important points to know:</p>
+<ul>
+  <li><strong>Ethics:</strong> AI should be designed to do good and avoid harm, respecting human rights and fairness.</li>
+  <li><strong>Privacy:</strong> AI often uses large amounts of data, so keeping personal information safe is a big priority.</li>
+  <li><strong>Bias:</strong> If AI is trained on unfair information, it might make unfair decisions. Developers work hard to spot and fix these problems.</li>
+</ul>
+
+<p><em>In summary:</em> AI is like giving brains to machines, letting them learn, adapt, and help us in thousands of ways, from daily tasks to solving global problems. Its potential is as limitless as human imagination!</p>
+<style>
+    h2.exercise-heading {
+      color: #00796b;
+      border-left: 6px solid #004d40;
+      padding-left: 12px;
+      margin-bottom: 24px;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px #b2dfdb;
+      background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+      border-radius: 8px;
+      padding: 12px 20px;
+      max-width: 320px;
+      box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+      font-weight: 700;
+    }
+  
+    .btn-submit {
+      background: linear-gradient(145deg, #00796b, #004d40);
+      border: none;
+      border-radius: 25px;
+      color: #a7ffeb;
+      font-weight: 700;
+      padding: 10px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+      transition: background 0.4s ease;
+      display: block;
+      margin: 16px auto 0;
+      width: 160px;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(145deg, #004d40, #00796b);
+    }
+  
+    .correct-answer {
+      color: #2e7d32;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .motivation-line {
+      color: #00796b;
+      font-style: italic;
+      margin-top: 6px;
+    }
+  </style>
+  
+  <h2 class="exercise-heading">AI Quiz Exercise</h2>
+  
+  <form id="aiQuiz">
+  
+    <div class="question-block">
+      <p class="question-text"><strong>1. What does AI stand for?</strong></p>
+      <label><input type="radio" name="q1" value="wrong"> Automatic Industry</label>
+      <label><input type="radio" name="q1" value="wrong"> Automated Input</label>
+      <label><input type="radio" name="q1" value="wrong"> Automated Intelligence</label>
+      <label><input type="radio" name="q1" value="correct"> Artificial Intelligence</label>
+      <button type="button" class="btn-submit" onclick="submitSingle(1)">Submit</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>2. Which of these is NOT a key feature of AI?</strong></p>
+      <label><input type="radio" name="q2" value="wrong"> Learning from data</label>
+      <label><input type="radio" name="q2" value="wrong"> Reasoning and decision making</label>
+      <label><input type="radio" name="q2" value="wrong"> Perception</label>
+      <label><input type="radio" name="q2" value="correct"> Manual repetitive task</label>
+      <button type="button" class="btn-submit" onclick="submitSingle(2)">Submit</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>3. Which AI application helps you get personalized movie recommendations?</strong></p>
+      <label><input type="radio" name="q3" value="wrong"> Email spam filter</label>
+      <label><input type="radio" name="q3" value="wrong"> Smart thermostat</label>
+      <label><input type="radio" name="q3" value="wrong"> Social media</label>
+      <label><input type="radio" name="q3" value="correct"> Netflix recommendation system</label>
+      <button type="button" class="btn-submit" onclick="submitSingle(3)">Submit</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>4. Which industry uses AI for predictive maintenance?</strong></p>
+      <label><input type="radio" name="q4" value="wrong"> Retail</label>
+      <label><input type="radio" name="q4" value="wrong"> Education</label>
+      <label><input type="radio" name="q4" value="wrong"> Banking</label>
+      <label><input type="radio" name="q4" value="correct"> Manufacturing</label>
+      <button type="button" class="btn-submit" onclick="submitSingle(4)">Submit</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>5. What is important to avoid bias in AI systems?</strong></p>
+      <label><input type="radio" name="q5" value="wrong"> Using outdated technology</label>
+      <label><input type="radio" name="q5" value="wrong"> Ignoring user feedback</label>
+      <label><input type="radio" name="q5" value="wrong"> Training AI without data</label>
+      <label><input type="radio" name="q5" value="correct"> Training AI with fair and balanced data</label>
+      <button type="button" class="btn-submit" onclick="submitSingle(5)">Submit</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  
+  </form>
+  
+  <div id="result"></div>
+  <p id="motivation"></p>
+  
+  <script>
+    const answers = {
+      q1: 'Artificial Intelligence',
+      q2: 'Manual repetitive task',
+      q3: 'Netflix recommendation system',
+      q4: 'Manufacturing',
+      q5: 'Training AI with fair and balanced data'
+    };
+    const correctValues = {
+      q1: 'correct',
+      q2: 'correct',
+      q3: 'correct',
+      q4: 'correct',
+      q5: 'correct'
+    };
+    const userAnswers = {};
+  
+    function submitSingle(qNum) {
+      const options = document.getElementsByName('q' + qNum);
+      let selectedValue = null;
+      for (const option of options) {
+        if (option.checked) selectedValue = option.nextSibling.textContent.trim();
+      }
+      if (selectedValue === null) {
+        alert('Please select an answer before submitting.');
+        return;
+      }
+      const selectedOption = Array.from(options).find(opt => opt.checked);
+      const selected = selectedOption.value;
+  
+      userAnswers['q' + qNum] = selected;
+  
+      // Disable all options and submit button after submission
+      for (const option of options) {
+        option.disabled = true;
+      }
+      const btn = event.target;
+      btn.disabled = true;
+  
+      const feedbackDiv = document.getElementById('feedback' + qNum);
+  
+      if (selected === correctValues['q' + qNum]) {
+        btn.innerText = 'Correct!';
+        feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+      } else {
+        btn.innerText = 'Wrong!';
+        feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${answers['q' + qNum]}</strong></span>
+                                 <br><span class="motivation-line">Keep trying, every mistake is a step forward!</span>`;
+      }
+  
+      // After last question answered, show final score and quote
+      if (Object.keys(userAnswers).length === 5) {
+        showResultAndQuote();
+      }
+    }
+  
+    function showResultAndQuote() {
+      let score = 0;
+      for (const key in userAnswers) {
+        if (userAnswers[key] === correctValues[key]) score++;
+      }
+      const percentage = (score / 5) * 100;
+      const resultText = `You scored ${score} out of 5 (${percentage}%).`;
+      document.getElementById('result').innerText = resultText;
+  
+      const motivationQuotes = [
+        "Great job! Keep learning and exploring — the future is yours!",
+        "Excellent effort! Every question brings you closer to mastery.",
+        "Well done! Remember, learning is a journey, not a race.",
+        "Good work! Your curiosity is your greatest strength.",
+        "Fantastic! Keep pushing boundaries and stay curious."
+      ];
+      const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+      document.getElementById('motivation').innerText = motivationQuotes[randomIndex];
+    }
+  </script>
+  
+                
+            </div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="chapter" id="chapter2">
+            <h2>Chapter 2: Python for AI</h2>
+            <div class="chapter-content">
+                <p><strong>Chapter 2: Python for AI</strong></p>
+
+                <p><strong>What is Python?</strong></p>
+                <p>Python is a popular, high-level programming language known for its easy-to-read syntax and versatility. It’s widely used in many fields—including web development, data science, automation, and especially Artificial Intelligence (AI). Python allows even beginners to start building powerful programs with minimal code.</p>
+                
+                <p><strong>Why is Python used for AI?</strong></p>
+                <ul>
+                  <li><strong>Simple and readable syntax:</strong> Perfect for beginners and helps advanced users write clear code quickly.</li>
+                  <li><strong>Huge library ecosystem:</strong> Python offers libraries like TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, and Matplotlib for AI, machine learning, and data processing.</li>
+                  <li><strong>Community support:</strong> Millions of users contribute tutorials, forums, and open-source code.</li>
+                  <li><strong>Flexible and fast prototyping:</strong> Python is good for trying ideas out quickly and works well with other programming languages.</li>
+                  <li><strong>Data handling:</strong> Tools like NumPy and Pandas make data analysis, cleaning, and visualization easy, which is essential for AI.</li>
+                </ul>
+                
+                <p><strong>Key Features of Python for AI</strong></p>
+                <ul>
+                  <li><strong>Simplicity and readability:</strong> Python’s code looks clear and almost like English, letting you focus more on solving problems and less on complex syntax.</li>
+                  <li><strong>Extensive AI libraries:</strong> Libraries such as TensorFlow and PyTorch help build neural networks, while Scikit-learn aids in classic machine learning. Pandas is great for data wrangling, and Matplotlib lets you visualize results.</li>
+                  <li><strong>Platform independence:</strong> Python works on Windows, macOS, Linux, and servers—so your AI models can run anywhere.</li>
+                  <li><strong>Integrated development environments (IDEs):</strong> Tools like Jupyter Notebook and VS Code make coding, testing, and visualization smooth—especially for AI projects.</li>
+                  <li><strong>Strong community:</strong> Helpful forums and abundant documentation make it easy to learn, get help, and stay up-to-date.</li>
+                  <li><strong>Versatile for tasks:</strong> Python handles everything from chatbots and image recognition to recommendation systems and automation.</li>
+                </ul>
+                
+                <p><strong>Applications in Daily Life</strong></p>
+                <ul>
+                  <li>Digital assistants: Python powers chatbots and voice assistants like Alexa, Siri, and Google Assistant.</li>
+                  <li>Recommendation engines: Netflix and Spotify use Python to suggest movies and songs based on what you like.</li>
+                  <li>Spam filters & security: Email platforms use Python machine learning to spot spam or scams.</li>
+                  <li>Web scraping: Python can collect info from websites to warn about price changes, news, or alerts.</li>
+                  <li>Smart home automation: Python scripts automate turning lights on/off or adjusting thermostats.</li>
+                  <li>Easy task automation: Python helps automate boring tasks—like sorting files, sending emails, or analyzing reports.</li>
+                  <li>Simple games & learning apps: Kids and beginners can code games or smart learning apps using Python.</li>
+                </ul>
+                
+                <p><strong>Industry Applications</strong></p>
+                <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse;">
+                  <tr>
+                    <th>Industry</th>
+                    <th>Python AI Applications</th>
+                  </tr>
+                  <tr>
+                    <td>Healthcare</td>
+                    <td>Medical image analysis, predictive diagnostics, patient data processing</td>
+                  </tr>
+                  <tr>
+                    <td>Finance</td>
+                    <td>Fraud detection, forecasting, risk analysis, algorithmic trading</td>
+                  </tr>
+                  <tr>
+                    <td>Retail</td>
+                    <td>Recommendation systems, inventory management, customer sentiment analysis</td>
+                  </tr>
+                  <tr>
+                    <td>Entertainment</td>
+                    <td>Movie/music suggestions, content tagging and optimization</td>
+                  </tr>
+                  <tr>
+                    <td>Manufacturing</td>
+                    <td>Predictive maintenance, robotics, automated quality checks</td>
+                  </tr>
+                  <tr>
+                    <td>Transportation</td>
+                    <td>Self-driving cars, route optimization, traffic prediction</td>
+                  </tr>
+                  <tr>
+                    <td>Agriculture</td>
+                    <td>Crop monitoring, yield prediction, pest detection, climate analysis</td>
+                  </tr>
+                  <tr>
+                    <td>Education</td>
+                    <td>Adaptive learning platforms, assessment tools, personalized curriculum</td>
+                  </tr>
+                </table>
+                
+                <p><strong>Summary</strong></p>
+                <p>Python is the backbone of modern AI because it’s simple, powerful, and versatile. Whether you’re just starting with “Hello, World!” or building a smart assistant or cutting-edge recommendation system, Python streamlines the journey from idea to reality, opening doors for everyone—from students to professionals—to create the next big thing in technology.</p>
+                <h2 class="exercise-heading">Python for AI Quiz Exercise</h2>
+
+<form id="pythonQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. Why is Python popular for AI development?</strong></p>
+    <label><input type="radio" name="q1" value="wrong" /> It is hard to learn</label><br />
+    <label><input type="radio" name="q1" value="wrong" /> It has limited libraries</label><br />
+    <label><input type="radio" name="q1" value="wrong" /> It only runs on Windows</label><br />
+    <label><input type="radio" name="q1" value="correct" /> It is simple, versatile, and has many AI libraries</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter2(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which Python library is commonly used for building neural networks?</strong></p>
+    <label><input type="radio" name="q2" value="correct" /> TensorFlow</label><br />
+    <label><input type="radio" name="q2" value="wrong" /> Pandas</label><br />
+    <label><input type="radio" name="q2" value="wrong" /> Matplotlib</label><br />
+    <label><input type="radio" name="q2" value="wrong" /> NumPy</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter2(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What tool helps visualize data and results in Python?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> Scikit-learn</label><br />
+    <label><input type="radio" name="q3" value="correct" /> Matplotlib</label><br />
+    <label><input type="radio" name="q3" value="wrong" /> TensorFlow</label><br />
+    <label><input type="radio" name="q3" value="wrong" /> PyTorch</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter2(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which Python tool is popular for interactive AI experiments and tutorials?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> Jupyter Notebook</label><br />
+    <label><input type="radio" name="q4" value="wrong" /> Sublime Text</label><br />
+    <label><input type="radio" name="q4" value="wrong" /> Visual Studio Code</label><br />
+    <label><input type="radio" name="q4" value="wrong" /> PyCharm</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter2(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What is essential to handle data efficiently in Python for AI?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> Only use Python loops</label><br />
+    <label><input type="radio" name="q5" value="wrong" /> Manual calculations by hand</label><br />
+    <label><input type="radio" name="q5" value="wrong" /> Ignore data preprocessing</label><br />
+    <label><input type="radio" name="q5" value="correct" /> Use libraries like Pandas and NumPy</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter2(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultChapter2"></div>
+<p id="motivationChapter2"></p>
+
+         </div>
+        </div>       
+               
+        <!-- Chapter 3 -->
+        <div class="chapter" id="chapter3">
+            <h2>Chapter 3: Data – The Heart of AI</h2>
+            <div class="chapter-content">
+                <h2>Chapter 3: Data – The Heart of AI</h2>
+
+                <p>
+                Data is at the foundation of every AI project. Without data, machine learning algorithms and AI systems cannot learn, make predictions, or solve problems. In this chapter, we’ll explore the types of data used in AI, the importance of cleaning and preparing data, visualizing data for insight, and practical examples that illustrate each concept.
+                </p>
+                
+                <hr>
+                
+                <h3>1. Types of Data</h3>
+                
+                <table border="1" cellpadding="6" style="border-collapse:collapse; margin-bottom:16px;">
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Common Sources</th>
+                    <th>AI Usage Example</th>
+                  </tr>
+                  <tr>
+                    <td><b>Structured</b></td>
+                    <td>Data arranged in tabular form (rows/columns). Each attribute has a fixed meaning.</td>
+                    <td>Databases, spreadsheets, CSV files</td>
+                    <td>Customer records, transaction ledgers, sensor readings</td>
+                  </tr>
+                  <tr>
+                    <td><b>Unstructured</b></td>
+                    <td>Data without a formal structure, often text, images, or audio.</td>
+                    <td>Emails, documents, images, videos, audio recordings, tweets</td>
+                    <td>Voice assistants, sentiment analysis, object detection</td>
+                  </tr>
+                  <tr>
+                    <td><b>Semi-structured</b></td>
+                    <td>Data with organizational elements but not rigidly formatted; uses tags or keys.</td>
+                    <td>JSON, XML files, HTML, logs</td>
+                    <td>Social media posts (JSON), system logs, product catalogues</td>
+                  </tr>
+                </table>
+                
+                <p><b>Tip:</b> The structure of your data determines your cleaning, analysis, and modeling approach. Most AI projects blend these types!</p>
+                
+                <hr>
+                
+                <h3>2. Data Cleaning and Preparation</h3>
+                
+                <p>
+                Before feeding data into an AI model, it's crucial to clean and prepare it. This enhances model accuracy and reliability.
+                </p>
+                
+                <ul>
+                  <li><b>Remove duplicates:</b> Ensure each record is unique to avoid bias.</li>
+                  <li><b>Handle missing values:</b>
+                    <ul>
+                      <li>Fill with a default (mean, median, zero, "Unknown")</li>
+                      <li>Remove rows/columns with too many missing entries</li>
+                    </ul>
+                  </li>
+                  <li><b>Standardize formats:</b> 
+                    <ul>
+                      <li>Convert dates to a common format (e.g., YYYY-MM-DD)</li>
+                      <li>Lowercase all text for consistency</li>
+                    </ul>
+                  </li>
+                  <li><b>Remove outliers:</b> Delete or investigate values that drastically differ from others if they distort analysis.</li>
+                  <li><b>Normalize or scale data:</b> Scale numbers to similar ranges (often 0 to 1) for fair model training.</li>
+                  <li><b>Convert categorical data:</b> Age groups, colors, etc., need to be encoded as numbers for machine learning.</li>
+                </ul>
+                
+                <pre><code>
+                # Cleaning and Preprocessing Example (Python)
+                import pandas as pd
+                
+                df = pd.read_csv('sales.csv')
+                df.drop_duplicates(inplace=True)            # Remove duplicate rows
+                df.fillna('unknown', inplace=True)          # Fill missing values
+                df['date'] = pd.to_datetime(df['date'])     # Standardize date format
+                df['amount'] = pd.to_numeric(df['amount'], errors='coerce')  # Ensure numbers
+                df = df.dropna(subset=['amount'])           # Remove missing values in amount
+                df['region'] = df['region'].str.lower()     # Standardize text
+                </code></pre>
+                
+                <p>
+                <b>Why is this important?</b>  
+                Messy data leads to models that make bad predictions. The effort you put into cleaning is critical for AI success!
+                </p>
+                
+                <hr>
+                
+                <h3>3. Data Visualization</h3>
+                <p>
+                Data visualization is the art of turning data into visual insight. Before machine learning, visualization helps you explore patterns, spot errors, and communicate findings.
+                </p>
+                
+                <ul>
+                  <li><b>Histogram:</b> Shows distribution of a numeric variable (like prices)</li>
+                  <li><b>Bar Chart:</b> Compares categories (brands, countries, etc.)</li>
+                  <li><b>Scatter Plot:</b> Visualizes relationship between two numeric variables</li>
+                  <li><b>Line Graph:</b> Shows change over time (sales, temperature, population)</li>
+                </ul>
+                
+                <pre><code>
+                # Visualization Example (Python)
+                import matplotlib.pyplot as plt
+                
+                plt.hist(df['amount'], bins=20, color='teal')
+                plt.title('Distribution of Sales Amount')
+                plt.xlabel('Sale Amount')
+                plt.ylabel('Number of Transactions')
+                plt.show()
+                </code></pre>
+                
+                <p>
+                <b>Note:</b> Tools such as <b>matplotlib</b> and <b>seaborn</b> in Python make visualization easy!
+                </p>
+                
+                <hr>
+                
+                <h3>4. Practical Examples</h3>
+                
+                <ul>
+                  <li>
+                    <b>Structured Data AI Example:</b>
+                    <br>
+                    Building a model to predict employee attrition based on data fields like <i>salary, age, years at the company, department</i>.
+                  </li>
+                  <li>
+                    <b>Unstructured Data AI Example:</b>
+                    <br>
+                    Sentiment analysis on product reviews: The AI reads raw review text and predicts positive or negative sentiment.
+                  </li>
+                  <li>
+                    <b>Semi-structured Data AI Example:</b>
+                    <br>
+                    Recommender systems using product catalogues stored in JSON: AI extracts features and generates personalized suggestions.
+                  </li>
+                </ul>
+                
+                <hr>
+                
+                <h3>5. Key Terms to Remember</h3>
+                <ul>
+                  <li><b>Dataset:</b> A collection of related data points or records.</li>
+                  <li><b>Feature:</b> Individual measurable attribute (column) in data (e.g., price, color).</li>
+                  <li><b>Label (Target):</b> Desired prediction or classification—output produced by AI (e.g., is_spam, sale_price).</li>
+                  <li><b>Training Data:</b> The subset used for learning.</li>
+                  <li><b>Test/Validation Data:</b> Data to evaluate model performance after training.</li>
+                </ul>
+                
+                <hr>
+                
+                <h3>6. Mini Exercise</h3>
+                <ol>
+                  <li>List two sources where you can collect structured and unstructured data for an AI project.</li>
+                  <li>Why is it important to clean your data before building an AI model?</li>
+                  <li>Draw a sketch (or describe) what a histogram of house prices would look like—what insights might you get?</li>
+                  <li>What could go wrong in an AI project if data isn’t diverse?</li>
+                </ol>
+                
+                <hr>
+                
+                <p><b>Summary:</b> Data is what gives AI its “intelligence.” The more effort you put into collecting, cleaning, and understanding your data, the better your AI solution will be—whether it’s predicting, classifying, or recommending!</p>
+                <h2 class="exercise-heading">Chapter 3: Data – The Heart of AI Quiz</h2>
+
+                <form id="dataQuiz">
+                
+                  <div class="question-block">
+                    <p class="question-text"><strong>1. Which of the following is structured data?</strong></p>
+                    <label><input type="radio" name="q1_3" value="correct"> An Excel sheet with employee records</label><br />
+                    <label><input type="radio" name="q1_3" value="wrong"> A folder of images</label><br />
+                    <label><input type="radio" name="q1_3" value="wrong"> An MP3 audio file</label><br />
+                    <label><input type="radio" name="q1_3" value="wrong"> A paragraph of text from a book</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter3(1, event)">Submit</button>
+                    <div class="feedback" id="feedback1_3"></div>
+                  </div>
+                  
+                  <div class="question-block">
+                    <p class="question-text"><strong>2. What is the main purpose of data cleaning?</strong></p>
+                    <label><input type="radio" name="q2_3" value="correct"> Prepare data to improve AI model performance and accuracy</label><br />
+                    <label><input type="radio" name="q2_3" value="wrong"> Make data look attractive</label><br />
+                    <label><input type="radio" name="q2_3" value="wrong"> Remove all old data</label><br />
+                    <label><input type="radio" name="q2_3" value="wrong"> Increase data size</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter3(2, event)">Submit</button>
+                    <div class="feedback" id="feedback2_3"></div>
+                  </div>
+                  
+                  <div class="question-block">
+                    <p class="question-text"><strong>3. Which tool is most commonly used for data visualization in Python?</strong></p>
+                    <label><input type="radio" name="q3_3" value="wrong"> NumPy</label><br />
+                    <label><input type="radio" name="q3_3" value="wrong"> Pandas</label><br />
+                    <label><input type="radio" name="q3_3" value="correct"> Matplotlib</label><br />
+                    <label><input type="radio" name="q3_3" value="wrong"> TensorFlow</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter3(3, event)">Submit</button>
+                    <div class="feedback" id="feedback3_3"></div>
+                  </div>
+                  
+                  <div class="question-block">
+                    <p class="question-text"><strong>4. Semi-structured data usually comes in which format?</strong></p>
+                    <label><input type="radio" name="q4_3" value="wrong"> Images</label><br />
+                    <label><input type="radio" name="q4_3" value="wrong"> Tables</label><br />
+                    <label><input type="radio" name="q4_3" value="correct"> JSON files</label><br />
+                    <label><input type="radio" name="q4_3" value="wrong"> Videos</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter3(4, event)">Submit</button>
+                    <div class="feedback" id="feedback4_3"></div>
+                  </div>
+                  
+                  <div class="question-block">
+                    <p class="question-text"><strong>5. Why do we visualize data before building ML models?</strong></p>
+                    <label><input type="radio" name="q5_3" value="correct"> To find patterns and outliers</label><br />
+                    <label><input type="radio" name="q5_3" value="wrong"> To make the code run faster</label><br />
+                    <label><input type="radio" name="q5_3" value="wrong"> To delete the data</label><br />
+                    <label><input type="radio" name="q5_3" value="wrong"> To add new columns</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter3(5, event)">Submit</button>
+                    <div class="feedback" id="feedback5_3"></div>
+                  </div>
+                
+                </form>
+                
+                <div id="resultChapter3"></div>
+                <p id="motivationChapter3"></p>
+                                
+            </div>
+        </div>
+
+        <!-- Chapter 4 -->
+        <div class="chapter" id="chapter4">
+            <h2>Chapter 4: Machine Learning</h2>
+            <div class="chapter-content">
+                <h2>Chapter 4: Machine Learning</h2>
+
+<p>
+Machine Learning (ML) is the science of getting computers to learn from data, identify patterns, and make decisions with minimal human intervention. At its core, ML is about algorithms learning from examples to make accurate predictions or decisions.
+</p>
+
+<hr>
+
+<h3>1. What Is Machine Learning?</h3>
+<ul>
+  <li>
+    ML is a subset of artificial intelligence focused on building systems that automatically improve through experience.
+  </li>
+  <li>
+    <b>Key principle:</b> Feed data to the machine, let it learn and improve by itself.
+  </li>
+  <li>
+    Instead of explicitly programming every single rule, let algorithms generalize from lots of real-world examples.
+  </li>
+</ul>
+<p>
+<b>Example:</b> Rather than writing rules that say “every email containing ‘free money’ is spam,” we show hundreds of examples of spam and non-spam emails and let ML algorithms find patterns themselves.
+</p>
+
+<hr>
+
+<h3>2. Types of Machine Learning</h3>
+
+<table border="1" cellpadding="6" style="border-collapse:collapse; margin-bottom:16px;">
+  <tr>
+    <th>Type</th>
+    <th>How It Works</th>
+    <th>Data Needed</th>
+    <th>Real-world Example</th>
+    <th>Common Algorithms</th>
+  </tr>
+  <tr>
+    <td><b>Supervised Learning</b></td>
+    <td>Model learns a mapping from inputs to outputs given known correct answers (labels).</td>
+    <td>Large set of labeled data (<i>features + label</i>).</td>
+    <td>Email spam detection, predicting house prices, image classification</td>
+    <td>Linear Regression, Decision Trees, SVM, Neural Networks</td>
+  </tr>
+  <tr>
+    <td><b>Unsupervised Learning</b></td>
+    <td>Model looks for patterns, groupings, or structures in data WITHOUT labels.</td>
+    <td>Raw data without labels.</td>
+    <td>Market segmentation, grouping customers, anomaly detection</td>
+    <td>K-Means Clustering, Hierarchical Clustering, Principal Component Analysis</td>
+  </tr>
+  <tr>
+    <td><b>Reinforcement Learning</b></td>
+    <td>An agent interacts with its environment, receives feedback (reward/punishment), learns sequence of actions to maximize rewards.</td>
+    <td>Reward signals, environment for trial/error.</td>
+    <td>Games (chess, Go, Atari), robotic control, traffic signal optimization</td>
+    <td>Q-Learning, Deep Q-Networks, Policy Gradient Methods</td>
+  </tr>
+</table>
+
+<p>
+<b>Tip:</b> Most day-to-day ML applications use supervised or unsupervised learning. Reinforcement learning is often used for decision-making systems and robots.
+</p>
+
+<hr>
+
+<h3>3. Machine Learning Workflow</h3>
+
+<ol>
+  <li>
+    <b>Data Collection:</b><br>
+    Gather relevant, sufficient, and high-quality data (images, text, numbers) for your problem.
+  </li>
+  <li>
+    <b>Data Preparation:</b><br>
+    Clean, preprocess, and transform data into a format suitable for analysis. Handling missing values, normalizing numbers, encoding categories.
+  </li>
+  <li>
+    <b>Training:</b><br>
+    Feed prepared data to a chosen ML algorithm so it can learn relationships (like between house features and price).
+    <br>
+    <i>Training set:</i> The portion of data used to teach the model.
+  </li>
+  <li>
+    <b>Testing/Validation:</b><br>
+    Check how well the trained model predicts on NEW, previously unseen data.
+    <br>
+    <i>Test/Validation set:</i> Hold back some data to evaluate model accuracy.
+  </li>
+  <li>
+    <b>Evaluation:</b><br>
+    Measure performance (accuracy, precision, recall, F1-score) and diagnose errors.
+  </li>
+  <li>
+    <b>Prediction & Deployment:</b><br>
+    Use the well-performing model to make real predictions in live environments (e.g., recommend movies, flag fraudulent transactions).
+  </li>
+</ol>
+
+<pre><code>
+# Typical ML Workflow (Python with scikit-learn)
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+
+# Load and split data
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+# Train model
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+# Test performance
+accuracy = clf.score(X_test, y_test)
+print(f"Model accuracy: {accuracy:.2f}")
+# Make predictions
+predictions = clf.predict(X_test)
+</code></pre>
+
+<hr>
+
+<h3>4. Real-world Examples</h3>
+
+<ul>
+  <li>
+    <b>Supervised Learning:</b> 
+    <ul>
+      <li>Handwriting Recognition: Learning from labeled digit images to interpret written numbers.</li>
+      <li>Medical Diagnosis: Predicting diseases based on patient records, images, and test results.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Unsupervised Learning:</b>
+    <ul>
+      <li>Customer Segmentation: Finding groups of customers with similar buying habits for targeted marketing.</li>
+      <li>Gene Expression Clustering: Grouping genes based on patterns in biological data.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Reinforcement Learning:</b>
+    <ul>
+      <li>Self-driving Cars: Learning to navigate by reward signals (safe driving, obstacle avoidance).</li>
+      <li>Game AI: Learning to win board games or video games via reward/punishment from each move.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>Classic Diagram: ML Process Overview</h3>
+<ul>
+  <li>Input Data &rarr; Data Cleaning &rarr; Training Algorithm &rarr; Model Evaluation &rarr; Predictions &rarr; Action/Deployment</li>
+</ul>
+
+<hr>
+
+<h3>Key Points</h3>
+<ul>
+  <li>Machine Learning lets computers “learn from experience” instead of just following instructions.</li>
+  <li>Supervised, unsupervised, and reinforcement learning are the three main types.</li>
+  <li>Workflow: Data collection &rarr; Preparation &rarr; Training &rarr; Testing &rarr; Deployment.</li>
+  <li>ML powers everyday technologies: recommendations, translations, smart assistants, vehicles, health care, and more.</li>
+</ul>
+<h2 class="exercise-heading">Chapter 4: Machine Learning Quiz</h2>
+
+<form id="mlQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is Machine Learning?</strong></p>
+    <label><input type="radio" name="q1_ml" value="correct" /> Teaching computers to learn patterns from data</label><br />
+    <label><input type="radio" name="q1_ml" value="wrong" /> Writing explicit rules for every task</label><br />
+    <label><input type="radio" name="q1_ml" value="wrong" /> Programming only using loops and conditionals</label><br />
+    <label><input type="radio" name="q1_ml" value="wrong" /> Running software without data</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter4(1, event)">Submit</button>
+    <div class="feedback" id="feedback1_ml"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which type of ML uses labeled data with known outputs?</strong></p>
+    <label><input type="radio" name="q2_ml" value="correct" /> Supervised Learning</label><br />
+    <label><input type="radio" name="q2_ml" value="wrong" /> Unsupervised Learning</label><br />
+    <label><input type="radio" name="q2_ml" value="wrong" /> Reinforcement Learning</label><br />
+    <label><input type="radio" name="q2_ml" value="wrong" /> Deep Learning</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter4(2, event)">Submit</button>
+    <div class="feedback" id="feedback2_ml"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is the main goal of Reinforcement Learning?</strong></p>
+    <label><input type="radio" name="q3_ml" value="wrong" /> Find hidden groups in unlabeled data</label><br />
+    <label><input type="radio" name="q3_ml" value="correct" /> Learn actions to maximize rewards through trial and error</label><br />
+    <label><input type="radio" name="q3_ml" value="wrong" /> Classify images into categories</label><br />
+    <label><input type="radio" name="q3_ml" value="wrong" /> Predict next value in a sequence</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter4(3, event)">Submit</button>
+    <div class="feedback" id="feedback3_ml"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What is the typical first step in a machine learning project?</strong></p>
+    <label><input type="radio" name="q4_ml" value="wrong" /> Making predictions</label><br />
+    <label><input type="radio" name="q4_ml" value="correct" /> Collecting and preparing data</label><br />
+    <label><input type="radio" name="q4_ml" value="wrong" /> Training the model</label><br />
+    <label><input type="radio" name="q4_ml" value="wrong" /> Evaluating results</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter4(4, event)">Submit</button>
+    <div class="feedback" id="feedback4_ml"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which of these is NOT a common application of ML?</strong></p>
+    <label><input type="radio" name="q5_ml" value="wrong" /> Email spam detection</label><br />
+    <label><input type="radio" name="q5_ml" value="wrong" /> Self-driving cars</label><br />
+    <label><input type="radio" name="q5_ml" value="correct" /> Manual data entry by humans</label><br />
+    <label><input type="radio" name="q5_ml" value="wrong" /> Voice assistants</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter4(5, event)">Submit</button>
+    <div class="feedback" id="feedback5_ml"></div>
+  </div>
+
+</form>
+
+<div id="resultChapter4"></div>
+<p id="motivationChapter4"></p>
+
+            </div>
+        </div>
+
+        <!-- Chapter 5 -->
+        <div class="chapter" id="chapter5">
+            <h2>Chapter 5: Beginner AI Projects</h2>
+            <div class="chapter-content">
+                <h2>Chapter 5: Beginner AI Projects</h2>
+
+                <p>
+                Jumping into hands-on AI projects is one of the fastest ways to learn how Artificial Intelligence works in the real world. Here are some beginner-friendly project types, what they involve, and tips to help you start small and succeed!
+                </p>
+                
+                <hr>
+                
+                <h3>1. Chatbots</h3>
+                <ul>
+                  <li>
+                    <b>What is it?</b> A chatbot is an automated program that can converse with users via text or voice. It understands input and provides appropriate responses.
+                  </li>
+                  <li>
+                    <b>Tools:</b> Python libraries (<code>NLTK</code>, <code>ChatterBot</code>), cloud APIs
+                  </li>
+                  <li>
+                    <b>Example project:</b> Build a simple bot that answers FAQs or greets visitors on a website.
+                  </li>
+                </ul>
+                <pre><code>
+                # Example: Chatbot with ChatterBot
+                from chatterbot import ChatBot
+                from chatterbot.trainers import ChatterBotCorpusTrainer
+                
+                bot = ChatBot("Assistant")
+                trainer = ChatterBotCorpusTrainer(bot)
+                trainer.train("chatterbot.corpus.english")
+                
+                response = bot.get_response("Hello!")
+                print(response)
+                </code></pre>
+                
+                <hr>
+                
+                <h3>2. Sentiment Analysis</h3>
+                <ul>
+                  <li>
+                    <b>What is it?</b> Sentiment analysis uses AI to figure out whether text expresses positive, negative, or neutral emotions.
+                  </li>
+                  <li>
+                    <b>Tools:</b> Python (<code>TextBlob</code>, <code>NLTK</code>), datasets with labeled sentiments
+                  </li>
+                  <li>
+                    <b>Example project:</b> Write a simple Python script that analyzes movie reviews and predicts the sentiment.
+                  </li>
+                </ul>
+                <pre><code>
+                # Example: Sentiment Analysis with TextBlob
+                from textblob import TextBlob
+                
+                text = "I love this new phone!"
+                blob = TextBlob(text)
+                print(blob.sentiment)
+                </code></pre>
+                
+                <hr>
+                
+                <h3>3. Image Classification</h3>
+                <ul>
+                  <li>
+                    <b>What is it?</b> Image classification assigns labels to images based on their contents (cat, dog, car, etc.).
+                  </li>
+                  <li>
+                    <b>Tools:</b> Python (<code>TensorFlow</code>, <code>Keras</code>), datasets of labeled images (e.g., MNIST)
+                  </li>
+                  <li>
+                    <b>Example project:</b> Build a simple digit recognizer using the MNIST dataset of handwritten numbers.
+                  </li>
+                </ul>
+                <pre><code>
+                # Example: Image Classification with Keras
+                from keras.datasets import mnist
+                from keras.models import Sequential
+                from keras.layers import Dense, Flatten
+                
+                (X_train, y_train), (X_test, y_test) = mnist.load_data()
+                model = Sequential()
+                model.add(Flatten(input_shape=(28,28)))
+                model.add(Dense(128, activation='relu'))
+                model.add(Dense(10, activation='softmax'))
+                model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+                model.fit(X_train, y_train, epochs=3)
+                </code></pre>
+                
+                <hr>
+                
+                <h3>4. Recommendation Systems</h3>
+                <ul>
+                  <li>
+                    <b>What is it?</b> A recommendation system suggests products, movies, or music based on user preferences and history.
+                  </li>
+                  <li>
+                    <b>Tools:</b> Python (<code>pandas</code>, <code>scikit-learn</code>), datasets with user ratings and items
+                  </li>
+                  <li>
+                    <b>Example project:</b> Make a simple movie recommender using user and item data.
+                  </li>
+                </ul>
+                <pre><code>
+                # Example: Item-Based Recommendation (Skeleton)
+                import pandas as pd
+                ratings = pd.DataFrame({
+                    'user': [1, 2, 1, 2],
+                    'item': ['A', 'A', 'B', 'C'],
+                    'rating': [5, 4, 3, 2]
+                })
+                user_pref = ratings[ratings['user'] == 1]
+                print("User 1 preferences:")
+                print(user_pref)
+                </code></pre>
+                
+                <hr>
+                
+                <h3>5. Tips for Starting Small</h3>
+                <ul>
+                  <li><b>Pick a simple, well-defined goal.</b> Example: “Classify dog vs. cat images.”</li>
+                  <li><b>Use small sample datasets</b> available for free (e.g. MNIST, movie reviews, product ratings).</li>
+                  <li><b>Build prototypes first, polish later.</b> Don't worry about fancy user interfaces at the start.</li>
+                  <li><b>Choose beginner-friendly libraries.</b> E.g., Keras, TextBlob, ChatterBot make things much easier.</li>
+                  <li><b>Test, fail, fix, and try again!</b> Learning happens best when you experiment.</li>
+                </ul>
+                
+                <hr>
+                
+                <h3>Key Point:</h3>
+                <p>
+                Starting with small AI projects helps you build skills and confidence. Focus on learning the process, not just getting perfect results!
+                </p>
+                <h2 class="exercise-heading">Chapter 5: Beginner AI Projects Quiz</h2>
+
+<form id="aiProjectsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is a chatbot?</strong></p>
+    <label><input type="radio" name="q1_ai" value="correct" /> A program that can converse with users automatically</label><br />
+    <label><input type="radio" name="q1_ai" value="wrong" /> A system to play chess</label><br />
+    <label><input type="radio" name="q1_ai" value="wrong" /> A robot that cleans your house</label><br />
+    <label><input type="radio" name="q1_ai" value="wrong" /> A movie recommendation system</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter5(1, event)">Submit</button>
+    <div class="feedback" id="feedback1_ai"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Sentiment analysis is used to:</strong></p>
+    <label><input type="radio" name="q2_ai" value="correct" /> Detect positive, negative, or neutral feelings in text</label><br />
+    <label><input type="radio" name="q2_ai" value="wrong" /> Generate images from text descriptions</label><br />
+    <label><input type="radio" name="q2_ai" value="wrong" /> Clean noisy data</label><br />
+    <label><input type="radio" name="q2_ai" value="wrong" /> Predict stock prices</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter5(2, event)">Submit</button>
+    <div class="feedback" id="feedback2_ai"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What dataset is commonly used to train beginner image classification models?</strong></p>
+    <label><input type="radio" name="q3_ai" value="correct" /> MNIST handwritten digits dataset</label><br />
+    <label><input type="radio" name="q3_ai" value="wrong" /> IMDB movie reviews</label><br />
+    <label><input type="radio" name="q3_ai" value="wrong" /> Amazon product data</label><br />
+    <label><input type="radio" name="q3_ai" value="wrong" /> Twitter API data</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter5(3, event)">Submit</button>
+    <div class="feedback" id="feedback3_ai"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Recommendation systems help:</strong></p>
+    <label><input type="radio" name="q4_ai" value="correct" /> Suggest products or content based on user preferences</label><br />
+    <label><input type="radio" name="q4_ai" value="wrong" /> Translate text to different languages</label><br />
+    <label><input type="radio" name="q4_ai" value="wrong" /> Automatically generate code</label><br />
+    <label><input type="radio" name="q4_ai" value="wrong" /> Detect spam emails</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter5(4, event)">Submit</button>
+    <div class="feedback" id="feedback4_ai"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. A good tip for starting AI projects is:</strong></p>
+    <label><input type="radio" name="q5_ai" value="correct" /> Start small with simple datasets and clear goals</label><br />
+    <label><input type="radio" name="q5_ai" value="wrong" /> Jump immediately to complex deep learning models</label><br />
+    <label><input type="radio" name="q5_ai" value="wrong" /> Avoid testing until the whole project is complete</label><br />
+    <label><input type="radio" name="q5_ai" value="wrong" /> Ignore data preparation</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleChapter5(5, event)">Submit</button>
+    <div class="feedback" id="feedback5_ai"></div>
+  </div>
+
+</form>
+
+<div id="resultChapter5"></div>
+<p id="motivationChapter5"></p>
+
+                            </div>
+        </div>
+
+        <!-- Chapter 6 -->
+        <div class="chapter" id="chapter6">
+            <h2>Chapter 6: AI Ethics and Responsible Use</h2>
+            <div class="chapter-content">
+                <h2>Chapter 6: AI Ethics</h2>
+
+                <p>
+                As artificial intelligence (AI) technology becomes a bigger part of our lives, it’s important to use it responsibly and thoughtfully. <strong>AI Ethics</strong> teaches us how to build and use AI in a way that benefits everyone&nbsp;—&nbsp;ensuring that our creations are fair, safe, and respectful of people’s rights.
+                </p>
+                
+                <hr>
+                
+                <h3>Why Responsible AI Matters</h3>
+                <ul>
+                  <li><b>AI shapes decisions</b> about jobs, finances, healthcare, and even security, so mistakes or bias impact people’s lives in real ways.</li>
+                  <li>If AI is not handled ethically, it can accidentally harm, discriminate, or invade privacy.</li>
+                  <li>Being responsible with AI builds trust between people, businesses, and technologies.</li>
+                </ul>
+                
+                <hr>
+                
+                <h3>Key Principles of AI Ethics</h3>
+                <table border="1" cellpadding="6" style="border-collapse:collapse; margin-bottom:16px;">
+                  <tr>
+                    <th>Principle</th>
+                    <th>Definition</th>
+                    <th>Example</th>
+                  </tr>
+                  <tr>
+                    <td><b>Privacy</b></td>
+                    <td>Protecting people’s personal information and only using data in ethical ways.</td>
+                    <td>Hiding names and IDs in datasets; asking permission before collecting data.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Fairness</b></td>
+                    <td>Ensuring AI is free from discrimination and bias; treating all people equally.</td>
+                    <td>Testing AI to make sure it doesn’t favor one gender, race, or age group.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Accountability</b></td>
+                    <td>Holding people and companies responsible for the effects of AI systems.</td>
+                    <td>Developers respond to complaints and fix problems caused by their AI.</td>
+                  </tr>
+                  <tr>
+                    <td><b>Transparency</b></td>
+                    <td>Making how AI works and makes decisions easy to understand.</td>
+                    <td>Publishing how a credit scoring AI works, or sharing the logic behind AI decisions.</td>
+                  </tr>
+                </table>
+                
+                <hr>
+                
+                <h3>Quick Reflection Questions</h3>
+                <ul>
+                  <li>Why is it important to make AI accountable?</li>
+                  <li>How can we check if an AI is fair to everyone?</li>
+                  <li>When is it OK to collect and use someone’s personal data for AI?</li>
+                </ul>
+                
+                <hr>
+                
+                <p>
+                <strong>Summary:</strong>  
+                Ethics in AI helps us use technology for good, by protecting privacy, ensuring fairness, being accountable for our actions, and keeping AI processes clear and open.
+                </p>
+                <h2 class="exercise-heading">Chapter 6: AI Ethics Quiz</h2>
+
+<form id="aiEthicsQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. Why is privacy important in AI?</strong></p>
+    <label><input type="radio" name="q1_ethics" value="correct" /> It protects people's sensitive and personal information</label><br />
+    <label><input type="radio" name="q1_ethics" value="wrong" /> It slows down AI systems</label><br />
+    <label><input type="radio" name="q1_ethics" value="wrong" /> It makes AI more expensive</label><br />
+    <label><input type="radio" name="q1_ethics" value="wrong" /> It is not important at all</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleEthics(1, event)">Submit</button>
+    <div class="feedback" id="feedback1_ethics"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What does fairness in AI mean?</strong></p>
+    <label><input type="radio" name="q2_ethics" value="correct" /> Treating people equally and avoiding discrimination</label><br />
+    <label><input type="radio" name="q2_ethics" value="wrong" /> Only working with big data</label><br />
+    <label><input type="radio" name="q2_ethics" value="wrong" /> Charging everyone the same price</label><br />
+    <label><input type="radio" name="q2_ethics" value="wrong" /> Letting anyone change the AI</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleEthics(2, event)">Submit</button>
+    <div class="feedback" id="feedback2_ethics"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which of these best describes transparency in AI?</strong></p>
+    <label><input type="radio" name="q3_ethics" value="wrong" /> Hiding all code from users</label><br />
+    <label><input type="radio" name="q3_ethics" value="correct" /> Clearly explaining how AI makes decisions</label><br />
+    <label><input type="radio" name="q3_ethics" value="wrong" /> Making predictions faster</label><br />
+    <label><input type="radio" name="q3_ethics" value="wrong" /> Allowing only experts to use AI</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleEthics(3, event)">Submit</button>
+    <div class="feedback" id="feedback3_ethics"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Who is accountable for the results of an AI system?</strong></p>
+    <label><input type="radio" name="q4_ethics" value="correct" /> The people and companies who develop or use the AI</label><br />
+    <label><input type="radio" name="q4_ethics" value="wrong" /> No one</label><br />
+    <label><input type="radio" name="q4_ethics" value="wrong" /> Only the end users</label><br />
+    <label><input type="radio" name="q4_ethics" value="wrong" /> Just the government</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleEthics(4, event)">Submit</button>
+    <div class="feedback" id="feedback4_ethics"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What is an example of unethical use of AI?</strong></p>
+    <label><input type="radio" name="q5_ethics" value="wrong" /> Using anonymized data for research (with consent)</label><br />
+    <label><input type="radio" name="q5_ethics" value="wrong" /> Explaining how an AI model makes decisions</label><br />
+    <label><input type="radio" name="q5_ethics" value="correct" /> Discriminating against people based on race or gender</label><br />
+    <label><input type="radio" name="q5_ethics" value="wrong" /> Allowing users to control their data</label><br />
+    <button type="button" class="btn-submit" onclick="submitSingleEthics(5, event)">Submit</button>
+    <div class="feedback" id="feedback5_ethics"></div>
+  </div>
+
+</form>
+
+<div id="resultEthics"></div>
+<p id="motivationEthics"></p>
+
+                            </div>
+        </div>
+
+        <!-- Chapter 7 -->
+        <div class="chapter" id="chapter7">
+            <h2>Chapter 7: Future of AI</h2>
+            <div class="chapter-content">
+                <h2>Chapter 7: Future of AI</h2>
+
+                <p>
+                Artificial Intelligence (AI) isn’t just transforming technology—it’s changing the world. The coming years promise dramatic advances in how machines learn, think, and act. This chapter explores the cutting-edge trends, what they mean for you, and exciting career paths you can follow.
+                </p>
+                
+                <hr>
+                
+                <h3>Key Trends Driving AI Forward</h3>
+                
+                <ul>
+                  <li>
+                    <b>Deep Learning</b>
+                    <ul>
+                      <li>
+                        Uses multi-layered neural networks that mimic how the human brain works, enabling computers to “see”, “hear”, and “learn” from massive sets of data.
+                      </li>
+                      <li>
+                        <b>Impact:</b> Powers speech recognition (Siri, Alexa), facial recognition, online recommendations, and much more.
+                      </li>
+                      <li>
+                        <b>Classic Example:</b> Google’s AlphaGo beating top human players in the game of Go.
+                      </li>
+                    </ul>
+                  </li>
+                
+                  <li>
+                    <b>Natural Language Processing (NLP)</b>
+                    <ul>
+                      <li>
+                        The science behind computers understanding, interpreting, and generating human language—written or spoken.
+                      </li>
+                      <li>
+                        <b>Impact:</b> Makes services like chatbots, translators, and voice assistants smarter and more conversational.
+                      </li>
+                      <li>
+                        <b>Classic Example:</b> Google Translate translating sentences instantly; ChatGPT writing stories or answering questions.
+                      </li>
+                    </ul>
+                  </li>
+                
+                  <li>
+                    <b>Computer Vision</b>
+                    <ul>
+                      <li>
+                        Allows machines to process and analyze visual information—photos, videos, X-rays.
+                      </li>
+                      <li>
+                        <b>Impact:</b> Used in medical diagnosis (detecting tumors in scans), self-driving cars (understanding traffic signs), industry automation (spotting defects).
+                      </li>
+                      <li>
+                        <b>Classic Example:</b> Instagram filters recognizing your face and tracking movements in real time.
+                      </li>
+                    </ul>
+                  </li>
+                
+                  <li>
+                    <b>Autonomous Systems</b>
+                    <ul>
+                      <li>
+                        Systems (robots, cars, drones) that make their own decisions, adapting in real time instead of just following pre-programmed instructions.
+                      </li>
+                      <li>
+                        <b>Impact:</b> Delivery drones, driverless cars, warehouse robots, and even farming equipment that plants and harvests by itself.
+                      </li>
+                      <li>
+                        <b>Classic Example:</b> Tesla’s Autopilot for autonomous driving; Boston Dynamics robots navigating rough terrain.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                
+                <hr>
+                
+                <h3>Emerging Career Opportunities in AI</h3>
+                
+                <ul>
+                  <li>
+                    <b>Machine Learning Engineer</b>
+                    <br>
+                    Develops and deploys ML models. Requires strong programming (Python/R), knowledge of statistics, and data science skills.
+                    <br>
+                    <i>Sample Task:</i> Building a fraud-detection algorithm for a bank.
+                  </li>
+                  <li>
+                    <b>Data Scientist</b>
+                    <br>
+                    Finds patterns, insights, and predictions from large datasets. Often uses visualization and communication skills.
+                    <br>
+                    <i>Sample Task:</i> Identifying customer segments for targeted marketing.
+                  </li>
+                  <li>
+                    <b>AI Research Scientist</b>
+                    <br>
+                    Pushes the boundaries of what AI can do—writing papers, developing new theories, inventing new algorithms.
+                    <br>
+                    <i>Sample Task:</i> Improving natural language processing accuracy for underrepresented languages.
+                  </li>
+                  <li>
+                    <b>NLP Engineer</b>
+                    <br>
+                    Specializes in teaching computers to understand text and voice.
+                    <br>
+                    <i>Sample Task:</i> Building smarter chatbots for hospitals or ecommerce.
+                  </li>
+                  <li>
+                    <b>Computer Vision Engineer</b>
+                    <br>
+                    Designs and optimizes AI for visual recognition and analysis.
+                    <br>
+                    <i>Sample Task:</i> Building a facial-recognition app for security systems.
+                  </li>
+                  <li>
+                    <b>Robotics Engineer / Autonomous Systems Developer</b>
+                    <br>
+                    Combines AI with electronics and mechanics to create smart machines.
+                    <br>
+                    <i>Sample Task:</i> Developing a drone swarm for precision agriculture.
+                  </li>
+                  <li>
+                    <b>AI Product Manager</b>
+                    <br>
+                    Oversees building, launching, and improving AI-powered products.
+                    <br>
+                    <i>Sample Task:</i> Coordinating a team to release a recommendation feature for a streaming app.
+                  </li>
+                  <li>
+                    <b>AI Ethics & Policy Specialist</b>
+                    <br>
+                    Makes sure AI systems are fair, transparent, and safe for society.
+                    <br>
+                    <i>Sample Task:</i> Drafting guidelines for responsible data use at a healthcare company.
+                  </li>
+                </ul>
+                
+                <hr>
+                
+                <h3>Preparing for an AI Career</h3>
+                <ul>
+                  <li><b>Learn core skills:</b> Python programming, statistics, algebra, and logical thinking.</li>
+                  <li><b>Explore AI libraries:</b> TensorFlow, PyTorch, scikit-learn, OpenCV, spaCy, transformers.</li>
+                  <li><b>Work on projects:</b> Try building simple chatbots, image classifiers, or recommendation engines with available datasets.</li>
+                  <li><b>Stay updated:</b> Read AI news, take part in online challenges (e.g., Kaggle), and talk to experts on forums and social media.</li>
+                </ul>
+                
+                <hr>
+                
+                <h3>Quick Exercise Topics</h3>
+                <ul>
+                  <li>Describe the most exciting AI application you’ve seen recently.</li>
+                  <li>List three jobs in AI you’d be interested in and why.</li>
+                  <li>What skill do you think is most important for working in AI?</li>
+                </ul>
+                
+                <hr>
+                
+                <p>
+                <b>Summary:</b> AI is reshaping the future with groundbreaking trends, practical applications, and booming career choices. No matter your background, curiosity and learning will help you find a place in this amazing field.
+                </p>
+                <h2 class="exercise-heading">Chapter 7: Future of AI Quiz</h2>
+
+                <form id="futureAIQuiz">
+                
+                  <div class="question-block">
+                    <p class="question-text"><strong>1. Which AI trend uses neural networks to learn from large datasets?</strong></p>
+                    <label><input type="radio" name="q1_fut" value="correct" /> Deep Learning</label><br />
+                    <label><input type="radio" name="q1_fut" value="wrong" /> Robotics</label><br />
+                    <label><input type="radio" name="q1_fut" value="wrong" /> Expert Systems</label><br />
+                    <label><input type="radio" name="q1_fut" value="wrong" /> Knowledge Graphs</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter7(1, event)">Submit</button>
+                    <div id="feedback1_fut" class="feedback"></div>
+                  </div>
+                
+                  <div class="question-block">
+                    <p class="question-text"><strong>2. Natural Language Processing (NLP) helps machines to:</strong></p>
+                    <label><input type="radio" name="q2_fut" value="correct" /> Understand and generate human language</label><br />
+                    <label><input type="radio" name="q2_fut" value="wrong" /> Control robots</label><br />
+                    <label><input type="radio" name="q2_fut" value="wrong" /> Manage databases</label><br />
+                    <label><input type="radio" name="q2_fut" value="wrong" /> Detect fraudulent transactions</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter7(2, event)">Submit</button>
+                    <div id="feedback2_fut" class="feedback"></div>
+                  </div>
+                
+                  <div class="question-block">
+                    <p class="question-text"><strong>3. Computer Vision technology is widely used for:</strong></p>
+                    <label><input type="radio" name="q3_fut" value="correct" /> Analyzing and interpreting images and videos</label><br />
+                    <label><input type="radio" name="q3_fut" value="wrong" /> Writing software programs</label><br />
+                    <label><input type="radio" name="q3_fut" value="wrong" /> Scheduling meetings</label><br />
+                    <label><input type="radio" name="q3_fut" value="wrong" /> Translating languages</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter7(3, event)">Submit</button>
+                    <div id="feedback3_fut" class="feedback"></div>
+                  </div>
+                
+                  <div class="question-block">
+                    <p class="question-text"><strong>4. Autonomous systems are best described as:</strong></p>
+                    <label><input type="radio" name="q4_fut" value="correct" /> Machines that can make decisions and act independently</label><br />
+                    <label><input type="radio" name="q4_fut" value="wrong" /> Simple calculators</label><br />
+                    <label><input type="radio" name="q4_fut" value="wrong" /> Manual data entry tools</label><br />
+                    <label><input type="radio" name="q4_fut" value="wrong" /> Basic mobile apps</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter7(4, event)">Submit</button>
+                    <div id="feedback4_fut" class="feedback"></div>
+                  </div>
+                
+                  <div class="question-block">
+                    <p class="question-text"><strong>5. Which of the following is a common AI career?</strong></p>
+                    <label><input type="radio" name="q5_fut" value="correct" /> Machine Learning Engineer</label><br />
+                    <label><input type="radio" name="q5_fut" value="wrong" /> Graphic Designer</label><br />
+                    <label><input type="radio" name="q5_fut" value="wrong" /> Accountant</label><br />
+                    <label><input type="radio" name="q5_fut" value="wrong" /> Chef</label><br />
+                    <button type="button" class="btn-submit" onclick="submitSingleChapter7(5, event)">Submit</button>
+                    <div id="feedback5_fut" class="feedback"></div>
+                  </div>
+                
+                </form>
+                
+                <div id="resultChapter7"></div>
+                <p id="motivationChapter7"></p>
+                
+            </div>
+        </div>
+
+        <!-- Chapter 8 -->
+        <div class="chapter" id="chapter8">
+            <h2>Chapter 8: Summary & Motivation</h2>
+            <div class="chapter-content">
+                <p>This course introduced AI concepts, Python basics, data handling, machine learning, beginner projects, ethics, and future opportunities. Stay consistent, practice daily, and build real projects to grow your AI skills.</p>
+            </div>
+        </div>
+
+      <div style="text-align:center; margin: 40px 0;">  
+  <p><strong>Get your Data Science Basics Certificate for ₹99!</strong> – Showcase your achievement and boost your career.</p>  
+  <button class="enroll" id="payBtn">Get Certificate</button>  
+</div>  
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  document.getElementById("payBtn").onclick = function(e) {
+    e.preventDefault();
+
+    var options = {
+      "key": "rzp_test_1234567890abcdef", // 🔹 Replace with your Razorpay Key ID from Dashboard
+      "amount": 9900, // ₹99 in paise
+      "currency": "INR",
+      "name": "Learnify AI",
+      "description": "Certificate Payment",
+      "image": "https://yourdomain.com/logo.png", // optional logo
+      "handler": function (response) {
+        // ✅ Redirect after successful payment
+        window.location.href = "payment1.html?payment_id=" + response.razorpay_payment_id;
+      },
+      "prefill": {
+        "name": localStorage.getItem("userName") || "Student",
+        "email": localStorage.getItem("userEmail") || "student@email.com",
+        "contact": localStorage.getItem("userPhone") || "9999999999"
+      },
+      "theme": { "color": "#0a1f44" } // navy blue
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response){
+      alert("❌ Payment Failed: " + response.error.description);
+    });
+    rzp.open();
+  }
+</script>
+
+</div>
+
+
+    <script>
+        const chapters = document.querySelectorAll('.chapter h2');
+        chapters.forEach(chap => {
+            chap.addEventListener('click', () => {
+                const content = chap.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Learning – Beginner’s Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    body { 
+        font-family: 'Roboto', sans-serif; 
+        background-color: #ffffff; 
+        color: #1a1a1a; 
+        margin: 0; 
+        padding: 0; 
+        line-height: 1.7; 
+    } 
+    header { 
+        background-color: #001f3f; 
+        color: #ffffff; 
+        padding: 20px; 
+        text-align: center; 
+    } 
+    header h1 { 
+        margin: 0; 
+        font-size: 2.2em; 
+    } 
+    nav { 
+        background-color: #003366; 
+        display: flex; 
+        justify-content: center; 
+        padding: 10px 0; 
+        flex-wrap: wrap;
+    } 
+    nav a { 
+        color: #ffffff; 
+        text-decoration: none; 
+        margin: 5px 15px; 
+        font-weight: 500; 
+    } 
+    nav a:hover { 
+        color: #00bfff; 
+    } 
+    .container { 
+        max-width: 900px; 
+        margin: 30px auto; 
+        padding: 0 20px; 
+    } 
+    h2 { 
+        color: #001f3f; 
+        cursor: pointer; 
+        position: relative; 
+        padding-right: 25px; 
+    } 
+    h2::after { 
+        content: '▼'; 
+        position: absolute; 
+        right: 0; 
+        font-size: 0.8em; 
+    } 
+    .chapter { 
+        margin-bottom: 20px; 
+        border-bottom: 1px solid #ccc; 
+        padding-bottom: 15px; 
+    } 
+    .chapter-content { 
+        display: none; 
+        padding-top: 10px; 
+        animation: fadeIn 0.5s ease-in-out; 
+    } 
+    @keyframes fadeIn { 
+        from {opacity: 0;} 
+        to {opacity:1;} 
+    } 
+    button.enroll { 
+        display: block; 
+        background-color: #001f3f; 
+        color: #ffffff; 
+        border: none; 
+        padding: 15px 30px; 
+        margin: 30px auto; 
+        font-size: 1.2em; 
+        cursor: pointer; 
+        border-radius: 8px; 
+        transition: background-color 0.3s ease; 
+    } 
+    button.enroll:hover { 
+        background-color: #003366; 
+    } 
+    p { 
+        margin-bottom: 15px; 
+    } 
+    li { 
+        margin-bottom: 8px; 
+    } 
+    .highlight { 
+        color: #003366; 
+        font-weight: 500; 
+    } 
+</style>
+</head>
+<body>
+<header> 
+    <h1>Machine Learning – Beginner’s Course</h1> 
+    <p>Learn Machine Learning from scratch – in-depth, engaging, and easy to understand!</p> 
+</header> 
+
+<nav> 
+    <a href="#chapter1">Introduction</a> 
+    <a href="#chapter2">Data Handling</a> 
+    <a href="#chapter3">Supervised Learning</a> 
+    <a href="#chapter4">Unsupervised Learning</a> 
+    <a href="#chapter5">ML Projects</a> 
+    <a href="#chapter6">Evaluation</a> 
+    <a href="#chapter7">Deployment</a> 
+    <a href="#chapter8">Summary</a> 
+</nav>
+
+<div class="container">
+
+    <!-- Chapter 1 -->
+    <div class="chapter" id="chapter1">
+        <h2>Chapter 1: Introduction to Machine Learning</h2>
+        <div class="chapter-content">
+            <h2>Chapter 1: Introduction to Machine Learning</h2>
+
+<h3>What is Machine Learning (ML)?</h3>
+<p>
+<strong>Machine Learning (ML)</strong> is a branch of <strong>Artificial Intelligence (AI)</strong> that enables computers to learn from experience—meaning data—instead of just following step-by-step instructions. Think of ML as teaching a computer by showing examples, not by giving it every possible rule!
+</p>
+
+<ul>
+  <li><b>Artificial Intelligence (AI):</b> The broad field of building systems that can perform tasks that usually require human intelligence, such as reasoning, planning, or understanding language. AI covers everything from smart assistants (like Alexa and Siri) to self-driving cars.</li>
+  <li><b>Machine Learning (ML):</b> A specialized area within AI that focuses on algorithms able to learn patterns and rules automatically from data to make decisions or predictions.</li>
+</ul>
+<p>
+<b>Difference:</b> <i>All machine learning is AI, but not all AI is machine learning.</i> For example, early chess computers used explicit rules (AI but not ML), while today’s champions use learned strategies from millions of games (AI + ML).
+</p>
+
+<hr>
+
+<h3>Types of Machine Learning</h3>
+<ul>
+  <li>
+    <b>Supervised Learning:</b>
+    <ul>
+      <li>Trains on labeled data—every example has both the input (features) and the desired output (label).</li>
+      <li>The goal: learn a mapping from input to output so it can predict the label for new, unseen data.</li>
+      <li>
+        <b>Examples:</b> Classifying emails as “spam” or “not spam,” predicting house prices from features, recognizing objects in images.
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>Unsupervised Learning:</b>
+    <ul>
+      <li>Works with unlabeled data—only the input is provided, with no known output.</li>
+      <li>The algorithm looks for hidden patterns or naturally occurring groups without instructions on what to look for.</li>
+      <li>
+        <b>Examples:</b> Grouping customers into segments based on buying habits, clustering news stories by topic, anomaly detection for fraud.
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>Reinforcement Learning:</b>
+    <ul>
+      <li>Teaches an “agent” to take actions in an environment. After each action, it receives feedback (reward or penalty).</li>
+      <li>The agent learns strategies through trial and error to achieve the highest rewards over time.</li>
+      <li>
+        <b>Examples:</b> Game-playing AIs (chess, Go, video games), robots learning to walk or pick up objects, self-driving cars making driving decisions.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>Real-world Applications of ML</h3>
+<table border="1" cellpadding="6" style="border-collapse:collapse; margin-bottom:16px;">
+  <tr>
+    <th>Field</th>
+    <th>ML Application</th>
+    <th>Example in Daily Life</th>
+  </tr>
+  <tr>
+    <td>Finance</td>
+    <td>Fraud detection, credit scoring, stock prediction</td>
+    <td>Alerts from your bank for unusual transactions</td>
+  </tr>
+  <tr>
+    <td>Healthcare</td>
+    <td>Medical image analysis, disease prediction</td>
+    <td>AI helping radiologists spot cancer in X-rays</td>
+  </tr>
+  <tr>
+    <td>E-commerce</td>
+    <td>Product recommendations, personalized ads</td>
+    <td>Amazon suggesting items based on what you’ve browsed or bought</td>
+  </tr>
+  <tr>
+    <td>Robotics</td>
+    <td>Autonomous navigation, precision tasks</td>
+    <td>Vacuum robots mapping your house; warehouse robots sorting packages</td>
+  </tr>
+  <tr>
+    <td>Social Media</td>
+    <td>Content recommendation, sentiment analysis</td>
+    <td>Instagram suggesting reels, Facebook showing posts you might like</td>
+  </tr>
+</table>
+
+<hr>
+
+<h3>Summary</h3>
+<ul>
+  <li><strong>Machine Learning</strong> is at the core of modern AI, driving everything from recommendations to self-driving cars.</li>
+  <li>There are three main types: <strong>supervised</strong> (learn from labeled data), <strong>unsupervised</strong> (find patterns by itself), and <strong>reinforcement</strong> (learn from trial and error with feedback).</li>
+  <li>ML is making daily life smarter and industries more efficient, accurate, and personalized.</li>
+  <li>The journey starts with understanding data, learning about algorithms, and recognizing ML’s impact all around you!</li>
+</ul>
+
+<hr>
+
+<style>
+    h2.exercise-heading {
+      color: #00796b;
+      border-left: 6px solid #004d40;
+      padding-left: 12px;
+      margin-bottom: 24px;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px #b2dfdb;
+      background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+      border-radius: 8px;
+      padding: 12px 20px;
+      max-width: 370px;
+      box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+      font-weight: 700;
+    }
+    .question-block {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      padding: 20px 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 5px solid #80deea;
+    }
+    .question-text {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #005662;
+    }
+    label {
+      display: block;
+      margin: 6px 0;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    .btn-submit {
+      background: linear-gradient(145deg, #00796b, #004d40);
+      border: none;
+      border-radius: 25px;
+      color: #a7ffeb;
+      font-weight: 700;
+      padding: 10px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+      transition: background 0.4s ease;
+      display: block;
+      margin: 16px auto 0;
+      width: 160px;
+    }
+    .btn-submit:disabled {
+      background-color: #95a5a6;
+      cursor: not-allowed;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(145deg, #004d40, #00796b);
+    }
+    .feedback {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .correct-answer {
+      color: #2e7d32;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .motivation-line {
+      color: #00796b;
+      font-style: italic;
+      margin-top: 6px;
+    }
+    #resultMLIntro {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-top: 25px;
+      color: #004d40;
+    }
+    #motivationMLIntro {
+      font-style: italic;
+      margin-top: 8px;
+      color: #00897b;
+    }
+  </style>
+  
+  <h2 class="exercise-heading">Machine Learning (AI) Introduction Quiz</h2>
+  
+  <form id="mlTypeExercise">
+    <div class="question-block">
+      <p class="question-text"><strong>1. What does Machine Learning (ML) mean?</strong></p>
+      <label><input type="radio" name="q1" value="wrong"> A robot performing manual tasks</label>
+      <label><input type="radio" name="q1" value="wrong"> Programming all rules by hand</label>
+      <label><input type="radio" name="q1" value="correct"> Teaching computers to learn patterns from data</label>
+      <label><input type="radio" name="q1" value="wrong"> Computers running fast calculations only</label>
+      <button type="button" class="btn-submit" onclick="submitSingleMLIntro(1, event)">Submit</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>2. Which of these is a type of Machine Learning?</strong></p>
+      <label><input type="radio" name="q2" value="wrong"> Guided Learning</label>
+      <label><input type="radio" name="q2" value="correct"> Supervised Learning</label>
+      <label><input type="radio" name="q2" value="wrong"> Assisted Learning</label>
+      <label><input type="radio" name="q2" value="wrong"> Accelerated Learning</label>
+      <button type="button" class="btn-submit" onclick="submitSingleMLIntro(2, event)">Submit</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>3. Which scenario uses Unsupervised Learning?</strong></p>
+      <label><input type="radio" name="q3" value="correct"> Grouping news articles by topics without labels</label>
+      <label><input type="radio" name="q3" value="wrong"> Determining if an email is spam or not</label>
+      <label><input type="radio" name="q3" value="wrong"> A robot learning to walk by reward and penalty</label>
+      <label><input type="radio" name="q3" value="wrong"> Making product recommendations</label>
+      <button type="button" class="btn-submit" onclick="submitSingleMLIntro(3, event)">Submit</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>4. In Reinforcement Learning, the system learns by:</strong></p>
+      <label><input type="radio" name="q4" value="wrong"> Just reading lots of text</label>
+      <label><input type="radio" name="q4" value="wrong"> Getting only labeled data</label>
+      <label><input type="radio" name="q4" value="correct"> Trying actions and receiving rewards or penalties</label>
+      <label><input type="radio" name="q4" value="wrong"> Rotating through preset choices</label>
+      <button type="button" class="btn-submit" onclick="submitSingleMLIntro(4, event)">Submit</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+  
+    <div class="question-block">
+      <p class="question-text"><strong>5. Which is a real-world example of Machine Learning?</strong></p>
+      <label><input type="radio" name="q5" value="wrong"> A digital clock showing time</label>
+      <label><input type="radio" name="q5" value="correct"> Personalized recommendations on Netflix</label>
+      <label><input type="radio" name="q5" value="wrong"> Turning on a light with a switch</label>
+      <label><input type="radio" name="q5" value="wrong"> A calculator performing addition</label>
+      <button type="button" class="btn-submit" onclick="submitSingleMLIntro(5, event)">Submit</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  </form>
+  <div id="resultMLIntro"></div>
+  <p id="motivationMLIntro"></p>
+  
+  <script>
+  const mlAnswers = {
+    q1: 'Teaching computers to learn patterns from data',
+    q2: 'Supervised Learning',
+    q3: 'Grouping news articles by topics without labels',
+    q4: 'Trying actions and receiving rewards or penalties',
+    q5: 'Personalized recommendations on Netflix'
+  };
+  const mlCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userMLIntro = {};
+  
+  function submitSingleMLIntro(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+  
+    userMLIntro['q' + qNum] = selected;
+  
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+  
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+  
+    if (selected === mlCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${mlAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep trying, every mistake is a step forward!</span>`;
+    }
+    if (Object.keys(userMLIntro).length === 5) {
+      showMLIntroResult();
+    }
+  }
+  
+  function showMLIntroResult() {
+    let score = 0;
+    for (const key in userMLIntro) {
+      if (userMLIntro[key] === mlCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultMLIntro').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+  
+    const motivationQuotes = [
+      "Great job! Keep learning and exploring — the future is yours!",
+      "Excellent effort! Every question brings you closer to mastery.",
+      "Well done! Remember, learning is a journey, not a race.",
+      "Good work! Your curiosity is your greatest strength.",
+      "Fantastic! Keep pushing boundaries and stay curious."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationMLIntro').innerText = motivationQuotes[randomIndex];
+  }
+  </script>         
+        </div>
+    </div>
+
+    <!-- Chapter 2 -->
+    <div class="chapter" id="chapter2">
+        <h2>Chapter 2: Data Handling & Preprocessing</h2>
+        <div class="chapter-content">
+            <h2>Chapter 2: Data Handling & Preprocessing</h2>
+
+<p>
+Data is the lifeblood of any machine learning project. The quality, quantity, and how you handle your data directly affect how well your ML models work. This chapter introduces the essentials of collecting, cleaning, and preparing data so your learning algorithms perform their best.
+</p>
+
+<hr>
+
+<h3>1. Importance of Data in ML</h3>
+<ul>
+  <li><b>Garbage in, garbage out:</b> Bad or poorly prepared data leads to unreliable machine learning models.</li>
+  <li>Good data lets ML models learn patterns and make accurate predictions.</li>
+  <li>Most of the effort in ML projects goes into preparing the data, not building the model!</li>
+</ul>
+
+<hr>
+
+<h3>2. Data Collection and Sources</h3>
+<ul>
+  <li><b>Data sources:</b> Databases, web scraping, public datasets (e.g., Kaggle, UCI), sensors, APIs, user input.</li>
+  <li><b>Data types:</b> Text, numbers, images, audio, video, time series, tabular (spreadsheet-like data).</li>
+  <li>Data must represent the real-world scenario you want your model to understand.</li>
+</ul>
+
+<hr>
+
+<h3>3. Cleaning Data</h3>
+<ul>
+  <li><b>Handling missing values (nulls):</b> Remove, fill with averages, use forward/backward fill, or advanced imputation.</li>
+  <li><b>Removing duplicates:</b> Drop duplicate rows to avoid bias or cheating in ML.</li>
+  <li><b>Fixing types & errors:</b> Make sure numbers are numbers, strings are strings; fix obvious mistakes or typos.</li>
+</ul>
+
+<pre><code>
+# Example: Handling missing values in pandas DataFrame
+import pandas as pd
+df = pd.read_csv("my_data.csv")
+# Remove rows with nulls
+df = df.dropna()
+# Or fill missing values with the mean
+df = df.fillna(df.mean())
+</code></pre>
+
+<hr>
+
+<h3>4. Feature Scaling, Normalization, Encoding</h3>
+<ul>
+  <li><b>Feature scaling:</b> Transform numeric features so they’re on similar scales (important for gradient-based algorithms).</li>
+  <li><b>Normalization:</b> Rescale features to a specific range (often 0 to 1) or make sure values have mean=0, std=1.</li>
+  <li><b>Encoding:</b> Convert categorical/text values to numbers (one-hot encoding, label encoding) so ML algorithms can use them.</li>
+</ul>
+
+<pre><code>
+# Scale features to 0-1
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+scaled_data = scaler.fit_transform(df[["feature1", "feature2"]])
+# One-hot encode a categorical feature
+encoded = pd.get_dummies(df["city"])
+</code></pre>
+
+<hr>
+
+<h3>5. Train-Test Split</h3>
+<ul>
+  <li><b>Why split?</b> To check model performance on new, unseen data and avoid overfitting.</li>
+  <li><b>How?</b> Common split: 70-80% for training, 20-30% for testing.</li>
+  <li>Always randomize/shuffle before splitting.</li>
+</ul>
+
+<pre><code>
+# Split data using scikit-learn
+from sklearn.model_selection import train_test_split
+X = df.drop("target", axis=1)
+y = df["target"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+</code></pre>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Most ML work is data work—spend time to get data right!</li>
+  <li>Clean, consistent, and well-prepared data leads to accurate and trustworthy machine learning models.</li>
+  <li>Scaling, encoding, and good train-test splits are as important as choosing the right algorithm.</li>
+</ul>
+<style>
+    h2.exercise-heading {
+      color: #00796b;
+      border-left: 6px solid #004d40;
+      padding-left: 12px;
+      margin-bottom: 24px;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px #b2dfdb;
+      background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+      border-radius: 8px;
+      padding: 12px 20px;
+      max-width: 370px;
+      box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+      font-weight: 700;
+    }
+    .question-block {
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      padding: 20px 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 5px solid #80deea;
+    }
+    .question-text {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #005662;
+    }
+    label {
+      display: block;
+      margin: 6px 0;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    .btn-submit {
+      background: linear-gradient(145deg, #00796b, #004d40);
+      border: none;
+      border-radius: 25px;
+      color: #a7ffeb;
+      font-weight: 700;
+      padding: 10px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+      transition: background 0.4s ease;
+      display: block;
+      margin: 16px auto 0;
+      width: 160px;
+    }
+    .btn-submit:disabled {
+      background-color: #95a5a6;
+      cursor: not-allowed;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(145deg, #004d40, #00796b);
+    }
+    .feedback {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .correct-answer {
+      color: #2e7d32;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .motivation-line {
+      color: #00796b;
+      font-style: italic;
+      margin-top: 6px;
+    }
+    #resultDataPreprocess {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-top: 25px;
+      color: #004d40;
+    }
+    #motivationDataPreprocess {
+      font-style: italic;
+      margin-top: 8px;
+      color: #00897b;
+    }
+  </style>
+  
+  <h2 class="exercise-heading">Data Handling & Preprocessing Quiz</h2>
+  <form id="dataPreprocessQuiz">
+    <div class="question-block">
+      <p class="question-text"><strong>1. Why is it important to clean your dataset before training a machine learning model?</strong></p>
+      <label><input type="radio" name="q1" value="wrong"> It is not important, raw data is always fine</label>
+      <label><input type="radio" name="q1" value="wrong"> To make the dataset look neat for presentations</label>
+      <label><input type="radio" name="q1" value="correct"> To improve accuracy by removing errors and inconsistencies</label>
+      <label><input type="radio" name="q1" value="wrong"> Only needed for images</label>
+      <button type="button" class="btn-submit" onclick="submitSingleDataPreprocess(1, event)">Submit</button>
+      <div class="feedback" id="feedback1"></div>
+    </div>
+    <div class="question-block">
+      <p class="question-text"><strong>2. What is the purpose of feature scaling?</strong></p>
+      <label><input type="radio" name="q2" value="wrong"> To increase dataset size</label>
+      <label><input type="radio" name="q2" value="correct"> To bring all features to a similar range for better model performance</label>
+      <label><input type="radio" name="q2" value="wrong"> To make variables categorical</label>
+      <label><input type="radio" name="q2" value="wrong"> None of the above</label>
+      <button type="button" class="btn-submit" onclick="submitSingleDataPreprocess(2, event)">Submit</button>
+      <div class="feedback" id="feedback2"></div>
+    </div>
+    <div class="question-block">
+      <p class="question-text"><strong>3. One-hot encoding is used for:</strong></p>
+      <label><input type="radio" name="q3" value="wrong"> Scaling numeric values</label>
+      <label><input type="radio" name="q3" value="wrong"> Splitting datasets into train/test</label>
+      <label><input type="radio" name="q3" value="wrong"> Removing null values</label>
+      <label><input type="radio" name="q3" value="correct"> Representing categories as binary columns</label>
+      <button type="button" class="btn-submit" onclick="submitSingleDataPreprocess(3, event)">Submit</button>
+      <div class="feedback" id="feedback3"></div>
+    </div>
+    <div class="question-block">
+      <p class="question-text"><strong>4. What is a common reason for splitting data into training and testing sets?</strong></p>
+      <label><input type="radio" name="q4" value="correct"> To evaluate how the model performs on new, unseen data</label>
+      <label><input type="radio" name="q4" value="wrong"> To make the code longer</label>
+      <label><input type="radio" name="q4" value="wrong"> Only for large datasets</label>
+      <label><input type="radio" name="q4" value="wrong"> It has no benefit</label>
+      <button type="button" class="btn-submit" onclick="submitSingleDataPreprocess(4, event)">Submit</button>
+      <div class="feedback" id="feedback4"></div>
+    </div>
+    <div class="question-block">
+      <p class="question-text"><strong>5. What is the best way to handle missing (null) values?</strong></p>
+      <label><input type="radio" name="q5" value="wrong"> Ignore them completely</label>
+      <label><input type="radio" name="q5" value="correct"> Remove or replace them with a suitable value</label>
+      <label><input type="radio" name="q5" value="wrong"> Leave them for the model to decide automatically</label>
+      <label><input type="radio" name="q5" value="wrong"> Change all data to zeros</label>
+      <button type="button" class="btn-submit" onclick="submitSingleDataPreprocess(5, event)">Submit</button>
+      <div class="feedback" id="feedback5"></div>
+    </div>
+  </form>
+  <div id="resultDataPreprocess"></div>
+  <p id="motivationDataPreprocess"></p>
+  
+  <script>
+    const dpAnswers = {
+      q1: 'To improve accuracy by removing errors and inconsistencies',
+      q2: 'To bring all features to a similar range for better model performance',
+      q3: 'Representing categories as binary columns',
+      q4: 'To evaluate how the model performs on new, unseen data',
+      q5: 'Remove or replace them with a suitable value'
+    };
+    const dpCorrect = {
+      q1: 'correct',
+      q2: 'correct',
+      q3: 'correct',
+      q4: 'correct',
+      q5: 'correct'
+    };
+    const userDP = {};
+  
+    function submitSingleDataPreprocess(qNum, event) {
+      const options = document.getElementsByName('q' + qNum);
+      let selectedText = null;
+      for (const option of options) {
+        if (option.checked) selectedText = option.nextSibling.textContent.trim();
+      }
+      if (selectedText === null) {
+        alert('Please select an answer before submitting.');
+        return;
+      }
+      const selectedOption = Array.from(options).find(opt => opt.checked);
+      const selected = selectedOption.value;
+  
+      userDP['q' + qNum] = selected;
+  
+      for (const option of options) {
+        option.disabled = true;
+      }
+      const btn = event.target;
+      btn.disabled = true;
+  
+      const feedbackDiv = document.getElementById('feedback' + qNum);
+  
+      if (selected === dpCorrect['q' + qNum]) {
+        btn.innerText = 'Correct!';
+        feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+      } else {
+        btn.innerText = 'Wrong!';
+        feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${dpAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep trying, every mistake is a step forward!</span>`;
+      }
+      if (Object.keys(userDP).length === 5) {
+        showDPResult();
+      }
+    }
+  
+    function showDPResult() {
+      let score = 0;
+      for (const key in userDP) {
+        if (userDP[key] === dpCorrect[key]) score++;
+      }
+      const percentage = (score / 5) * 100;
+      document.getElementById('resultDataPreprocess').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+  
+      const motivationQuotes = [
+        "Great job! Accurate data builds strong models.",
+        "Fantastic effort! The best ML comes from clean data.",
+        "Well done! Data skills = ML success.",
+        "Keep improving! Every question boosts your understanding.",
+        "Excellent! Master data and you'll master ML."
+      ];
+      const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+      document.getElementById('motivationDataPreprocess').innerText = motivationQuotes[randomIndex];
+    }
+  </script>
+  
+        </div>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div class="chapter" id="chapter3">
+        <h2>Chapter 3: Supervised Learning Basics</h2>
+        <div class="chapter-content">
+           <h2>Chapter 3: Supervised Learning</h2>
+
+<p>
+Supervised learning is a foundational concept in machine learning. It refers to training algorithms on labeled datasets, where each data point includes both the input features and the known correct output (target). The machine “learns” by finding patterns in this data, so it can accurately predict outcomes for new, unseen examples.
+</p>
+
+<hr>
+
+<h3>Regression vs Classification: What’s the Difference?</h3>
+<ul>
+  <li>
+    <b>Regression</b>
+    <ul>
+      <li>The model predicts a continuous numeric value.</li>
+      <li><b>Examples:</b> Predicting house prices, stock values, rainfall amount, or temperature.</li>
+      <li>The output could be any real number—for instance, $205,345 for a house price.</li>
+      <li><b>Real-life scenario:</b> Given features like number of bedrooms, location, and square footage, estimate a house’s selling price.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Classification</b>
+    <ul>
+      <li>The model predicts a category (class).</li>
+      <li><b>Examples:</b> Spam filter (spam or not), disease diagnosis (positive or negative), image recognition (cat/dog/car).</li>
+      <li>Outputs are chosen from fixed groups, such as “yes/no” or “A/B/C/D.”</li>
+      <li><b>Real-life scenario:</b> Given the pixels of a handwritten digit image, recognize if it’s a 7 or a 9.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>Common Supervised Learning Algorithms</h3>
+<ul>
+  <li>
+    <b>Linear Regression</b>
+    <ul>
+      <li>
+        <b>Purpose:</b> Regression (predicting numbers)
+      </li>
+      <li>
+        <b>How it works:</b> Fits a straight line (y = mx + b) to the data, showing the relationship between input features and the predicted outcome.
+      </li>
+      <li>
+        <b>Example:</b> Estimate someone’s annual income from years of education and age.
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>Logistic Regression</b>
+    <ul>
+      <li>
+        <b>Purpose:</b> Classification (usually binary, but also multi-class)
+      </li>
+      <li>
+        <b>How it works:</b> Uses a mathematical curve (sigmoid function) to estimate the probability of a data point being in a certain class.
+      </li>
+      <li>
+        <b>Example:</b> Predict if a tumor is benign or malignant (cancer diagnosis).
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>Decision Trees</b>
+    <ul>
+      <li>
+        <b>Purpose:</b> Regression and Classification
+      </li>
+      <li>
+        <b>How it works:</b> Splits data into branches using “if/else” rules (like a flowchart) until each branch ends in a prediction.
+      </li>
+      <li>
+        <b>Example:</b> Predict customer churn: Is this customer likely to leave? Each level splits by age, spending habits, etc.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code>
+# A quick Python example: Linear Regression with scikit-learn
+from sklearn.linear_model import LinearRegression
+
+# X = input features, y = target values
+model = LinearRegression()
+model.fit(X, y)
+y_pred = model.predict(X_new) # Predict for new data
+</code></pre>
+
+<hr>
+
+<h3>Model Evaluation Metrics</h3>
+<ul>
+  <li>
+    <b>Accuracy</b>
+    <ul>
+      <li>The ratio of correct predictions to the total number of predictions.</li>
+      <li>Best when classes are balanced (similar counts for each class).</li>
+      <li><b>Example:</b> Out of 100 images, model correctly predicts 92. Accuracy = 92%.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Precision</b>
+    <ul>
+      <li>The fraction of positive predictions that were actually correct.</li>
+      <li>Indicates how much you can trust your positive predictions.</li>
+      <li><b>Example:</b> Out of 30 predicted spam emails, 27 were really spam (Precision = 90%).</li>
+    </ul>
+  </li>
+  <li>
+    <b>Recall</b>
+    <ul>
+      <li>The fraction of actual positives that your model managed to find.</li>
+      <li>Shows how good you are at finding all the true positives.</li>
+      <li><b>Example:</b> Of 40 actual spam emails, the filter flagged 32 (Recall = 80%).</li>
+    </ul>
+  </li>
+  <li>
+    <b>F1-score</b>
+    <ul>
+      <li>The harmonic mean of precision and recall. Good for imbalanced data (where one class dominates).</li>
+      <li><b>Example:</b> Precision = 90%, Recall = 80%, F1-score ≈ 85%.</li>
+      <li>Formula: F1 = 2 * (precision * recall) / (precision + recall)</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code>
+# Use scikit-learn for evaluation metrics
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+accuracy = accuracy_score(y_true, y_pred)
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+</code></pre>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Supervised learning relies on labeled data to “teach” models about the relationship between input and output.</li>
+  <li>Regression predicts numbers, classification predicts categories.</li>
+  <li>Popular algorithms like Linear Regression, Logistic Regression, and Decision Trees address a wide range of ML tasks.</li>
+  <li>Evaluation metrics reveal strengths and weaknesses—don’t rely on accuracy alone!</li>
+  <li>Always visualize and analyze predictions: Are errors random, or is the model missing something important?</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultSupervised {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationSupervised {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Supervised Learning Quiz</h2>
+<form id="supervisedQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What type of supervised learning predicts continuous numeric values?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> Regression</label>
+    <label><input type="radio" name="q1" value="wrong" /> Classification</label>
+    <label><input type="radio" name="q1" value="wrong" /> Clustering</label>
+    <label><input type="radio" name="q1" value="wrong" /> Dimensionality Reduction</label>
+    <button type="button" class="btn-submit" onclick="submitSingleSupervised(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. Which algorithm is used for classification problems?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> Linear Regression</label>
+    <label><input type="radio" name="q2" value="correct" /> Logistic Regression</label>
+    <label><input type="radio" name="q2" value="wrong" /> K-Means</label>
+    <label><input type="radio" name="q2" value="wrong" /> PCA</label>
+    <button type="button" class="btn-submit" onclick="submitSingleSupervised(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. In decision trees, how does the model decide outcomes?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> By calculating averages of features</label>
+    <label><input type="radio" name="q3" value="correct" /> By splitting data based on feature values</label>
+    <label><input type="radio" name="q3" value="wrong" /> By using a neural network</label>
+    <label><input type="radio" name="q3" value="wrong" /> By random guessing</label>
+    <button type="button" class="btn-submit" onclick="submitSingleSupervised(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What does precision measure in classification evaluation?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> The ratio of correct positive predictions to total predicted positives</label>
+    <label><input type="radio" name="q4" value="wrong" /> The ratio of correct positives to actual positives</label>
+    <label><input type="radio" name="q4" value="wrong" /> The overall accuracy of the model</label>
+    <label><input type="radio" name="q4" value="wrong" /> The time taken to train the model</label>
+    <button type="button" class="btn-submit" onclick="submitSingleSupervised(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What is the F1-score?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> The average difference between predicted and actual values</label>
+    <label><input type="radio" name="q5" value="wrong" /> The ratio of true negatives to false positives</label>
+    <label><input type="radio" name="q5" value="correct" /> The harmonic mean of precision and recall</label>
+    <label><input type="radio" name="q5" value="wrong" /> The total number of errors made by the model</label>
+    <button type="button" class="btn-submit" onclick="submitSingleSupervised(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+<div id="resultSupervised"></div>
+<p id="motivationSupervised"></p>
+
+<script>
+  const supAnswers = {
+    q1: 'Regression',
+    q2: 'Logistic Regression',
+    q3: 'By splitting data based on feature values',
+    q4: 'The ratio of correct positive predictions to total predicted positives',
+    q5: 'The harmonic mean of precision and recall'
+  };
+  const supCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userSup = {};
+
+  function submitSingleSupervised(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userSup['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === supCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${supAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep trying, every mistake is a step forward!</span>`;
+    }
+    if (Object.keys(userSup).length === 5) {
+      showSupResult();
+    }
+  }
+
+  function showSupResult() {
+    let score = 0;
+    for (const key in userSup) {
+      if (userSup[key] === supCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultSupervised').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent work! Your understanding of supervised learning is growing.",
+      "Nice job! Keep practicing to master model evaluation.",
+      "Great effort! Precision and recall become clearer with practice.",
+      "Well done! You're building solid machine learning foundations.",
+      "Keep pushing! Your knowledge will keep improving with every step."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationSupervised').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+        </div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div class="chapter" id="chapter4">
+        <h2>Chapter 4: Unsupervised Learning Basics</h2>
+        <div class="chapter-content">
+            <h2>Chapter 4: Unsupervised Learning</h2>
+<p>
+Unsupervised learning is a machine learning approach where algorithms find patterns or structure in data without using labels (answers). Instead of telling the computer “this is A and that is B,” we give it a large dataset and let it discover similarities, groupings, and hidden structure on its own.
+</p>
+<hr>
+<h3>Clustering Algorithms</h3>
+<ul>
+  <li>
+    <b>K-Means Clustering</b>
+    <ul>
+      <li><b>Goal:</b> Group similar data points into <b>K</b> distinct clusters based on their features.</li>
+      <li><b>How it works:</b> Assigns each data point to the nearest cluster center, recalculates centers, and repeats these steps until assignments don’t change.</li>
+      <li>
+        <b>Example:</b> A supermarket has customer purchasing data (how much someone buys bread, milk, fruits, etc.). Using K-Means, it groups customers into “clusters”—for instance, <span style="color:#e65100; font-weight:bold;">health focused</span>, <span style="color:#1565c0; font-weight:bold;">bargain shoppers</span>, or <span style="color:#2e7d32; font-weight:bold;">family buyers</span>. They can now offer each group special deals!
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</b>
+    <ul>
+      <li><b>Goal:</b> Find clusters of varying shape and size—even if they're irregular—based on data density.</li>
+      <li><b>How it works:</b> Groups together points in dense regions and marks points far from any cluster as “noise” or outliers.</li>
+      <li>
+        <b>Example:</b> A GPS system analyzes taxi ride pickup locations in a city. DBSCAN finds zones with lots of activity—like airports, malls, or stadiums—without needing to know the number of hot spots ahead of time. It can also spot outliers: rare drop-off points.
+      </li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<h3>Dimensionality Reduction: PCA</h3>
+<ul>
+  <li>
+    <b>Principal Component Analysis (PCA):</b> Reduces the number of features (dimensions) in your data, summarizing the dataset with a few “principal components” that keep as much important information (variance) as possible.
+  </li>
+  <li>
+    <b>Example:</b> Imagine you have a dataset measuring people’s height, weight, arm span, leg length, and torso size. Many of these features are correlated. PCA can summarize all these into just two or three “virtual features” that show most of the differences between people, making it easier to visualize and cluster.
+  </li>
+</ul>
+<pre><code>
+# Python Example: Using PCA with scikit-learn
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+# Suppose X is your data (NumPy array or DataFrame)
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+# You can now visualize or cluster X_pca!
+</code></pre>
+<hr>
+<h3>Applications of Unsupervised Learning</h3>
+<ul>
+  <li><b>Segmentation:</b> Marketers divide customers into groups for tailored ads and promotions (using clustering on shopping data).</li>
+  <li><b>Anomaly Detection:</b> Banking systems flag unusual transactions as possible fraud by finding which data points “don’t fit” (outliers with DBSCAN/clustering).</li>
+  <li><b>Preprocessing for Supervised ML:</b> PCA is used to shrink huge gene or sensor datasets before classification tasks, to make the job easier for the model and avoid overfitting.</li>
+  <li><b>Document Grouping:</b> News websites use clustering to suggest related articles (placing similar stories together without needing topic labels).</li>
+  <li><b>Image Compression:</b> PCA and clustering can reduce image size by capturing the most important color components or features.</li>
+</ul>
+<hr>
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Unsupervised learning helps find hidden patterns or simplify data without using defined answers.</li>
+  <li>Clustering is about grouping similar things; PCA is about making complex data easier to explore and analyze.</li>
+  <li>These tools are widely used in marketing, cybersecurity, medical research, and more.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultUnsupervised {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationUnsupervised {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 4: Unsupervised Learning Quiz</h2>
+
+<form id="unsupervisedQuiz">
+  <div class="question-block">
+    <p class="question-text"><strong>1. What is the goal of K-Means clustering?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> Partition data into K clusters by minimizing within-cluster variance</label>
+    <label><input type="radio" name="q1" value="wrong" /> Assign labels based on known classes</label>
+    <label><input type="radio" name="q1" value="wrong" /> Reduce dimensionality of data</label>
+    <label><input type="radio" name="q1" value="wrong" /> Find density-based clusters</label>
+    <button type="button" class="btn-submit" onclick="submitSingleUnsupervised(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. How does DBSCAN differ from K-Means?</strong></p>
+    <label><input type="radio" name="q2" value="correct" /> DBSCAN finds clusters of arbitrary shape and detects noise</label>
+    <label><input type="radio" name="q2" value="wrong" /> DBSCAN requires the number of clusters to be defined</label>
+    <label><input type="radio" name="q2" value="wrong" /> DBSCAN is a supervised learning algorithm</label>
+    <label><input type="radio" name="q2" value="wrong" /> DBSCAN reduces dimensionality before clustering</label>
+    <button type="button" class="btn-submit" onclick="submitSingleUnsupervised(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is the primary purpose of PCA?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> To cluster similar data points</label>
+    <label><input type="radio" name="q3" value="correct" /> To reduce the dimensionality of data while retaining most variance</label>
+    <label><input type="radio" name="q3" value="wrong" /> To label data points automatically</label>
+    <label><input type="radio" name="q3" value="wrong" /> To increase the number of features</label>
+    <button type="button" class="btn-submit" onclick="submitSingleUnsupervised(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which of the following is NOT a typical application of unsupervised learning?</strong></p>
+    <label><input type="radio" name="q4" value="wrong" /> Customer segmentation</label>
+    <label><input type="radio" name="q4" value="wrong" /> Anomaly detection</label>
+    <label><input type="radio" name="q4" value="wrong" /> Recommender systems</label>
+    <label><input type="radio" name="q4" value="correct" /> Email spam classification</label>
+    <button type="button" class="btn-submit" onclick="submitSingleUnsupervised(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What does DBSCAN stand for?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> Density-Based Spatial Clustering of Applications with Noise</label>
+    <label><input type="radio" name="q5" value="wrong" /> Data-Based Structural Clustering and Analysis Network</label>
+    <label><input type="radio" name="q5" value="wrong" /> Dimensionality Based Spatial Clustering Algorithm</label>
+    <label><input type="radio" name="q5" value="wrong" /> Distribution-Based Standard Clustering and Noise</label>
+    <button type="button" class="btn-submit" onclick="submitSingleUnsupervised(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultUnsupervised"></div>
+<p id="motivationUnsupervised"></p>
+
+<script>
+  const unsupAnswers = {
+    q1: 'Partition data into K clusters by minimizing within-cluster variance',
+    q2: 'DBSCAN finds clusters of arbitrary shape and detects noise',
+    q3: 'To reduce the dimensionality of data while retaining most variance',
+    q4: 'Email spam classification',
+    q5: 'Density-Based Spatial Clustering of Applications with Noise'
+  };
+
+  const unsupCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+
+  const userUnsup = {};
+
+  function submitSingleUnsupervised(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userUnsup['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === unsupCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${unsupAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep trying, every mistake is a step forward!</span>`;
+    }
+    if (Object.keys(userUnsup).length === 5) {
+      showUnsupResult();
+    }
+  }
+
+  function showUnsupResult() {
+    let score = 0;
+    for (const key in userUnsup) {
+      if (userUnsup[key] === unsupCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultUnsupervised').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! Your grasp of unsupervised learning is improving.",
+      "Great effort! Keep exploring the power of clustering and PCA.",
+      "Well done! Uncovering hidden patterns is a key ML skill.",
+      "Keep it up! Every question builds your understanding further.",
+      "Awesome work! You're mastering unsupervised machine learning."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationUnsupervised').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+        </div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div class="chapter" id="chapter5">
+        <h2>Chapter 5: Beginner ML Projects</h2>
+        <div class="chapter-content">
+            
+
+<p>
+A great way to understand machine learning is to apply what you learn through small hands-on projects. This chapter highlights three classic beginner ML projects and explains how to approach any ML project in simple, repeatable steps.
+</p>
+
+<hr>
+
+<h3>1. Student Grade Prediction (Regression Project)</h3>
+<ul>
+  <li><b>Goal:</b> Predict final exam grades using features like study hours, attendance, and previous scores.</li>
+  <li><b>Data Example:</b> <code>[hours_studied, attendance, assignment_score] -&gt; final_grade</code></li>
+  <li><b>Common Algorithms:</b> Linear Regression, Decision Trees.</li>
+  <li><b>Approach:</b>
+    <ul>
+      <li>Collect and clean data (handle missing values, outliers).</li>
+      <li>Explore data: Check for correlations between features and grades.</li>
+      <li>Split into train/test sets.</li>
+      <li>Train a regression model and check its accuracy (mean absolute error, RMSE).</li>
+      <li>Analyze which features impact grades most.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>2. Spam Email Classification (Classification Project)</h3>
+<ul>
+  <li><b>Goal:</b> Classify emails as 'spam' or 'not spam'.</li>
+  <li><b>Data Example:</b> <code>[has_“free”, num_links, has_attachment, sender]</code></li>
+  <li><b>Common Algorithms:</b> Logistic Regression, Decision Tree, Naive Bayes.</li>
+  <li><b>Approach:</b>
+    <ul>
+      <li>Gather a set of labeled emails (spam/not spam) as training data.</li>
+      <li>Convert email text/features into numeric form (encoding, vectorization).</li>
+      <li>Split into train/test sets.</li>
+      <li>Train classifier, measure precision/recall/F1-score.</li>
+      <li>Test with new emails to see how well it blocks spam.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>3. Simple Image Recognition (Classification Project)</h3>
+<ul>
+  <li><b>Goal:</b> Recognize digits (0–9) in small images (like MNIST dataset).</li>
+  <li><b>Data Example:</b> Pixel values of 28×28 grayscale images, each labeled with a digit.</li>
+  <li><b>Common Algorithms:</b> Logistic Regression, k-Nearest Neighbors, Simple Neural Networks.</li>
+  <li><b>Approach:</b>
+    <ul>
+      <li>Preprocess images: normalize pixel values, possibly flatten images into vectors.</li>
+      <li>Split dataset into train and test.</li>
+      <li>Train classification model, check accuracy on test set.</li>
+      <li>Visualize predictions (optional) to better understand errors.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>How to Approach an ML Project: General Steps</h3>
+<ol>
+  <li>Define the problem clearly (what do you want to predict or classify?).</li>
+  <li>Collect and inspect data. Clean and preprocess it (fix missing values, encode text, scale values as needed).</li>
+  <li>Explore data: Find patterns, correlations, and visualize distributions.</li>
+  <li>Split data into training and testing sets.</li>
+  <li>Choose a suitable ML algorithm and train the model.</li>
+  <li>Evaluate the model's performance with appropriate metrics.</li>
+  <li>Analyze results and refine the model as needed.</li>
+  <li>Test on new/unseen data, and share/report your findings!</li>
+</ol>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Pick simple, well-defined projects at first (one target to predict, not too many features).</li>
+  <li>Follow a structured approach: data → exploration → preprocessing → modeling → evaluation.</li>
+  <li>Use public datasets (like Kaggle, UCI, scikit-learn) when starting out.</li>
+  <li>Practice, experiment, and don’t worry if your first model isn’t perfect—learning happens by doing!</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultProject {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationProject {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 5: Beginner ML Projects Quiz</h2>
+
+<form id="projectQuiz">
+  <div class="question-block">
+    <p class="question-text"><strong>1. Which project is an example of a regression problem?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> Predicting student's final grade based on study hours</label>
+    <label><input type="radio" name="q1" value="wrong" /> Classifying emails as spam or not</label>
+    <label><input type="radio" name="q1" value="wrong" /> Recognizing handwritten digits</label>
+    <button type="button" class="btn-submit" onclick="submitSingleProject(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+  
+  <div class="question-block">
+    <p class="question-text"><strong>2. What preprocessing step is important when working with email text data for spam classification?</strong></p>
+    <label><input type="radio" name="q2" value="correct" /> Converting text to numeric features using encoding or vectorization</label>
+    <label><input type="radio" name="q2" value="wrong" /> Removing all punctuation without converting text</label>
+    <label><input type="radio" name="q2" value="wrong" /> Using images directly without any processing</label>
+    <button type="button" class="btn-submit" onclick="submitSingleProject(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. Which algorithm is commonly used for simple image recognition projects like digit classification?</strong></p>
+    <label><input type="radio" name="q3" value="correct" /> Logistic Regression</label>
+    <label><input type="radio" name="q3" value="wrong" /> K-Means clustering</label>
+    <label><input type="radio" name="q3" value="wrong" /> PCA for clustering</label>
+    <button type="button" class="btn-submit" onclick="submitSingleProject(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. What is the typical first step when beginning any ML project?</strong></p>
+    <label><input type="radio" name="q4" value="correct" /> Define the problem clearly</label>
+    <label><input type="radio" name="q4" value="wrong" /> Train the model right away</label>
+    <label><input type="radio" name="q4" value="wrong" /> Ignore data preprocessing</label>
+    <button type="button" class="btn-submit" onclick="submitSingleProject(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What metric is useful to evaluate a student grade prediction model?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> Mean Absolute Error (MAE)</label>
+    <label><input type="radio" name="q5" value="wrong" /> Precision</label>
+    <label><input type="radio" name="q5" value="wrong" /> F1-score</label>
+    <button type="button" class="btn-submit" onclick="submitSingleProject(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultProject"></div>
+<p id="motivationProject"></p>
+
+<script>
+  const projAnswers = {
+    q1: 'Predicting student\'s final grade based on study hours',
+    q2: 'Converting text to numeric features using encoding or vectorization',
+    q3: 'Logistic Regression',
+    q4: 'Define the problem clearly',
+    q5: 'Mean Absolute Error (MAE)'
+  };
+  const projCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userProj = {};
+
+  function submitSingleProject(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim(); 
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+    
+    userProj['q' + qNum] = selected;
+    
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+    
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+    
+    if (selected === projCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Well done! That is correct.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${projAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep learning and improving!</span>`;
+    }
+    
+    if (Object.keys(userProj).length === 5) {
+      showProjResult();
+    }
+  }
+  
+  function showProjResult() {
+    let score = 0;
+    for (const key in userProj) {
+      if (userProj[key] === projCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultProject').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+    
+    const motivationalQuotes = [
+      "Great job! Keep practicing to build strong ML skills.",
+      "Excellent effort! Each project you complete strengthens your expertise.",
+      "Well done! Building real projects is the best way to learn.",
+      "Keep experimenting! Real growth comes from hands-on practice.",
+      "Fantastic! You’re on the path to becoming a skilled ML practitioner."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
+    document.getElementById('motivationProject').innerText = motivationalQuotes[randomIndex];
+  }
+</script>
+
+        </div>
+    </div>
+
+    <!-- Chapter 6 -->
+    <div class="chapter" id="chapter6">
+        <h2>Chapter 6: Model Evaluation</h2>
+        <div class="chapter-content">
+            
+
+<p>
+Model evaluation is a crucial step in any machine learning workflow. It helps you understand how well your model is performing, whether it generalizes to new data, and where improvements can be made. In this chapter, we’ll cover key concepts and tools for evaluating ML models.
+</p>
+
+<hr>
+
+<h3>1. Evaluating Performance Metrics</h3>
+<ul>
+  <li><b>Accuracy:</b> Proportion of correct predictions overall. Good for balanced classes, not for imbalanced problems.</li>
+  <li><b>Precision:</b> Out of all predicted positives, how many are actually positive?</li>
+  <li><b>Recall:</b> Out of all actual positives, how many did the model correctly flag?</li>
+  <li><b>F1-Score:</b> The harmonic mean of precision and recall. Useful when you want a balance between the two on imbalanced data.</li>
+  <li><b>ROC-AUC:</b> Measures how well the model separates classes across all thresholds.</li>
+</ul>
+
+<hr>
+
+<h3>2. Confusion Matrix</h3>
+<ul>
+  <li>The confusion matrix is a table that summarizes the number of true positives, true negatives, false positives, and false negatives.</li>
+  <li><b>Example for Binary Classification:</b></li>
+</ul>
+<table border="1" cellpadding="6">
+  <tr><th></th><th>Predicted Positive</th><th>Predicted Negative</th></tr>
+  <tr><th>Actual Positive</th><td>True Positive (TP)</td><td>False Negative (FN)</td></tr>
+  <tr><th>Actual Negative</th><td>False Positive (FP)</td><td>True Negative (TN)</td></tr>
+</table>
+<ul>
+  <li><b>Use it to:</b>
+    <ul>
+      <li>Diagnose types of errors your model is making</li>
+      <li>Compute precision, recall, F1-score, etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>3. Cross-Validation</h3>
+<ul>
+  <li><b>What?</b> Cross-validation splits the dataset into several parts (folds). The model is trained on some parts and tested on others, rotated through all combinations.</li>
+  <li><b>Why?</b> Gives a better estimate of how the model will perform on new, unseen data than a single train-test split.</li>
+  <li><b>K-Fold Cross-Validation:</b> Most common type where the data is divided into 'K' equal parts and the process is repeated 'K' times so every part is used as test data once.</li>
+  <li>Helps identify if a model is sensitive to the specifics of your train-test split.</li>
+</ul>
+
+<hr>
+
+<h3>4. Overfitting & Underfitting</h3>
+<ul>
+  <li><b>Overfitting:</b>
+    <ul>
+      <li>The model captures noise and details specific to the training data rather than general patterns.</li>
+      <li>High accuracy on training data, low accuracy on new/unseen data.</li>
+      <li><b>How to spot:</b> Big gap between training accuracy and test (or cross-validation) accuracy.</li>
+    </ul>
+  </li>
+  <li><b>Underfitting:</b>
+    <ul>
+      <li>The model is too simple, missing important patterns in the data.</li>
+      <li>Poor accuracy on both training and testing data.</li>
+    </ul>
+  </li>
+  <li><b>Goal:</b> Find a model that generalizes well—not too simple (underfit), not too tailored (overfit).</li>
+</ul>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Always use performance metrics that match your problem and data characteristics.</li>
+  <li>Confusion matrix is essential for detailed error analysis.</li>
+  <li>Cross-validation provides a more robust evaluation than a single split.</li>
+  <li>Beware of overfitting and underfitting—assess both train and test performance carefully!</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultModelEval {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationModelEval {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 6: Model Evaluation Quiz</h2>
+
+<form id="modelEvalQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. What does a confusion matrix show?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> The counts of true positives, false positives, true negatives, and false negatives</label>
+    <label><input type="radio" name="q1" value="wrong" /> Model training time</label>
+    <label><input type="radio" name="q1" value="wrong" /> Number of epochs</label>
+    <label><input type="radio" name="q1" value="wrong" /> The number of features used</label>
+    <button type="button" class="btn-submit" onclick="submitSingleModelEval(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What is overfitting?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> When the model performs poorly on training data</label>
+    <label><input type="radio" name="q2" value="correct" /> When the model performs well on training data but poorly on unseen data</label>
+    <label><input type="radio" name="q2" value="wrong" /> When the model doesn’t learn anything</label>
+    <label><input type="radio" name="q2" value="wrong" /> When the model uses too few features</label>
+    <button type="button" class="btn-submit" onclick="submitSingleModelEval(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is cross-validation used for?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> To train the model faster</label>
+    <label><input type="radio" name="q3" value="correct" /> To evaluate model’s generalization by testing on different data splits</label>
+    <label><input type="radio" name="q3" value="wrong" /> To reduce dataset size</label>
+    <label><input type="radio" name="q3" value="wrong" /> To select features</label>
+    <button type="button" class="btn-submit" onclick="submitSingleModelEval(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which metric balances precision and recall?</strong></p>
+    <label><input type="radio" name="q4" value="wrong" /> Accuracy</label>
+    <label><input type="radio" name="q4" value="correct" /> F1-score</label>
+    <label><input type="radio" name="q4" value="wrong" /> ROC-AUC</label>
+    <label><input type="radio" name="q4" value="wrong" /> Confusion matrix</label>
+    <button type="button" class="btn-submit" onclick="submitSingleModelEval(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. Which issue refers to a model that is too simple to capture underlying patterns?</strong></p>
+    <label><input type="radio" name="q5" value="correct" /> Underfitting</label>
+    <label><input type="radio" name="q5" value="wrong" /> Overfitting</label>
+    <label><input type="radio" name="q5" value="wrong" /> Data leakage</label>
+    <label><input type="radio" name="q5" value="wrong" /> Cross-validation</label>
+    <button type="button" class="btn-submit" onclick="submitSingleModelEval(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+
+</form>
+
+<div id="resultModelEval"></div>
+<p id="motivationModelEval"></p>
+
+<script>
+  const modelEvalAnswers = {
+    q1: 'The counts of true positives, false positives, true negatives, and false negatives',
+    q2: 'When the model performs well on training data but poorly on unseen data',
+    q3: 'To evaluate model’s generalization by testing on different data splits',
+    q4: 'F1-score',
+    q5: 'Underfitting'
+  };
+  const modelEvalCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userModelEval = {};
+
+  function submitSingleModelEval(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userModelEval['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === modelEvalCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${modelEvalAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep trying, every mistake is a step forward!</span>`;
+    }
+    if (Object.keys(userModelEval).length === 5) {
+      showModelEvalResult();
+    }
+  }
+
+  function showModelEvalResult() {
+    let score = 0;
+    for (const key in userModelEval) {
+      if (userModelEval[key] === modelEvalCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultModelEval').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Excellent! You understand how to evaluate ML models effectively.",
+      "Great effort! Model evaluation is key to building better ML systems.",
+      "Well done! Keep refining how you measure performance.",
+      "Keep going! Evaluation skills boost your ML success.",
+      "Fantastic! Understanding evaluation leads to smarter models."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationModelEval').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+</div>
+
+    </div>
+
+    <!-- Chapter 7 -->
+    <div class="chapter" id="chapter7">
+        <h2>Chapter 7: Deployment</h2>
+        <div class="chapter-content">
+            <h2>Chapter 7: Deployment</h2>
+
+<p>
+Deployment is the process of taking your trained machine learning model and making it usable outside your development environment—whether that means sharing predictions online, embedding in a web or mobile app, or integrating with business systems. This chapter covers the essential concepts and steps for bringing your ML models to real-world applications.
+</p>
+
+<hr>
+
+<h3>1. Saving and Loading Models</h3>
+<ul>
+  <li>
+    <b>Why?</b> Training models can take time and resources. Once trained, you can save a model for future use, eliminating the need to retrain every time.
+  </li>
+  <li>
+    <b>How?</b> Common libraries for model persistence:
+    <ul>
+      <li><b>joblib</b> (best for scikit-learn): <code>import joblib; joblib.dump(model, 'model.pkl')</code></li>
+      <li><b>pickle:</b> General Python object serialization.</li>
+      <li>Framework-specific options: <b>TensorFlow/Keras</b> <code>.save()</code>, <b>PyTorch</b> <code>torch.save()</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Loading:</b> Use the corresponding <code>load</code> function when you want to use the model for new data without retraining.
+    <ul>
+      <li><code>model = joblib.load('model.pkl')</code></li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>2. Converting ML Models into Applications</h3>
+<ul>
+  <li>
+    <b>Why?</b> Making predictions interactive and accessible—users or programs can supply their own data instead of you providing all examples yourself.
+  </li>
+  <li>
+    <b>Common approaches:</b>
+    <ul>
+      <li>Embed the model in a script or application (e.g., a web dashboard or automated workflow).</li>
+      <li>Use frameworks like <b>Flask</b> or <b>FastAPI</b> to wrap your trained model in a Python web application.</li>
+      <li>Convert models for use in mobile apps (e.g., TensorFlow Lite for Android/iOS).</li>
+      <li>Export models to ONNX or TensorFlow.js for cross-platform compatibility.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>3. Introduction to APIs for ML</h3>
+<ul>
+  <li>
+    <b>API (Application Programming Interface):</b> An interface that lets other software interact with your model. Most common for ML is the REST API.
+  </li>
+  <li>
+    <b>REST API:</b> Web protocol that allows you to send data to a server (your model), get predictions, and use them elsewhere.
+    <ul>
+      <li>Example stack: Python + Flask + model file = REST API for predictions.</li>
+      <li>Input/Output: Send features (as JSON or form data), get predicted values or classes back (as JSON).</li>
+    </ul>
+  </li>
+  <li>
+    Modern ML deployment tools (FastAPI, Flask, Streamlit, BentoML, etc.) make API creation simple for ML models.
+  </li>
+</ul>
+
+<hr>
+
+<h3>4. Basic Deployment Pipeline Overview</h3>
+<ol>
+  <li><b>Train and evaluate</b> your model.</li>
+  <li><b>Save</b> the trained model to disk.</li>
+  <li><b>Build an interface or API</b> to load the model and accept new input data.</li>
+  <li><b>Deploy</b> the API/app to a server or cloud service (Heroku, AWS, Azure, etc.).</li>
+  <li><b>Serve predictions</b>: Users or systems send requests and get model output in real-time.</li>
+</ol>
+
+<hr>
+
+<h3>Key Points to Remember</h3>
+<ul>
+  <li>Deployment turns your model into a practical tool for real users or automated processes.</li>
+  <li>Saving/loading models is crucial for reuse and scalability.</li>
+  <li>APIs are the main technology for making models interact with the world—learn the basics!</li>
+  <li>Test your deployed app or API thoroughly to ensure accuracy and reliability in production.</li>
+</ul>
+<style>
+  h2.exercise-heading {
+    color: #00796b;
+    border-left: 6px solid #004d40;
+    padding-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #b2dfdb;
+    background: linear-gradient(90deg, #80deea 0%, #4db6ac 100%);
+    border-radius: 8px;
+    padding: 12px 20px;
+    max-width: 370px;
+    box-shadow: 0 8px 20px rgba(0, 121, 107, 0.4);
+    font-weight: 700;
+  }
+  .question-block {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 20px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #80deea;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #005662;
+  }
+  label {
+    display: block;
+    margin: 6px 0;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .btn-submit {
+    background: linear-gradient(145deg, #00796b, #004d40);
+    border: none;
+    border-radius: 25px;
+    color: #a7ffeb;
+    font-weight: 700;
+    padding: 10px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 121, 107, 0.7);
+    transition: background 0.4s ease;
+    display: block;
+    margin: 16px auto 0;
+    width: 160px;
+  }
+  .btn-submit:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  .btn-submit:hover {
+    background: linear-gradient(145deg, #004d40, #00796b);
+  }
+  .feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+  .correct-answer {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .motivation-line {
+    color: #00796b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  #resultDeployment {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #004d40;
+  }
+  #motivationDeployment {
+    font-style: italic;
+    margin-top: 8px;
+    color: #00897b;
+  }
+</style>
+
+<h2 class="exercise-heading">Chapter 7: Deployment Quiz</h2>
+
+<form id="deploymentQuiz">
+
+  <div class="question-block">
+    <p class="question-text"><strong>1. Which Python library is commonly used to save and load ML models?</strong></p>
+    <label><input type="radio" name="q1" value="correct" /> joblib</label>
+    <label><input type="radio" name="q1" value="wrong" /> pandas</label>
+    <label><input type="radio" name="q1" value="wrong" /> matplotlib</label>
+    <label><input type="radio" name="q1" value="wrong" /> seaborn</label>
+    <button type="button" class="btn-submit" onclick="submitSingleDeployment(1, event)">Submit</button>
+    <div class="feedback" id="feedback1"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>2. What is a REST API in the context of ML deployment?</strong></p>
+    <label><input type="radio" name="q2" value="wrong" /> A database for storing large models</label>
+    <label><input type="radio" name="q2" value="correct" /> A web interface that allows apps to communicate with your ML model over the internet</label>
+    <label><input type="radio" name="q2" value="wrong" /> A visualization tool for ML results</label>
+    <label><input type="radio" name="q2" value="wrong" /> A tool that only trains models</label>
+    <button type="button" class="btn-submit" onclick="submitSingleDeployment(2, event)">Submit</button>
+    <div class="feedback" id="feedback2"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>3. What is the benefit of converting an ML model into an application/API?</strong></p>
+    <label><input type="radio" name="q3" value="wrong" /> Only runs on large enterprise servers</label>
+    <label><input type="radio" name="q3" value="wrong" /> Makes training much faster</label>
+    <label><input type="radio" name="q3" value="wrong" /> It cannot be reused</label>
+    <label><input type="radio" name="q3" value="correct" /> Allows other programs or users to use the model's predictions easily</label>
+    <button type="button" class="btn-submit" onclick="submitSingleDeployment(3, event)">Submit</button>
+    <div class="feedback" id="feedback3"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>4. Which is NOT typically part of a basic ML deployment pipeline?</strong></p>
+    <label><input type="radio" name="q4" value="wrong" /> Model training and evaluation</label>
+    <label><input type="radio" name="q4" value="correct" /> Drawing scatterplots using matplotlib</label>
+    <label><input type="radio" name="q4" value="wrong" /> Saving the trained model to disk</label>
+    <label><input type="radio" name="q4" value="wrong" /> Serving model predictions via an API</label>
+    <button type="button" class="btn-submit" onclick="submitSingleDeployment(4, event)">Submit</button>
+    <div class="feedback" id="feedback4"></div>
+  </div>
+
+  <div class="question-block">
+    <p class="question-text"><strong>5. What does 'serving the model' mean?</strong></p>
+    <label><input type="radio" name="q5" value="wrong" /> Training the model on a new dataset</label>
+    <label><input type="radio" name="q5" value="correct" /> Making the model available to provide predictions to applications/users</label>
+    <label><input type="radio" name="q5" value="wrong" /> Collecting fresh training data</label>
+    <label><input type="radio" name="q5" value="wrong" /> Visualizing the loss curve</label>
+    <button type="button" class="btn-submit" onclick="submitSingleDeployment(5, event)">Submit</button>
+    <div class="feedback" id="feedback5"></div>
+  </div>
+</form>
+
+<div id="resultDeployment"></div>
+<p id="motivationDeployment"></p>
+
+<script>
+  const deploymentAnswers = {
+    q1: 'joblib',
+    q2: "A web interface that allows apps to communicate with your ML model over the internet",
+    q3: "Allows other programs or users to use the model's predictions easily",
+    q4: "Drawing scatterplots using matplotlib",
+    q5: "Making the model available to provide predictions to applications/users"
+  };
+  const deploymentCorrect = {
+    q1: 'correct',
+    q2: 'correct',
+    q3: 'correct',
+    q4: 'correct',
+    q5: 'correct'
+  };
+  const userDeployment = {};
+
+  function submitSingleDeployment(qNum, event) {
+    const options = document.getElementsByName('q' + qNum);
+    let selectedText = null;
+    for (const option of options) {
+      if (option.checked) selectedText = option.nextSibling.textContent.trim();
+    }
+    if (selectedText === null) {
+      alert('Please select an answer before submitting.');
+      return;
+    }
+    const selectedOption = Array.from(options).find(opt => opt.checked);
+    const selected = selectedOption.value;
+
+    userDeployment['q' + qNum] = selected;
+
+    for (const option of options) {
+      option.disabled = true;
+    }
+    const btn = event.target;
+    btn.disabled = true;
+
+    const feedbackDiv = document.getElementById('feedback' + qNum);
+
+    if (selected === deploymentCorrect['q' + qNum]) {
+      btn.innerText = 'Correct!';
+      feedbackDiv.innerHTML = '<span class="correct-answer">Great job! That is the right answer.</span>';
+    } else {
+      btn.innerText = 'Wrong!';
+      feedbackDiv.innerHTML = `<span class="correct-answer">The correct answer is: <strong>${deploymentAnswers['q' + qNum]}</strong></span><br><span class="motivation-line">Keep going—every attempt brings improvement!</span>`;
+    }
+    if (Object.keys(userDeployment).length === 5) {
+      showDeploymentResult();
+    }
+  }
+
+  function showDeploymentResult() {
+    let score = 0;
+    for (const key in userDeployment) {
+      if (userDeployment[key] === deploymentCorrect[key]) score++;
+    }
+    const percentage = (score / 5) * 100;
+    document.getElementById('resultDeployment').innerText = `You scored ${score} out of 5 (${percentage}%).`;
+
+    const motivationQuotes = [
+      "Deployment brings your ML models to life—great job!",
+      "Fantastic! Sharing models via APIs is the future.",
+      "Well done! Your knowledge of model serving is growing.",
+      "Keep it up! Successfully deploying models is an essential skill.",
+      "Excellent! You're developing practical ML expertise."
+    ];
+    const randomIndex = Math.floor(Math.random() * motivationQuotes.length);
+    document.getElementById('motivationDeployment').innerText = motivationQuotes[randomIndex];
+  }
+</script>
+
+
+        </div>
+    </div>
+
+    <!-- Chapter 8 -->
+    <div class="chapter" id="chapter8">
+        <h2>Chapter 8: Summary & Next Steps</h2>
+        <div class="chapter-content">
+            <p>You now have a foundational understanding of Machine Learning. Next steps include:</p>
+            <ul>
+                <li>Advanced ML courses</li>
+                <li>Deep Learning</li>
+                <li>Real-world ML projects and portfolio building</li>
+            </ul>
+          </div>
+    </div>
+
+</div>
+<div style="text-align:center; margin: 40px 0;">  
+  <p><strong>Get your Data Science Basics Certificate for ₹99!</strong> – Showcase your achievement and boost your career.</p>  
+  <button class="enroll" id="payBtn">Get Certificate</button>  
+</div>  
+
+<!-- Razorpay Checkout -->
+<script src="https://rzp.io/rzp/idpTilQ"></script>
+<script>
+  document.getElementById("payBtn").onclick = function(e) {
+    e.preventDefault();
+
+    var options = {
+      "key": "rzp_test_1234567890abcdef", // 🔹 Replace with your Razorpay Key ID from Dashboard
+      "amount": 9900, // ₹99 in paise
+      "currency": "INR",
+      "name": "Learnify AI",
+      "description": "Certificate Payment",
+      "image": "https://yourdomain.com/logo.png", // optional logo
+      "handler": function (response) {
+        // ✅ Redirect after successful payment
+        window.location.href = "payment1.html?payment_id=" + response.razorpay_payment_id;
+      },
+      "prefill": {
+        "name": localStorage.getItem("userName") || "Student",
+        "email": localStorage.getItem("userEmail") || "student@email.com",
+        "contact": localStorage.getItem("userPhone") || "9999999999"
+      },
+      "theme": { "color": "#0a1f44" } // navy blue
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response){
+      alert("❌ Payment Failed: " + response.error.description);
+    });
+    rzp.open();
+  }
+</script>
+
+
+<script>
+    const chapters = document.querySelectorAll('.chapter h2');
+    chapters.forEach(ch => {
+        ch.addEventListener('click', () => {
+            const content = ch.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+<script src="mlscript.js"></script>
+</body>
+</html>
